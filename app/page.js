@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Our_Products from "@/components/Our_Products";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Navbar />
       <div>
         <Hero />
+        <Our_Products />
       </div>
     </div>
   );
