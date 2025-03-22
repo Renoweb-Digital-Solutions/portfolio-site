@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className="relative min-h-screen bg-black text-white flex flex-col items-center">
+        <div className="relative lg:h-[700px] bg-black text-white flex flex-col items-center">
             <Ellipse />
             <motion.div
                 initial={{ y: 100, opacity: 0 }}
