@@ -1,9 +1,16 @@
+"use client"
+
 import Image from 'next/image'
 import React from 'react'
+import Button from './shared/Button'
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
     return (
-        <div className='bg-[#0A0A0A] text-white  rounded-xl border-4 border-[#3877F0]/20 poppins-regular h-18 w-[98%] mx-5 my-5 flex flex-row justify-between'>
+        <motion.div initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className='bg-[#1D1A1A] opacity-80 text-white  rounded-xl border-4 border-[#3877F0]/20 poppins-regular h-18 w-[98%] mx-5 my-5 flex flex-row justify-between fixed top-0 left-0 right-0 z-50'>
 
             <div>
                 <Image src="/renowebLogo.png" width={70} height={70} alt='Renoweb logo' />
@@ -15,11 +22,8 @@ const Navbar = () => {
                 <p>Our-Blog</p>
                 <p>Products</p>
             </div>
-
-            <div className='my-auto mr-3'>
-                <button className='bg-[#003FB9] px-10 py-2 rounded-xl border-3 border-[#3877F0]/60 hover:bg-[#3877F0] hover:border-[#003FB9]'>Get in Touch</button>
-            </div>
-        </div>
+            <Button>Get in Touch</Button>
+        </motion.div>
 
     )
 }
