@@ -3,7 +3,7 @@ import Product_Card from './shared/Product_Card'
 
 const Our_Products = () => {
     return (
-        <div className=''>
+        <div>
             <h1 className='text-[#FFFBEF] font-bold text-center text-3xl'>OUR <span className='text-[#3877F0]'>PRODUCTS</span></h1>
 
             <div className="flex flex-row space-x-7 justify-evenly my-20">
