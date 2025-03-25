@@ -11,7 +11,7 @@ const images = [
 
 const Our_Results = () => {
     return (
-        <div>
+        <div className='mb-20'>
             <h1 className='text-[#FFFBEF] font-bold text-center text-3xl'>OUR <span className='text-[#3877F0]'>RESULTS</span></h1>
 
             <div className='my-10'>
