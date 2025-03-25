@@ -67,7 +67,7 @@ const NodeDesign = () => {
             ref={lineRef}
             className="absolute top-6 bottom-0 left-1/2 transform -translate-x-1/2 w-1 flex justify-center">
             <motion.div
-              className="bg-blue-500 w-1"
+              className="bg-[#3877F0] w-1"
               initial="hidden"
               animate={lineInView ? "visible" : "hidden"}
               variants={lineVariants}
