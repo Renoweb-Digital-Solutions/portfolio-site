@@ -1,5 +1,5 @@
-import React from 'react'
 import InfiniteSlider from './shared/InfiniteSlider'
+import AnimatedHeadings from './shared/AnimatedHeadings'
 
 const images = [
     '/case_Studies_marquee_1.png',
@@ -12,7 +12,9 @@ const images = [
 const Our_Results = () => {
     return (
         <div className='mb-20'>
-            <h1 className='text-[#FFFBEF] font-bold text-center text-3xl'>OUR <span className='text-[#3877F0]'>RESULTS</span></h1>
+            <AnimatedHeadings triggerOnScroll={true}>
+                <h1 className='text-[#FFFBEF] font-bold text-center text-3xl'>OUR <span className='text-[#3877F0]'>RESULTS</span></h1>
+            </AnimatedHeadings>
 
             <div className='my-10'>
                 <InfiniteSlider images={images} />
