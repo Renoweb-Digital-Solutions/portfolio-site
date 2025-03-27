@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyRenowebCard = ({ title, description, image }) => {
     return (
-        <div className="max-w-sm border rounded-2xl shadow-sm bg-gradient-to-b from-[#0A0A0A]/[1] to-[#302E2E]/[0.28]">
+        <div className="max-w-sm border rounded-2xl shadow-sm bg-gradient-to-b from-[#0A0A0A]/[1] to-[#302E2E]/[0.28] h-[500px]">
 
             <img
                 className="rounded-t-2xl w-full h-48 object-cover"
@@ -12,7 +12,7 @@ const WhyRenowebCard = ({ title, description, image }) => {
 
             <div className="p-5">
 
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-white mt-2 mb-7">
+                <h5 className="text-2xl font-bold tracking-tight text-white mt-2 mb-7">
                     {title.split("\n").map((line, index) => (
                         <React.Fragment key={index}>
                             {line}

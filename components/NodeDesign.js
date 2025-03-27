@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+"use client"
+import { useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { services } from './data/Services';
 import Button from './shared/Button';
@@ -6,7 +7,6 @@ import Button from './shared/Button';
 const NodeDesign = () => {
   const containerRef = useRef(null);
   const lineRef = useRef(null);
-  const nodeRef = useRef(null);
 
   const lineInView = useInView(lineRef, { once: true, amount: 0.1 });
 

@@ -1,5 +1,15 @@
-import React from 'react'
+"use client"
 import { case_study_data } from '../data/case_study_data';
+import { motion } from "framer-motion";
+
+const cardVariants = {
+    hidden: { x: 50, opacity: 0 },  // Starts slightly to the right
+    visible: {
+        x: 0,
+        opacity: 1,
+        transition: { duration: 0.6, ease: "easeOut" }
+    },
+};
 
 const StatsCard = ({ stats }) => {
     return (
@@ -25,7 +35,12 @@ const StatsCard = ({ stats }) => {
 
 const CaseStudyCard = ({ data }) => {
     return (
-        <div className="w-[630px] border rounded-4xl bg-gradient-to-r from-[#0A0A0A]/0 to-[#3877F0]/[7%] shadow-[0px_4px_48px_2px_#3877F0] p-4">
+        <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}  // Trigger animation when 20% visible
+            className="w-[630px] border rounded-4xl bg-gradient-to-r from-[#0A0A0A]/0 to-[#3877F0]/[7%] shadow-[0px_4px_48px_2px_#3877F0] p-4">
             <h1 className='text-white my-10 font-bold text-5xl text-center'>{data.category.toUpperCase()}</h1>
             <img
                 className="rounded-2xl w-11/12 h-auto object-cover m-5 mx-auto"
@@ -57,7 +72,7 @@ const CaseStudyCard = ({ data }) => {
                     </span>
                 </button>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
