@@ -3,25 +3,39 @@
 import Image from 'next/image'
 import Button from './shared/Button'
 import { motion } from 'framer-motion';
+import isMobileView from './shared/isMobileView';
+import { IoIosMenu } from "react-icons/io";
 
+const navbarVariants = {
+    desktop: { y: 0, opacity: 1 },
+    mobile: { y: 0, opacity: 1 }, // No animation for mobile
+};
 const Navbar = () => {
+    const isMobile = isMobileView();
     return (
-        <motion.div initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className='bg-[#1D1A1A]/80 backdrop-blur-xl opacity-80 text-white  rounded-lg border-4 border-[#3877F0]/20 bg-transparent-50 poppins-regular h-18 w-[98%] mx-5 my-5 flex flex-row justify-between fixed top-0 left-0 right-0 z-50 '>
+        <motion.div variants={navbarVariants} initial={{ y: -100, opacity: 0 }}
+            animate={isMobile ? "mobile" : "desktop"}
+            transition={{ duration: isMobile ? 0 : 0.4, ease: "easeOut" }}
+            className='bg-[#1D1A1A]/80 backdrop-blur-xl opacity-80 text-white  md:rounded-lg md:border-4 md:border-[#3877F0]/20 md:bg-transparent-50 poppins-regular w-auto h-18 md:w-[98%] md:mx-5 md:my-5 flex flex-row justify-between fixed top-0 left-0 right-0 z-50 '>
 
             <div>
                 <Image src="/renowebLogo.png" width={70} height={70} alt='Renoweb logo' />
             </div>
 
-            <div className='flex flex-row space-x-16 my-auto'>
+            <div className='hidden md:flex md:flex-row space-x-16 my-auto'>
                 <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Home</p>
                 <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Case-Studies</p>
                 <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Our-Blog</p>
                 <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Products</p>
             </div>
-            <Button classname="duration-300 ease-in">Get in Touch</Button>
+
+            <div className='md:hidden block my-auto p-5'>
+                <IoIosMenu className='text-3xl cursor-pointer font-bold' />
+            </div>
+
+            <div className='hidden md:block'>
+                <Button classname="duration-300 ease-in   mr-3">Get in Touch</Button>
+            </div>
         </motion.div>
 
     )

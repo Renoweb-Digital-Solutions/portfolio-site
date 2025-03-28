@@ -23,7 +23,7 @@ const Our_Products = () => {
 
 
 
-            <div className="flex flex-row space-x-7 justify-evenly my-20">
+            <div className="flex flex-col md:flex-row space-y-10 md:space-x-7 justify-center md:justify-evenly my-20">
                 {[
                     {
                         name: "QUANTUM ACCELERATOR",

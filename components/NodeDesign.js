@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { services } from './data/Services';
 import Button from './shared/Button';
+import isMobileView from './shared/isMobileView';
 
 const NodeDesign = () => {
   const containerRef = useRef(null);
@@ -28,11 +29,11 @@ const NodeDesign = () => {
       <div className="max-w-6xl w-full relative">
         <div className="relative flex justify-center">
           <div
-            className="w-6 h-6 bg-transparent border-2 border-red-500 rounded-full absolute top-00"
+            className="hidden md:block w-6 h-6 bg-transparent border-2 border-red-500 rounded-full absolute top-00"
 
           />
           {/* Center line */}
-          <div className="absolute top-6 bottom-0 left-1/2 transform -translate-x-1/2 w-1 flex justify-center">
+          <div className="absolute top-6 bottom-0 left-1/2 transform -translate-x-1/2 w-1 hidden md:flex justify-center">
             <motion.div
               className="bg-[#3877F0] w-1"
               style={{
@@ -49,12 +50,14 @@ const NodeDesign = () => {
                 const isCardInView = useInView(cardRef, { once: true, amount: 0.2 });
                 const isBranchInView = useInView(branchRef, { once: true, amount: 0.2 });
 
+                const isMobile = isMobileView();
+
                 return (
                   <div className="relative ">
                     {/* Branch line */}
                     <div
                       ref={branchRef}
-                      className="absolute top-1/2 left-0 right-0 flex items-center"
+                      className="hidden absolute top-1/2 left-0 right-0 md:flex items-center"
                     >
                       <motion.div
                         className={`absolute h-1 bg-blue-500 ${service.position === 'left' ? 'right-1/2' : 'left-1/2'}`}
@@ -73,12 +76,12 @@ const NodeDesign = () => {
                     {/* Service card */}
                     <div
                       ref={cardRef}
-                      className={`flex ${service.position === 'left' ? 'justify-start pl-16' : 'justify-end pr-16'}`}
+                      className={`flex justify-center ${service.position === 'left' ? 'md:justify-start md:pl-16' : 'md:justify-end md:pr-16'}`}
                     >
                       <motion.div
                         className={`max-w-md p-6  text-white bg-[#0A0A0A] border-2 rounded-2xl border-[#1E1E1E]`}
-                        initial={{ opacity: 0, x: service.position === 'left' ? -50 : 50 }}
-                        animate={isCardInView ? { opacity: 1, x: 0 } : { opacity: 0, x: service.position === 'left' ? -50 : 50 }}
+                        initial={{ opacity: 0, x: isMobile ? 0 : service.position === 'left' ? -50 : 50, y: isMobile ? 50 : 0 }}
+                        animate={isCardInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: isMobile ? 0 : service.position === 'left' ? -50 : 50, y: isMobile ? 50 : 0 }}
                         transition={{
                           duration: 0.6,
                           ease: "easeOut"

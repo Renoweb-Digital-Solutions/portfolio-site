@@ -8,7 +8,7 @@ const cardVariants = {
     visible: (i) => ({
         y: 0,
         opacity: 1,
-        transition: { duration: 0.6, ease: "easeOut", delay: i * 0.3 },
+        transition: { duration: 0.2, ease: "easeOut", delay: i * 0.2 },
     }),
 };
 
@@ -20,7 +20,7 @@ const AnimatedWhyRenowebCard = ({ index, title, description }) => {
             whileInView="visible"
             viewport={{ once: true }}
             custom={index}
-            className="md:hover:scale-105 duration-300 ease-in"
+            className="md:hover:scale-105 md:duration-300 md:ease-in"
         >
             <WhyRenowebCard title={title} description={description} />
         </motion.div>

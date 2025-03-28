@@ -13,15 +13,15 @@ const textVariants = {
 };
 const Case_Studies = () => {
     return (
-        <div className='flex flex-row justify-center my-[250px] space-x-15'>
-            <div className='text-white text-center self-center'>
+        <div className='flex flex-col md:flex-row justify-center my-[250px] space-y-10 md:space-x-15'>
+            <div className='text-white text-center self-center mx-auto md:mx-10'>
                 <motion.h3
                     whileInView="visible"
                     variants={textVariants}
                     initial="hidden"
                     animate="visible"
                     custom={0}  // First element
-                    className='font-bold text-2xl'
+                    className='font-bold text-xl md:text-2xl'
                 >
                     Want to know more?
                 </motion.h3>
@@ -32,7 +32,7 @@ const Case_Studies = () => {
                     initial="hidden"
                     animate="visible"
                     custom={1}  // Second element
-                    className='font-bold text-2xl'
+                    className='font-bold text-xl md:text-2xl'
                 >
                     See the
                 </motion.h4>
@@ -43,7 +43,7 @@ const Case_Studies = () => {
                     initial="hidden"
                     animate="visible"
                     custom={2}  // Third element
-                    className='text-[#3877F0] font-extrabold text-5xl cursor-pointer'
+                    className='text-[#3877F0] font-extrabold text-4xl md:text-5xl cursor-pointer'
                 >
                     CASE STUDIES
                 </motion.h1>
