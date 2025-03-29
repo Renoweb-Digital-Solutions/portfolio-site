@@ -33,7 +33,7 @@ const ContactForm = () => {
 
             <motion.div initial={{ x: 200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.4, ease: "easeOut" }} className="bg-[#0A0A0A] flex flex-row gap-5 w-[700px] p-10 mx-auto mb-[100px] shadow-[0px_4px_48px_2px_#3877F0] rounded-3xl">
+                transition={{ duration: 0.4, ease: "easeOut" }} className="bg-[#0A0A0A] flex flex-col md:flex-row gap-5 w-[90%] lg:w-[700px] p-10 mx-auto mb-[100px] shadow-[0px_4px_48px_2px_#3877F0] rounded-3xl">
                 <div className="w-6/12 self-center">
                     <Image width={300} height={300} src="/renowebLogo.png" alt="renoweb logo" />
                 </div>
