@@ -91,7 +91,7 @@ const NodeDesign = () => {
                         <p className="text-sm text-gray-300 mt-4 mb-3">{service.description}</p>
 
                         <div className="py-4">
-                          <Button classname="my-3">Learn More</Button>
+                          <Button classname="md:my-3">Learn More</Button>
                         </div>
 
                       </motion.div>

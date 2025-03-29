@@ -16,8 +16,8 @@ const InfiniteSlider = ({ images }) => {
         <div className="relative w-8/12 mx-auto overflow-hidden">
             {/* Background Blur Mask (Ensures it stays always) */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-                <div className="absolute top-0 left-0 h-full w-24 bg-gradient-to-r from-black via-transparent to-transparent" />
-                <div className="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-black via-transparent to-transparent" />
+                <div className="absolute top-0 left-0 h-full w-18 md:w-24 bg-gradient-to-r from-black via-transparent to-transparent" />
+                <div className="absolute top-0 right-0 h-full w-18 md:w-24 bg-gradient-to-l from-black via-transparent to-transparent" />
             </div>
 
             {/* Image Slider */}
@@ -37,7 +37,7 @@ const InfiniteSlider = ({ images }) => {
                     <img
                         key={index}
                         src={src}
-                        className="w-9/12 h-50 object-cover rounded-2xl"
+                        className="w-7/12 md:w-9/12 h-38 md:h-50 object-cover rounded-2xl"
                         alt={`slide-${index}`}
                     />
                 ))}

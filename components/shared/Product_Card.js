@@ -7,7 +7,7 @@ const Product_Card = ({ productName, description }) => {
   const secondWord = words.slice(1).join(' ') || '';
 
   return (
-    <div className="w-11/12 md:max-w-[420px] bg-[#322E2E] border  rounded-3xl shadow-xl shadow-[#6D98EC]/40" style={{ background: 'linear-gradient(to bottom, #0A0A0A 100%, #302E2E 24%)' }}>
+    <div className="mx-auto md:mx-0 w-10/12 md:w-11/12 md:max-w-[420px] bg-[#322E2E] border  rounded-3xl shadow-xl shadow-[#6D98EC]/40" style={{ background: 'linear-gradient(to bottom, #0A0A0A 100%, #302E2E 24%)' }}>
       <a href="#">
         <Image className="rounded-t-3xl" src="/product_card_1.png" width={420} height={300} alt='Growth OS' />
       </a>
