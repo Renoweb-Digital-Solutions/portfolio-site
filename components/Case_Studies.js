@@ -13,7 +13,7 @@ const textVariants = {
 };
 const Case_Studies = () => {
     return (
-        <div className='flex flex-col md:flex-row justify-center my-[250px] space-y-10 md:space-x-15'>
+        <div className='flex flex-col lg:flex-row justify-center my-[250px] space-y-10 md:space-x-15'>
             <div className='text-white text-center self-center mx-auto md:mx-10'>
                 <motion.h3
                     whileInView="visible"

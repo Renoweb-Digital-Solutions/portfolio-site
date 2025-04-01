@@ -29,11 +29,11 @@ const NodeDesign = () => {
       <div className="max-w-6xl w-full relative">
         <div className="relative flex justify-center">
           <div
-            className="hidden md:block w-6 h-6 bg-transparent border-2 border-red-500 rounded-full absolute top-00"
+            className="hidden lg:block w-6 h-6 bg-transparent border-2 border-red-500 rounded-full absolute top-00"
 
           />
           {/* Center line */}
-          <div className="absolute top-6 bottom-0 left-1/2 transform -translate-x-1/2 w-1 hidden md:flex justify-center">
+          <div className="absolute top-6 bottom-0 left-1/2 transform -translate-x-1/2 w-1 hidden lg:flex justify-center">
             <motion.div
               className="bg-[#3877F0] w-1"
               style={{
@@ -57,7 +57,7 @@ const NodeDesign = () => {
                     {/* Branch line */}
                     <div
                       ref={branchRef}
-                      className="hidden absolute top-1/2 left-0 right-0 md:flex items-center"
+                      className="hidden absolute top-1/2 left-0 right-0 lg:flex items-center"
                     >
                       <motion.div
                         className={`absolute h-1 bg-blue-500 ${service.position === 'left' ? 'right-1/2' : 'left-1/2'}`}
@@ -76,7 +76,7 @@ const NodeDesign = () => {
                     {/* Service card */}
                     <div
                       ref={cardRef}
-                      className={`flex justify-center ${service.position === 'left' ? 'md:justify-start md:pl-16' : 'md:justify-end md:pr-16'}`}
+                      className={`flex justify-center ${service.position === 'left' ? 'lg:justify-start lg:pl-10 lg:pl-16' : 'lg:justify-end lg:pr-16'}`}
                     >
                       <motion.div
                         className={`max-w-md p-6  text-white bg-[#0A0A0A] border-2 rounded-2xl border-[#1E1E1E]`}

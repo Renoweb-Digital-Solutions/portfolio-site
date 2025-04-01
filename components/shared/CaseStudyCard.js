@@ -6,7 +6,7 @@ import isMobileView from './isMobileView';
 const StatsCard = ({ stats }) => {
 
     return (
-        <div className="flex items-center mx-auto md:mx-0 space-x-4 md:space-x-6 bg-black text-white p-5 md:p-7 rounded-3xl border-2 border-[#3877F0]">
+        <div className="flex items-center mx-auto md:mx-0 space-x-4 md:space-x-6 bg-black text-white p-5 lg:p-7 rounded-3xl border-2 border-[#3877F0]">
             <div className="text-center">
                 <p className="text-lg font-semibold">{stats.clicks}</p>
                 <p className="text-sm text-gray-400">Clicks</p>
@@ -43,7 +43,7 @@ const CaseStudyCard = ({ data }) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}  // Trigger animation when 20% visible
-            className="w-86 md:w-[630px] border rounded-4xl bg-gradient-to-r from-[#0A0A0A]/0 to-[#3877F0]/[7%] shadow-[0px_4px_18px_2px_#3877F0] md:shadow-[0px_4px_48px_2px_#3877F0] p-4">
+            className="w-86 md:w-11/12 lg:w-[630px] border rounded-4xl bg-gradient-to-r from-[#0A0A0A]/0 to-[#3877F0]/[7%] shadow-[0px_4px_18px_2px_#3877F0] md:shadow-[0px_4px_48px_2px_#3877F0] p-4">
             <h1 className='text-white my-5 md:my-10 font-bold text-3xl md:text-5xl text-center'>{data.category.toUpperCase()}</h1>
             <img
                 className="rounded-2xl w-11/12 md:h-auto object-contain md:object-cover m-5 mx-auto"
