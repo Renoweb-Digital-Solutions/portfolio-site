@@ -12,7 +12,7 @@ const Hero = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="my-60 h-[200px]">
-                <h1 className="text-xl md:text-2xl font-bold text-center opacity-90 px-5 md:px-0">
+                <h1 className="text-xl md:text-2xl font-bold text-center opacity-90 px-5 lg:px-0">
                     At Renoweb, we are more than just a growth agency—we are your partners in building sustainable success.
                 </h1>
                 <div className="flex flex-col justify-center my-7">
