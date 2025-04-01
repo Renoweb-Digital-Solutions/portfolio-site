@@ -13,7 +13,7 @@ const InfiniteSlider = ({ images }) => {
     }, [images]);
 
     return (
-        <div className="relative w-8/12 mx-auto overflow-hidden">
+        <div className="relative w-8/12 md:w-[700px] lg:w-[1400px] mx-auto overflow-hidden">
             {/* Background Blur Mask (Ensures it stays always) */}
             <div className="absolute inset-0 z-10 pointer-events-none">
                 <div className="absolute top-0 left-0 h-full w-18 md:w-24 bg-gradient-to-r from-black via-transparent to-transparent" />
@@ -37,7 +37,7 @@ const InfiniteSlider = ({ images }) => {
                     <img
                         key={index}
                         src={src}
-                        className="w-7/12 md:w-9/12 h-38 md:h-50 object-cover rounded-2xl"
+                        className="w-7/12 md:w-[9/12] h-38 md:h-50 object-cover rounded-2xl"
                         alt={`slide-${index}`}
                     />
                 ))}
