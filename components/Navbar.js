@@ -6,6 +6,7 @@ import Button from './shared/Button'
 import { motion, AnimatePresence } from 'framer-motion';
 import isMobileView from './shared/isMobileView';
 import { IoIosMenu, IoMdClose } from "react-icons/io";
+import Link from 'next/link';
 
 const navbarVariants = {
     desktop: { y: 0, opacity: 1 },
@@ -53,8 +54,12 @@ const Navbar = () => {
                 </div>
 
                 <div className='hidden md:flex md:flex-row md:space-x-10 lg:space-x-16 my-auto'>
-                    <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Home</p>
-                    <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Case-Studies</p>
+                    <Link href="/">
+                        <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Home</p>
+                    </Link>
+                    <Link href="/case-studies">
+                        <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Case-Studies</p>
+                    </Link>
                     <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Our-Blog</p>
                     <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Products</p>
                 </div>
