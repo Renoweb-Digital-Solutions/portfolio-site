@@ -1,7 +1,7 @@
 export const case_studies_data = [
     {
         id: 0,
-        category: "leadGenOs",
+        category: "Lead Gen",
         title: "Lead Generation Funnel for Canadian SaaS Company",
         about_client: "Our client, a Canadian SaaS company, was struggling to generate sufficient B2B leads for their analytics dashboard solution. Despite their best efforts, they were only getting 2-3 demo requests per month.",
         challenges: ["The client needed a lead generation funnel that could effectively target potential customers, capture their interest, and qualify them for demos."],
@@ -17,7 +17,7 @@ export const case_studies_data = [
     },
     {
         id: 1,
-        category: "leadGenOs",
+        category: "Lead Gen",
         title: "Omni-channel Lead Generation for US Healthcare Group",
         about_client: "Our client, a US-based healthcare group, was struggling to attract new patients and reduce no-shows for appointments. They needed a comprehensive lead generation strategy to drive growth and revenue.",
         challenges: ["Low online visibility and website traffic", "Insufficient lead generation and appointment bookings", "High no-show rates for appointments"],
@@ -31,7 +31,7 @@ export const case_studies_data = [
     },
     {
         id: 2,
-        category: "leadGenOs",
+        category: "SMM OS",
         title: "Building a Merchant Cash Advance Community: A Pioneering Reddit Initiative",
         about_client: "Our client, a Merchant Cash Advance (MCA) software company based in the USA, approached us with a unique challenge: establishing a cohesive community for MCA professionals in a niche B2B SaaS market. The industry was riddled with fragmented, spam-filled platforms, and the client wanted to stand out by building a brand that could attract and qualify merchant prospects while driving meaningful engagement.",
         challenges: ["Zero Demand for MCA Communities: Search demand for MCA-related forums was practically non-existent.", "High Competition in SEO and Paid Search: Established players like debanked.com, funderintel.com, and dailyfunder.com dominated the digital space.", "Scepticism of Niche Market Viability: There were no successful MCA-focused communities to benchmark."],
