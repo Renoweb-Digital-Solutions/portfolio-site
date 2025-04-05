@@ -1,16 +1,14 @@
 "use client"
 import { IoIosArrowDown } from "react-icons/io";
 import Case_studies_page_cards from "./Case_studies_page_cards";
-import CategoryDropdown from "./CategoryDropdown";
 import { useState } from "react";
+import CategoryFilter from "./CategoryFilter";
 
 
 const Case_studies_page = ({ case_studies }) => {
-    const [showDropdown, setShowDropdown] = useState(false);
+    const [activeCategory, setActiveCategory] = useState('All');
 
-    const onDropdownClick = () => {
-        setShowDropdown(!showDropdown);
-    };
+    const filterCaseStudies = activeCategory === 'All' ? case_studies : case_studies.filter(study => study.category === activeCategory);
 
     return (
         <div className="mt-[200px] relative mx-15">
@@ -18,20 +16,16 @@ const Case_studies_page = ({ case_studies }) => {
                 CASE STUDIES
             </h1>
 
-            <div className="border-2 border-[#C7C7C7] rounded-2xl w-2/12 px-5 py-2 ml-5 mt-[70px] hover:cursor-pointer" onClick={onDropdownClick}>
-                <div className="flex flex-row text-[#C7C7C7] space-x-2 justify-center">
-                    <p className="text-xl">Category</p>
-                    <IoIosArrowDown className="text-[#C7C7C7] text-2xl self-center" />
-                </div>
-            </div>
-            {showDropdown &&
-                <CategoryDropdown />
-            }
+            <CategoryFilter activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
             <div className="flex flex-col mx-70 space-y-7 my-20">
-                {case_studies.map((studies) => (
+                {filterCaseStudies.length !== 0 ? filterCaseStudies.map((studies) => (
                     <Case_studies_page_cards studies={studies} key={studies.id} />
-                ))}
+                )) :
+                    <p className="font-bold text-2xl text-[#C7C7C7] text-center">
+                        No case studies found.
+                    </p>
+                }
             </div>
         </div>
     )
