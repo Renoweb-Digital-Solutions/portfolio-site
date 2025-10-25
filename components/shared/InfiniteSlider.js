@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 const InfiniteSlider = ({ images }) => {
@@ -34,7 +35,9 @@ const InfiniteSlider = ({ images }) => {
                 ref={containerRef}
             >
                 {[...images, ...images].map((src, index) => (
-                    <img
+                    <Image
+                        width={500}
+                        height={500}
                         key={index}
                         src={src}
                         className="w-7/12 md:w-[9/12] h-38 md:h-50 object-cover rounded-2xl"

@@ -3,7 +3,8 @@ import { useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { services } from './data/Services';
 import Button from './shared/Button';
-import isMobileView from './shared/isMobileView';
+import useMobileView from './shared/useMobileView';
+
 
 const NodeDesign = () => {
   const containerRef = useRef(null);
@@ -50,7 +51,7 @@ const NodeDesign = () => {
                 const isCardInView = useInView(cardRef, { once: true, amount: 0.2 });
                 const isBranchInView = useInView(branchRef, { once: true, amount: 0.2 });
 
-                const isMobile = isMobileView();
+                const isMobile = useMobileView();
 
                 return (
                   <div className="relative ">

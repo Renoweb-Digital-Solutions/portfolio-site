@@ -4,9 +4,10 @@ import { useState } from 'react';
 import Image from 'next/image'
 import Button from './shared/Button'
 import { motion, AnimatePresence } from 'framer-motion';
-import isMobileView from './shared/isMobileView';
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import Link from 'next/link';
+import useMobileView from './shared/useMobileView';
+
 
 const navbarVariants = {
     desktop: { y: 0, opacity: 1 },
@@ -33,7 +34,7 @@ const dropdownVariants = {
 };
 
 const Navbar = () => {
-    const isMobile = isMobileView();
+    const isMobile = useMobileView();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -89,7 +90,7 @@ const Navbar = () => {
                     >
                         <div className='flex flex-col w-full'>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Home</p>
-                            <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Case-Studies</p>
+                            <Link href="/case-studies" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Case-Studies</Link>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Our-Blog</p>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Products</p>
                             <div className='p-4'>

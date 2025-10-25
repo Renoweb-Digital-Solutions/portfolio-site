@@ -1,10 +1,12 @@
+import Image from "next/image";
 import React from "react";
 
 const WhyRenowebCard = ({ title, description, image }) => {
     return (
         <div className="w-9/12 md:w-full mx-auto md:mx-0 md:max-w-sm border rounded-2xl shadow-sm bg-gradient-to-b from-[#0A0A0A]/[1] to-[#302E2E]/[0.28] h-[500px] md:h-[550px]">
 
-            <img
+            <Image
+                width={500} height={500}
                 className="rounded-t-2xl w-full h-48 object-cover"
                 src="https://flowbite.com/docs/images/blog/image-1.jpg"
                 alt={title}

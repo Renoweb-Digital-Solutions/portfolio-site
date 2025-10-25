@@ -2,11 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import isMobileView from "./isMobileView";
+import useMobileView from "./useMobileView";
+
 
 
 const AnimatedHeadings = ({ children, triggerOnScroll = false }) => {
-    const isMobile = isMobileView();
+    const isMobile = useMobileView();
 
     const ref = useRef(null);
     const isInView = useInView(ref, { triggerOnce: true, threshold: 0.3 });

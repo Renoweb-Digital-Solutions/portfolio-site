@@ -1,7 +1,7 @@
 "use client"
 import { case_study_data } from '../data/case_study_data';
 import { motion } from "framer-motion";
-import isMobileView from './isMobileView';
+import Image from 'next/image';
 
 const StatsCard = ({ stats }) => {
 
@@ -45,7 +45,8 @@ const CaseStudyCard = ({ data }) => {
             viewport={{ once: false, amount: 0.2 }}  // Trigger animation when 20% visible
             className="w-86 md:w-11/12 lg:w-[630px] border rounded-4xl bg-gradient-to-r from-[#0A0A0A]/0 to-[#3877F0]/[7%] shadow-[0px_4px_18px_2px_#3877F0] md:shadow-[0px_4px_48px_2px_#3877F0] p-4">
             <h1 className='text-white my-5 md:my-10 font-bold text-3xl md:text-5xl text-center'>{data.category.toUpperCase()}</h1>
-            <img
+            <Image
+                width={500} height={500}
                 className="rounded-2xl w-11/12 md:h-auto object-contain md:object-cover m-5 mx-auto"
                 src={`/case_studies_${data.id}.png`} // Dynamically use ID for the image
                 alt={data.category}
