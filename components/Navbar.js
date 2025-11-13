@@ -50,9 +50,9 @@ const Navbar = () => {
                 transition={{ duration: isMobile ? 0 : 0.4, ease: "easeOut" }}
                 className='bg-[#1D1A1A]/80 backdrop-blur-xl opacity-80 text-white md:rounded-lg md:border-4 md:border-[#3877F0]/20 md:bg-transparent-50 poppins-regular w-auto h-18 lg:w-[98%] md:mx-5 md:my-5 flex flex-row justify-between fixed top-0 left-0 right-0 z-50'
             >
-                <div>
+                <Link href="/">
                     <Image src="/renowebLogo.png" width={70} height={70} alt='Renoweb logo' />
-                </div>
+                </Link>
 
                 <div className='hidden md:flex md:flex-row md:space-x-10 lg:space-x-16 my-auto'>
                     <Link href="/">
@@ -89,7 +89,7 @@ const Navbar = () => {
                         className='md:hidden fixed top-[70px] left-0 right-0 bg-[#1D1A1A]/80 backdrop-blur-xl z-40 flex flex-col w-full text-white'
                     >
                         <div className='flex flex-col w-full'>
-                            <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Home</p>
+                            <Link href="/" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Home</Link>
                             <Link href="/case-studies" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Case-Studies</Link>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Our-Blog</p>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Products</p>
