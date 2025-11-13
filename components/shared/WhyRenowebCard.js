@@ -8,7 +8,7 @@ const WhyRenowebCard = ({ title, description, image }) => {
             <Image
                 width={500} height={500}
                 className="rounded-t-2xl w-full h-48 object-cover"
-                src="https://flowbite.com/docs/images/blog/image-1.jpg"
+                src={image}
                 alt={title}
             />
 

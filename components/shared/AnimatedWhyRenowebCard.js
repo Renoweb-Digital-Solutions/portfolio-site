@@ -12,7 +12,7 @@ const cardVariants = {
     }),
 };
 
-const AnimatedWhyRenowebCard = ({ index, title, description }) => {
+const AnimatedWhyRenowebCard = ({ index, title, description, image }) => {
     return (
         <motion.div
             variants={cardVariants}
@@ -22,7 +22,7 @@ const AnimatedWhyRenowebCard = ({ index, title, description }) => {
             custom={index}
             className="md:hover:scale-105 md:duration-300 md:ease-in md:mx-auto lg:mx-10"
         >
-            <WhyRenowebCard title={title} description={description} />
+            <WhyRenowebCard title={title} description={description} image={image} />
         </motion.div>
     );
 };

@@ -37,3 +37,13 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+@keyframes pulseShadow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(109, 152, 236, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(109, 152, 236, 0.7);
+  }
+}

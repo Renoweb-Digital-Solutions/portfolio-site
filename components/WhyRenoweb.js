@@ -11,7 +11,7 @@ const WhyRenoweb = () => {
 
             <div className="flex flex-col lg:flex-row  space-y-8 justify-center my-20">
                 {why_renwoweb_details.map((item, index) => (
-                    <AnimatedWhyRenowebCard key={index} index={index} title={item.title} description={item.description} />
+                    <AnimatedWhyRenowebCard key={index} index={index} title={item.title} description={item.description} image={item.image} />
                 ))}
             </div>
         </div>
