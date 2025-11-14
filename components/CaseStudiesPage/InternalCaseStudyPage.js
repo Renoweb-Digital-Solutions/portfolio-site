@@ -93,7 +93,7 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                     <h2 className="text-2xl font-bold text-blue-400 mb-6">Key Takeaway</h2>
                     <div className="bg-gray-900 border border-gray-800 rounded-xl p-8">
                         <p className="text-gray-300 text-lg leading-relaxed italic">
-                            "{caseStudy.takeaway}"
+                            {caseStudy.takeaway}
                         </p>
                     </div>
                 </section>
@@ -120,7 +120,7 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                 <div className="mt-20 text-center">
                     <div className="bg-gradient-to-r from-blue-600/20 to-blue-800/20 border border-blue-600/30 rounded-2xl p-12">
                         <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-                        <p className="text-gray-400 text-lg mb-8">Let's discuss how we can help you achieve similar results.</p>
+                        <p className="text-gray-400 text-lg mb-8">Let&apos;s discuss how we can help you achieve similar results.</p>
                         <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-lg text-lg font-medium transition">
                             Get in Touch
                         </button>
