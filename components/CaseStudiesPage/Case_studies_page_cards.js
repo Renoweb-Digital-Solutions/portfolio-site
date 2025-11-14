@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "motion/react"
+import Link from "next/link";
 
 const Case_studies_page_cards = ({ studies }) => {
     const [arrowHover, setArrowHover] = useState(false);
@@ -14,6 +15,7 @@ const Case_studies_page_cards = ({ studies }) => {
         setArrowHover(false);
     };
     return (
+
         <motion.div
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -41,7 +43,7 @@ const Case_studies_page_cards = ({ studies }) => {
                 onMouseEnter={onArrowHover}
                 onMouseLeave={onArrowLeave}
             >
-                <button className="focus:outline-none">Learn More</button>
+                <Link href={`/case-studies/${studies.id}`} className="focus:outline-none">Learn More</Link>
                 <FaArrowRight
                     className={`self-center transition-transform duration-200 ease-in-out ${arrowHover ? "translate-x-1" : ""
                         }`}
