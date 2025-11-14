@@ -13,10 +13,11 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: [-6, 6, -6] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 z-10"
+                className="pointer-events-none absolute top-0 left-15 -translate-x-1/2 z-10"
             >
                 <Ellipse />
             </motion.div>
+
 
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[rgba(11,32,64,0.15)] to-black pointer-events-none z-0" />
@@ -25,27 +26,7 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-28 lg:py-36">
                 <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-12 overflow-x-hidden">
 
-                    {/* Left: Video */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -40, scale: 0.98 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-2xl"
-                    >
-                        <div className="w-full h-56 sm:h-72 md:h-[420px] bg-black">
-                            <video
-                                className="w-full h-full object-cover object-center"
-                                src={videoSrc}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                preload="auto"
-                            />
-                        </div>
-                    </motion.div>
-
-                    {/* Right: Text + CTA */}
+                    {/* left CTA */}
                     <motion.div
                         initial={{ opacity: 0, x: 40 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -74,6 +55,28 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                             </button>
                         </motion.a>
                     </motion.div>
+
+                    {/* Right Video */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -40, scale: 0.98 }}
+                        animate={{ opacity: 1, x: 0, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-2xl"
+                    >
+                        <div className="w-full h-56 sm:h-72 md:h-[420px] bg-black">
+                            <video
+                                className="w-full h-full object-cover object-center"
+                                src={videoSrc}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                preload="auto"
+                            />
+                        </div>
+                    </motion.div>
+
+
                 </div>
             </div>
         </div>
