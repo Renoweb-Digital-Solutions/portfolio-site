@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CategoryFilter = ({ activeCategory, setActiveCategory }) => {
-    const categories = ['All', 'Lead Gen', 'SMM OS', 'Organic', 'Performance OS', 'LinkedIn', 'Community Management']
+    const categories = ['All', 'Lead Gen', 'SMM OS', 'Organic', 'Performance OS', 'LinkedIn', 'Community Management', "Dev OS"]
 
     return (
         <div>
