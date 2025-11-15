@@ -30,12 +30,14 @@ const Our_Products = () => {
                         image: "/quantam_accelerator.jpg",
                         description:
                             "Using our proprietary Quantum Accelerator Framework, we identify and eliminate the barriers holding your growth back. From internal inefficiencies to missed opportunities in your customer journey, we ensure every aspect of your business is optimized for success.",
+                        link: "/products/quantum-accelerator"
                     },
                     {
                         name: "GROWTH OS",
                         image: "/growth_os.jpg",
                         description:
                             "We design a customized Growth Operating System (Growth OS) tailored to your business’s digital maturity. This system creates a foundation for consistent, scalable growth by aligning your brand’s presence with your audience’s needs and expectations.",
+                        link: "/products/growth-os"
                     },
                 ].map((product, index) => (
                     <motion.div
@@ -45,7 +47,7 @@ const Our_Products = () => {
                         animate="visible"
                         variants={cardVariants}
                     >
-                        <Product_Card productName={product.name} description={product.description} image={product.image} />
+                        <Product_Card productName={product.name} description={product.description} image={product.image} link={product.link} />
                     </motion.div>
                 ))}
             </div>

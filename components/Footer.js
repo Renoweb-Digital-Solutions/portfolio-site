@@ -28,7 +28,7 @@ const Footer = () => {
                         <h4 className="text-lg text-[#3877F0] font-medium mb-7">Products</h4>
                         <ul className="text-sm text-[#fffbef] transition-all duration-500">
                             <li className="mb-6"><a href="javascript:;" className=" hover:text-[#3877F0]">Growth OS</a></li>
-                            <li className="mb-6"><a href="javascript:;" className="  hover:text-[#3877F0]">Quantam Accelerator</a></li>
+                            <li className="mb-6"><a href="javascript:;" className="  hover:text-[#3877F0]">Quantum Accelerator</a></li>
 
                         </ul>
                     </div>
