@@ -62,7 +62,7 @@ const Navbar = () => {
                         <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Case-Studies</p>
                     </Link>
                     <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Our-Blog</p>
-                    <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Products</p>
+                    <Link href="/products" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Products</Link>
                     <Link href="/pricing">
                         <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Pricing</p>
                     </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
                             <Link href="/" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Home</Link>
                             <Link href="/case-studies" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Case-Studies</Link>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Our-Blog</p>
-                            <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Products</p>
+                            <Link href="/products" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Products</Link>
                             <Link href="/pricing" onClick={toggleMenu}>
                                 <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Pricing</p>
                             </Link>
