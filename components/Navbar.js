@@ -63,6 +63,9 @@ const Navbar = () => {
                     </Link>
                     <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Our-Blog</p>
                     <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Products</p>
+                    <Link href="/pricing">
+                        <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in'>Pricing</p>
+                    </Link>
                 </div>
 
                 <div className='md:hidden block my-auto p-5'>
