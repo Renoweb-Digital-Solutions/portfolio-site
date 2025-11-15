@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import Ellipse from "./Ellipse";
 import { motion } from "framer-motion";
+import Button from "./shared/Button";
 
 const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
     return (
@@ -41,19 +43,19 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                             We build data-driven strategies and products that scale — combining design, growth and engineering to deliver ROI that lasts.
                         </p>
 
-                        <motion.a
+                        <motion.div
                             whileHover={{ scale: 1.02, y: -2 }}
                             whileTap={{ scale: 0.98 }}
                             href="#contact"
-                            className="mt-6 inline-block w-full sm:w-auto"
+                            className="mt-6 inline-block w-full sm:w-auto hover:cursor-pointer"
                         >
-                            <button
-                                className="w-full sm:w-auto bg-[#003FB9] hover:bg-[#3877F0] border-2 border-[#2B5ED6] text-white px-6 py-3 rounded-xl font-semibold shadow-lg transition-colors duration-200"
-                                aria-label="Contact Us"
+                            <Link href="/contact-us"
                             >
-                                Contact Us
-                            </button>
-                        </motion.a>
+                                <Button classname="duration-300 ease-in">
+                                    Contact Us
+                                </Button>
+                            </Link>
+                        </motion.div>
                     </motion.div>
 
                     {/* Right Video */}

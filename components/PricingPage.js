@@ -2,79 +2,11 @@
 
 import React, { useState } from 'react';
 import ContactForm from './shared/ContactForm';
+import { pricingPageServices, serviceFeaturesOfPricingPage } from './data/pricingPageData';
 
 export default function PricingPage() {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        projectDetails: '',
-        budget: ''
-    });
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Thank you! We will get back to you within 24 hours.');
-        // Handle form submission here
-    };
-
-    const services = [
-        {
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-            ),
-            title: "Lead Generation",
-            description: "Performance-driven funnels that convert"
-        },
-        {
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-            ),
-            title: "Website Development",
-            description: "Custom websites that convert visitors"
-        },
-        {
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-            ),
-            title: "SEO & Organic Growth",
-            description: "Sustainable traffic that scales"
-        },
-        {
-            icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-            ),
-            title: "Performance Marketing",
-            description: "Data-driven campaigns that deliver"
-        }
-    ];
-
-    const features = [
-        "Custom strategy tailored to your business",
-        "Dedicated account manager",
-        "Monthly performance reports",
-        "Flexible pricing based on scope",
-        "No long-term contracts required",
-        "ROI-focused approach"
-    ];
 
     return (
         <div className="min-h-screen bg-black text-white">
@@ -101,7 +33,7 @@ export default function PricingPage() {
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl font-bold text-center mb-12">What We Offer</h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {services.map((service, index) => (
+                        {pricingPageServices.map((service, index) => (
                             <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-blue-600/50 transition group">
                                 <div className="text-blue-400 mb-4 group-hover:scale-110 transition">
                                     {service.icon}
@@ -127,7 +59,7 @@ export default function PricingPage() {
                         <div className="bg-gradient-to-br from-blue-600/10 to-blue-800/10 border border-blue-600/30 rounded-xl p-8 mb-8">
                             <h3 className="text-xl font-semibold mb-4">What&apos;s Included</h3>
                             <ul className="space-y-3">
-                                {features.map((feature, index) => (
+                                {serviceFeaturesOfPricingPage.map((feature, index) => (
                                     <li key={index} className="flex items-start gap-3">
                                         <svg className="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />

@@ -77,7 +77,10 @@ const Navbar = () => {
                 </div>
 
                 <div className='hidden md:block my-auto'>
-                    <Button classname="duration-300 ease-in mr-3">Get in Touch</Button>
+                    <Link href="/contact-us" >
+                        <Button classname="duration-300 ease-in mr-3">Get in Touch</Button>
+                    </Link>
+
                 </div>
             </motion.div>
 
