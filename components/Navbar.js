@@ -103,7 +103,9 @@ const Navbar = () => {
                                 <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Pricing</p>
                             </Link>
                             <div className='p-4'>
-                                <Button classname="w-7/12 m text-center">Get in Touch</Button>
+                                <Link href="/contact-us" >
+                                    <Button classname="w-7/12 m text-center">Get in Touch</Button>
+                                </Link>
                             </div>
                         </div>
                     </motion.div>
