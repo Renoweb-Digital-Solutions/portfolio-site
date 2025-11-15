@@ -99,6 +99,9 @@ const Navbar = () => {
                             <Link href="/case-studies" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Case-Studies</Link>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Our-Blog</p>
                             <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Products</p>
+                            <Link href="/pricing">
+                                <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Pricing</p>
+                            </Link>
                             <div className='p-4'>
                                 <Button classname="w-7/12 m text-center">Get in Touch</Button>
                             </div>
