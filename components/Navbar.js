@@ -95,14 +95,14 @@ const Navbar = () => {
                         className='md:hidden fixed top-[70px] left-0 right-0 bg-[#1D1A1A]/80 backdrop-blur-xl z-40 flex flex-col w-full text-white'
                     >
                         <div className='flex flex-col w-full'>
-                            <Link href="/" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Home</Link>
-                            <Link href="/case-studies" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Case-Studies</Link>
-                            <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Our-Blog</p>
-                            <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Products</p>
-                            <Link href="/pricing">
+                            <Link href="/" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Home</Link>
+                            <Link href="/case-studies" className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Case-Studies</Link>
+                            <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Our-Blog</p>
+                            <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4' onClick={toggleMenu}>Products</p>
+                            <Link href="/pricing" onClick={toggleMenu}>
                                 <p className='cursor-pointer hover:text-[#3877F0] duration-300 ease-in p-4'>Pricing</p>
                             </Link>
-                            <div className='p-4'>
+                            <div className='p-4' onClick={toggleMenu}>
                                 <Link href="/contact-us" >
                                     <Button classname="w-7/12 m text-center">Get in Touch</Button>
                                 </Link>
