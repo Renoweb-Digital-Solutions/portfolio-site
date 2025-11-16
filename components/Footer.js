@@ -25,7 +25,7 @@ const Footer = () => {
 
                                 {/* CTA Button */}
                                 <Link
-                                    href="/contact"
+                                    href="/contact-us"
                                     className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-sm font-semibold text-white transition group"
                                 >
                                     Get Started
