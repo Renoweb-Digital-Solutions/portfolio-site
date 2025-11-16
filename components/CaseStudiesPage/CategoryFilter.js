@@ -4,23 +4,21 @@ const CategoryFilter = ({ activeCategory, setActiveCategory }) => {
     const categories = ['All', 'Lead Gen', 'SMM OS', 'Organic', 'Performance OS', 'LinkedIn', 'Community Management', "Dev OS"]
 
     return (
-        <div>
-            {/* Added flex-wrap for mobile, adjusted margin and spacing */}
-            <ul className='flex flex-row flex-wrap space-x-2 sm:space-x-4 mt-10 md:mt-20 justify-center mx-auto max-w-xl'>
+        <div className="max-w-4xl mx-auto mb-12">
+            <div className="flex flex-wrap gap-3 justify-center">
                 {categories.map((category) => (
-
-                    <li
+                    <button
                         key={category}
-                        // Added mb-2 for vertical spacing when wrapping
-                        className={`hover:cursor-pointer border-1 rounded-3xl px-3 py-1 sm:px-4 sm:py-2 text-sm sm:text-base mb-2
-                    ${activeCategory === category
-                                ? 'text-[#3877F0] border-[#3877F0] border' // Added 'border' class here as well for consistency
-                                : 'text-[#C7C7C7] border-gray-500 hover:text-[#3877F0] hover:border-[#3877F0] border' // Added 'border' class
+                        className={`px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-300 ${activeCategory === category
+                            ? 'bg-blue-600 text-white border border-blue-600 shadow-lg shadow-blue-600/50'
+                            : 'bg-gray-900 text-gray-400 border border-gray-800 hover:border-blue-600 hover:text-white'
                             }`}
                         onClick={() => setActiveCategory(category)}
-                    >{category}</li>
+                    >
+                        {category}
+                    </button>
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }

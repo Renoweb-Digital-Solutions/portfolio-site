@@ -48,4 +48,11 @@ export const services = [
         position: 'left',
         logo: '/service_logos/COMMUNITY_OS.png'
     },
+    {
+        id: 'performance',
+        title: 'PERFORMANCE OS',
+        description: 'PerfOS is our proprietary performance marketing system designed to unlock exponential business growth through precision-engineered funnels, targeted ads, automated nurturing, retargeting, and optimized sales workflows. It is used across industries such as travel, tourism, eCommerce, EdTech, coaching, SaaS, and more.',
+        position: 'right',
+        logo: '/service_logos/Perf_OS.png'
+    },
 ];
