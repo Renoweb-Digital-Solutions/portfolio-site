@@ -1,66 +1,59 @@
+'use client';
+import Image from 'next/image';
 import React from 'react';
 
 export default function OurPartners({
     title = "Our Partners",
     subtitle = "Trusted by leading brands around the world"
 }) {
-    // Sample partner logos - replace with actual logo URLs
     const partners = [
-        { name: "Company 1", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+1" },
-        { name: "Company 2", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+2" },
-        { name: "Company 3", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+3" },
-        { name: "Company 4", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+4" },
-        { name: "Company 5", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+5" },
-        { name: "Company 6", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+6" },
-        { name: "Company 7", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+7" },
-        { name: "Company 8", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+8" },
-        { name: "Company 9", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+9" },
-        { name: "Company 10", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+10" },
-        { name: "Company 11", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+11" },
-        { name: "Company 12", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+12" },
-        { name: "Company 13", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+13" },
-        { name: "Company 14", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+14" },
-        { name: "Company 15", logo: "https://via.placeholder.com/120x60/1e293b/94a3b8?text=Logo+15" },
+        { name: "numr", logo: "/brand_logos/numr.png" },
+        { name: "reccy", logo: "/brand_logos/reccy.png" },
+        { name: "moneyview", logo: "/brand_logos/moneyview.png" },
+        { name: "nexority_infotech", logo: "/brand_logos/nexority_infotech.png" },
+        { name: "community_club", logo: "/brand_logos/community_club.png" },
+        { name: "nidaan", logo: "/brand_logos/nidaan.png" },
+        { name: "moovana", logo: "/brand_logos/moovana.png" },
+        { name: "qcbt", logo: "/brand_logos/qcbt.png" },
+        { name: "eco_guard", logo: "/brand_logos/eco_guard.png" },
+        { name: "borrowed_pen", logo: "/brand_logos/borrowed_pen.png" },
+        { name: "cloudify", logo: "/brand_logos/cloudify.png" },
+        { name: "pepper_content", logo: "/brand_logos/pepper_content.png" },
+        { name: "cloudredux", logo: "/brand_logos/cloudredux.png" },
+        { name: "freight_tiger", logo: "/brand_logos/freight_tiger.png" },
+        { name: "draper_nation", logo: "/brand_logos/draper_nation.png" },
+        { name: "salus_internazionale_ecm", logo: "/brand_logos/salus_internazionale_ecm.png" },
+        { name: "one_life_adventures", logo: "/brand_logos/one_life_adventures.png" },
+        { name: "goldberg_kohn", logo: "/brand_logos/goldberg_kohn.png" },
+        { name: "racks_and_rollers", logo: "/brand_logos/racks_and_rollers.png" },
+        { name: "cub_demolition", logo: "/brand_logos/cub_demolition.png" },
+        { name: "suboxone_providence", logo: "/brand_logos/suboxone_providence.png" },
+        { name: "manchester_paediatric", logo: "/brand_logos/manchester_paediatric.png" },
+        { name: "artshoppy", logo: "/brand_logos/artshoppy.png" },
+        { name: "provisas_nz", logo: "/brand_logos/provisas_nz.png" },
+        { name: "blockmagic", logo: "/brand_logos/blockmagic.png" },
+        { name: "skyward_wings", logo: "/brand_logos/skyward_wings.png" },
+        { name: "jmr", logo: "/brand_logos/jmr.png" },
+        { name: "hopium_health", logo: "/brand_logos/hopium_health.png" },
+        { name: "rentpost", logo: "/brand_logos/rentpost.png" },
+        { name: "sugarant", logo: "/brand_logos/sugarant.png" },
+        { name: "drape_fit", logo: "/brand_logos/drape_fit.png" },
+        { name: "mmj", logo: "/brand_logos/mmj.png" },
+        { name: "saddak", logo: "/brand_logos/saddak.png" },
+        { name: "auli", logo: "/brand_logos/auli.png" },
+        { name: "novatise", logo: "/brand_logos/novatise.png" },
+        { name: "slcj", logo: "/brand_logos/slcj.png" },
+        { name: "travancore_foundation", logo: "/brand_logos/travancore_foundation.png" }
     ];
 
-    // Split partners into 3 rows
-    const row1 = [...partners.slice(0, 5), ...partners.slice(0, 5)]; // Duplicate for seamless loop
+
+    const row1 = [...partners.slice(0, 5), ...partners.slice(0, 5)];
     const row2 = [...partners.slice(5, 10), ...partners.slice(5, 10)];
     const row3 = [...partners.slice(10, 15), ...partners.slice(10, 15)];
 
     return (
         <section className="py-20 px-6 relative overflow-hidden bg-black">
-            {/* Sparkly Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                {[
-                    { left: '15%', top: '25%', delay: '0s', duration: '3s' },
-                    { left: '35%', top: '60%', delay: '0.5s', duration: '2.5s' },
-                    { left: '55%', top: '20%', delay: '1s', duration: '3.2s' },
-                    { left: '75%', top: '70%', delay: '1.5s', duration: '2.8s' },
-                    { left: '85%', top: '40%', delay: '2s', duration: '3.5s' },
-                    { left: '25%', top: '80%', delay: '2.5s', duration: '2.2s' },
-                    { left: '65%', top: '15%', delay: '0.8s', duration: '3.8s' },
-                    { left: '10%', top: '55%', delay: '1.8s', duration: '2.6s' },
-                ].map((particle, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-1 h-1 bg-blue-400/40 rounded-full animate-pulse"
-                        style={{
-                            left: particle.left,
-                            top: particle.top,
-                            animationDelay: particle.delay,
-                            animationDuration: particle.duration
-                        }}
-                    />
-                ))}
-            </div>
-
-            {/* Gradient Blobs */}
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-
             <div className="max-w-7xl mx-auto relative z-10">
-                {/* Header */}
                 <div className="text-center mb-16">
                     <div className="inline-block mb-4">
                         <span className="px-4 py-2 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium border border-blue-600/30">
@@ -72,162 +65,49 @@ export default function OurPartners({
                     </h2>
                 </div>
 
-                {/* Scrolling Rows Container */}
                 <div className="space-y-8">
-                    {/* Row 1 - Left to Right */}
-                    <div className="relative">
-                        {/* Left Mask */}
-                        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+                    {[row1, row2, row3].map((row, rowIndex) => (
+                        <div key={rowIndex} className="relative">
+                            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+                            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-                        {/* Right Mask */}
-                        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
-
-                        <div className="flex overflow-hidden">
-                            <div className="flex animate-scroll-left gap-8">
-                                {row1.map((partner, index) => (
-                                    <div
-                                        key={`row1-${index}`}
-                                        className="flex-shrink-0 w-40 h-20 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center justify-center p-4 hover:border-blue-600/50 transition group"
-                                    >
-                                        <img
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition filter grayscale group-hover:grayscale-0"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="flex animate-scroll-left gap-8" aria-hidden="true">
-                                {row1.map((partner, index) => (
-                                    <div
-                                        key={`row1-dup-${index}`}
-                                        className="flex-shrink-0 w-40 h-20 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center justify-center p-4 hover:border-blue-600/50 transition group"
-                                    >
-                                        <img
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition filter grayscale group-hover:grayscale-0"
-                                        />
-                                    </div>
-                                ))}
+                            <div className="flex overflow-hidden">
+                                <div className={`flex ${rowIndex === 1 ? 'animate-scroll-right' : 'animate-scroll-left'} gap-12`}>
+                                    {row.map((partner, index) => (
+                                        <div
+                                            key={`${rowIndex}-${index}`}
+                                            className="flex-shrink-0 flex items-center justify-center p-2"
+                                        >
+                                            <Image
+                                                src={partner.logo}
+                                                alt={partner.name}
+                                                width={120} sizes="(max-width: 768px) 90px, 120px !important"
+                                                height={120}
+                                                className="object-contain opacity-90 hover:opacity-100 hover:scale-110 transition duration-300 w-[80px] md:w-[120px]"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    {/* Row 2 - Right to Left */}
-                    <div className="relative">
-                        {/* Left Mask */}
-                        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-
-                        {/* Right Mask */}
-                        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
-
-                        <div className="flex overflow-hidden">
-                            <div className="flex animate-scroll-right gap-8">
-                                {row2.map((partner, index) => (
-                                    <div
-                                        key={`row2-${index}`}
-                                        className="flex-shrink-0 w-40 h-20 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center justify-center p-4 hover:border-blue-600/50 transition group"
-                                    >
-                                        <img
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition filter grayscale group-hover:grayscale-0"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="flex animate-scroll-right gap-8" aria-hidden="true">
-                                {row2.map((partner, index) => (
-                                    <div
-                                        key={`row2-dup-${index}`}
-                                        className="flex-shrink-0 w-40 h-20 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center justify-center p-4 hover:border-blue-600/50 transition group"
-                                    >
-                                        <img
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition filter grayscale group-hover:grayscale-0"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Row 3 - Left to Right */}
-                    <div className="relative">
-                        {/* Left Mask */}
-                        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-
-                        {/* Right Mask */}
-                        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
-
-                        <div className="flex overflow-hidden">
-                            <div className="flex animate-scroll-left gap-8">
-                                {row3.map((partner, index) => (
-                                    <div
-                                        key={`row3-${index}`}
-                                        className="flex-shrink-0 w-40 h-20 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center justify-center p-4 hover:border-blue-600/50 transition group"
-                                    >
-                                        <img
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition filter grayscale group-hover:grayscale-0"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="flex animate-scroll-left gap-8" aria-hidden="true">
-                                {row3.map((partner, index) => (
-                                    <div
-                                        key={`row3-dup-${index}`}
-                                        className="flex-shrink-0 w-40 h-20 bg-gray-900/50 border border-gray-800 rounded-xl flex items-center justify-center p-4 hover:border-blue-600/50 transition group"
-                                    >
-                                        <img
-                                            src={partner.logo}
-                                            alt={partner.name}
-                                            className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition filter grayscale group-hover:grayscale-0"
-                                        />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
 
             <style jsx>{`
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(-50%);
-          }
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        .animate-scroll-left {
-          animation: scroll-left 30s linear infinite;
-        }
-
-        .animate-scroll-right {
-          animation: scroll-right 30s linear infinite;
-        }
-
-        .animate-scroll-left:hover,
-        .animate-scroll-right:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+                @keyframes scroll-left {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                @keyframes scroll-right {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0); }
+                }
+                .animate-scroll-left { animation: scroll-left 30s linear infinite; }
+                .animate-scroll-right { animation: scroll-right 30s linear infinite; }
+                .animate-scroll-left:hover,
+                .animate-scroll-right:hover { animation-play-state: paused; }
+            `}</style>
         </section>
     );
 }

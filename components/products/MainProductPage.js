@@ -262,7 +262,7 @@ export default function MainProductPage() {
             </section >
 
             {/* CTA Section */}
-            <section section className="py-20 px-6 relative z-10" >
+            <section className="py-20 px-6 relative z-10" >
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-800/20 border border-blue-600/40 rounded-3xl p-12 overflow-hidden">
                         {/* Animated background shimmer */}

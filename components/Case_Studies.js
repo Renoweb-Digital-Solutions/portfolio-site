@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import CaseStudyCard from './shared/CaseStudyCard';
+import Link from "next/link";
 
 const textVariants = {
     hidden: { y: 50, opacity: 0 },
@@ -37,16 +38,18 @@ const Case_Studies = () => {
                     See the
                 </motion.h4>
 
-                <motion.h1
-                    whileInView="visible"
-                    variants={textVariants}
-                    initial="hidden"
-                    animate="visible"
-                    custom={2}  // Third element
-                    className='text-[#3877F0] font-extrabold text-4xl md:text-5xl cursor-pointer'
-                >
-                    CASE STUDIES
-                </motion.h1>
+                <Link href="/case-studies">
+                    <motion.h1
+                        whileInView="visible"
+                        variants={textVariants}
+                        initial="hidden"
+                        animate="visible"
+                        custom={2}  // Third element
+                        className='text-[#3877F0] font-extrabold text-4xl md:text-5xl cursor-pointer'
+                    >
+                        CASE STUDIES
+                    </motion.h1>
+                </Link>
             </div>
             <div>
                 <CaseStudyCard />

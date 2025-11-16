@@ -45,7 +45,7 @@ const Footer = () => {
                                             <li><Link href="/" className="text-gray-400 hover:text-blue-400 text-sm transition">Home</Link></li>
                                             <li><Link href="/about" className="text-gray-400 hover:text-blue-400 text-sm transition">About Us</Link></li>
                                             <li><Link href="/case-studies" className="text-gray-400 hover:text-blue-400 text-sm transition">Case Studies</Link></li>
-                                            <li><Link href="/contact" className="text-gray-400 hover:text-blue-400 text-sm transition">Contact</Link></li>
+                                            <li><Link href="/contact-us" className="text-gray-400 hover:text-blue-400 text-sm transition">Contact</Link></li>
                                         </ul>
                                     </div>
 
@@ -66,8 +66,7 @@ const Footer = () => {
                                         <ul className="space-y-3">
                                             <li><Link href="/blog" className="text-gray-400 hover:text-blue-400 text-sm transition">Blog</Link></li>
                                             <li><Link href="/case-studies" className="text-gray-400 hover:text-blue-400 text-sm transition">Case Studies</Link></li>
-                                            <li><Link href="/support" className="text-gray-400 hover:text-blue-400 text-sm transition">Support</Link></li>
-                                            <li><Link href="/faq" className="text-gray-400 hover:text-blue-400 text-sm transition">FAQ</Link></li>
+
                                         </ul>
                                     </div>
 
@@ -75,10 +74,9 @@ const Footer = () => {
                                     <div>
                                         <h4 className="text-white font-semibold mb-4">Legal</h4>
                                         <ul className="space-y-3">
-                                            <li><Link href="/privacy" className="text-gray-400 hover:text-blue-400 text-sm transition">Privacy Policy</Link></li>
-                                            <li><Link href="/terms" className="text-gray-400 hover:text-blue-400 text-sm transition">Terms of Service</Link></li>
-                                            <li><Link href="/cookies" className="text-gray-400 hover:text-blue-400 text-sm transition">Cookie Policy</Link></li>
-                                            <li><Link href="/disclaimer" className="text-gray-400 hover:text-blue-400 text-sm transition">Disclaimer</Link></li>
+                                            <li><Link href="#" className="text-gray-400 hover:text-blue-400 text-sm transition">Privacy Policy</Link></li>
+                                            <li><Link href="#" className="text-gray-400 hover:text-blue-400 text-sm transition">Terms of Service</Link></li>
+
                                         </ul>
                                     </div>
                                 </div>
