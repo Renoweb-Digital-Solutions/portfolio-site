@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -197,13 +198,18 @@ export default function MainProductPage() {
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8">
                             <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
+                                <div className="flex items-center">
+                                    <Image
+                                        src="/qa_logo.png"
+                                        width={60}
+                                        height={60}
+                                        alt="Quantum Accelerator logo"
+                                        className="object-contain"
+                                    />
                                 </div>
                                 <h3 className="text-xl font-bold">Quantum Accelerator</h3>
                             </div>
+
                             <p className="text-gray-300 mb-4">Perfect for businesses looking to:</p>
                             <ul className="space-y-2 text-gray-400">
                                 <li className="flex items-start gap-2">
@@ -223,13 +229,18 @@ export default function MainProductPage() {
 
                         <div className="bg-gradient-to-br from-blue-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8">
                             <div className="flex items-center gap-3 mb-4">
-                                <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                    </svg>
+                                <div className="flex items-center">
+                                    <Image
+                                        src="/growth_os_logo.png"
+                                        width={50}
+                                        height={50}
+                                        alt="Growth OS logo"
+                                        className="object-contain"
+                                    />
                                 </div>
                                 <h3 className="text-xl font-bold">Growth OS</h3>
                             </div>
+
                             <p className="text-gray-300 mb-4">Ideal for leaders who want to:</p>
                             <ul className="space-y-2 text-gray-400">
                                 <li className="flex items-start gap-2">
@@ -248,10 +259,10 @@ export default function MainProductPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* CTA Section */}
-            <section className="py-20 px-6 relative z-10">
+            <section section className="py-20 px-6 relative z-10" >
                 <div className="max-w-4xl mx-auto text-center">
                     <div className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-800/20 border border-blue-600/40 rounded-3xl p-12 overflow-hidden">
                         {/* Animated background shimmer */}
@@ -276,7 +287,7 @@ export default function MainProductPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             <style jsx>{`
         @keyframes shimmer {
@@ -291,6 +302,6 @@ export default function MainProductPage() {
           animation: shimmer 3s infinite;
         }
       `}</style>
-        </div>
+        </div >
     );
 }

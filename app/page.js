@@ -1,5 +1,4 @@
 import Case_Studies from "@/components/Case_Studies";
-import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import Our_Products from "@/components/Our_Products";
 import Our_Results from "@/components/Our_Results";
@@ -16,7 +15,6 @@ export default function Home() {
         <Our_Results />
         <WhyRenoweb />
         <Case_Studies />
-        <ContactForm />
       </div>
     </div>
   );

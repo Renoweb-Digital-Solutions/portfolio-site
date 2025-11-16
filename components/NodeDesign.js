@@ -88,7 +88,18 @@ const NodeDesign = () => {
                           ease: "easeOut"
                         }}
                       >
-                        <h2 className="text-2xl text-blue-500 font-bold my-4">{service.title}</h2>
+                        <div className="flex flex-row justify-between items-center">
+                          <h2 className="text-2xl text-blue-500 font-bold my-4">{service.title}</h2>
+                          {service.logo && (
+                            <div className="w-14 h-14 mb-2">
+                              <img
+                                src={service.logo}
+                                alt={`${service.title} logo`}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                          )}
+                        </div>
                         <p className="text-sm text-gray-300 mt-4 mb-3">{service.description}</p>
 
                         <div className="py-4">

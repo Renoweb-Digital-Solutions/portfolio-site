@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link';
 
-const Product_Card = ({ productName, description, image, link }) => {
+const Product_Card = ({ productName, description, image, link, logo }) => {
 
   const words = productName?.split(' ') || [];
   const firstWord = words[0] || '';
@@ -22,8 +22,20 @@ const Product_Card = ({ productName, description, image, link }) => {
       </a>
 
       <div className="p-5">
-        <div className='my-3'>
-          <h2 className='text-[#FFFBEF] font-bold text-2xl'>{firstWord} <br /> <span className='text-[#3877F0]'>{secondWord}</span> </h2>
+        <div className='my-3 flex flex-row justify-between items-center'>
+          <h2 className='text-[#FFFBEF] font-bold text-2xl'>{firstWord} <br /> <span className='text-[#3877F0]'>{secondWord}</span></h2>
+          {/* Logo Section */}
+          {logo && (
+            <div className="mb-4 flex items-center">
+              <Image
+                src={logo}
+                width={50}
+                height={50}
+                alt={`${productName} logo`}
+                className="object-contain"
+              />
+            </div>
+          )}
         </div>
         <p className='text-[#F3F3F3] text-sm my-5'>{description}</p>
         <Link href={link} className="inline-flex items-center px-3 py-2 text-sm text-center font-bold text-white bg-[#3877F0] rounded-lg mb-auto">

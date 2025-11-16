@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import ContactForm from './shared/ContactForm';
 import { pricingPageServices, serviceFeaturesOfPricingPage } from './data/pricingPageData';
+import OurPartners from './shared/OurPartners';
 
 export default function PricingPage() {
 
@@ -87,7 +88,7 @@ export default function PricingPage() {
             </section>
 
             {/* Trust Section */}
-            <section className="py-16 px-6 bg-gray-900/30">
+            {/* <section className="py-16 px-6 bg-gray-900/30">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-12">Trusted by Leading Brands</h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -98,7 +99,8 @@ export default function PricingPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
+            <OurPartners />
 
             {/* FAQ Section */}
             <section className="py-20 px-6">
