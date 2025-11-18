@@ -74,7 +74,7 @@ export default function Testimonials({
                                                 src={testimonial.image}
                                                 alt={testimonial.name}
                                                 fill
-                                                className="object-cover"
+                                                className="object-contain md:object-cover"
                                             />
                                         </div>
 
