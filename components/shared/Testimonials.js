@@ -53,10 +53,10 @@ export default function Testimonials({
                 {/* Testimonials Slider */}
                 <div className="relative">
                     {/* Left Mask */}
-                    <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
 
                     {/* Right Mask */}
-                    <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
                     {/* Scrolling Container */}
                     <div className="flex overflow-hidden">
