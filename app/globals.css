@@ -47,3 +47,17 @@ body {
     box-shadow: 0 0 35px rgba(109, 152, 236, 0.7);
   }
 }
+
+/* small float animation used by the portraits */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

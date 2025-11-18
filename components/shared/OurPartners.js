@@ -23,33 +23,29 @@ export default function OurPartners({
         { name: "freight_tiger", logo: "/brand_logos/freight_tiger.png" },
         { name: "draper_nation", logo: "/brand_logos/draper_nation.png" },
         { name: "salus_internazionale_ecm", logo: "/brand_logos/salus_internazionale_ecm.png" },
-        { name: "one_life_adventures", logo: "/brand_logos/one_life_adventures.png" },
+        { name: "one_life_adventure", logo: "/brand_logos/one_life_adventure.png" },
         { name: "goldberg_kohn", logo: "/brand_logos/goldberg_kohn.png" },
         { name: "racks_and_rollers", logo: "/brand_logos/racks_and_rollers.png" },
         { name: "cub_demolition", logo: "/brand_logos/cub_demolition.png" },
-        { name: "suboxone_providence", logo: "/brand_logos/suboxone_providence.png" },
-        { name: "manchester_paediatric", logo: "/brand_logos/manchester_paediatric.png" },
+        { name: "providence", logo: "/brand_logos/providence.png" }, // Changed from 'suboxone_providence'
+        { name: "manchester_pediatric", logo: "/brand_logos/manchester_pediatric.png" },
         { name: "artshoppy", logo: "/brand_logos/artshoppy.png" },
         { name: "provisas_nz", logo: "/brand_logos/provisas_nz.png" },
         { name: "blockmagic", logo: "/brand_logos/blockmagic.png" },
-        { name: "skyward_wings", logo: "/brand_logos/skyward_wings.png" },
+        { name: "wings", logo: "/brand_logos/wings.png" }, // Changed from 'skyward_wings'
         { name: "jmr", logo: "/brand_logos/jmr.png" },
         { name: "hopium_health", logo: "/brand_logos/hopium_health.png" },
         { name: "rentpost", logo: "/brand_logos/rentpost.png" },
-        { name: "sugarant", logo: "/brand_logos/sugarant.png" },
         { name: "drape_fit", logo: "/brand_logos/drape_fit.png" },
         { name: "mmj", logo: "/brand_logos/mmj.png" },
         { name: "saddak", logo: "/brand_logos/saddak.png" },
         { name: "auli", logo: "/brand_logos/auli.png" },
         { name: "novatise", logo: "/brand_logos/novatise.png" },
-        { name: "slcj", logo: "/brand_logos/slcj.png" },
         { name: "travancore_foundation", logo: "/brand_logos/travancore_foundation.png" }
     ];
-
-
-    const row1 = [...partners.slice(0, 5), ...partners.slice(0, 5)];
-    const row2 = [...partners.slice(5, 10), ...partners.slice(5, 10)];
-    const row3 = [...partners.slice(10, 15), ...partners.slice(10, 15)];
+    const row1 = [...partners.slice(0, 13), ...partners.slice(0, 13)];
+    const row2 = [...partners.slice(13, 25), ...partners.slice(13, 25)];
+    const row3 = [...partners.slice(25, 37), ...partners.slice(25, 37)];
 
     return (
         <section className="py-20 px-6 relative overflow-hidden bg-black">
@@ -65,14 +61,15 @@ export default function OurPartners({
                     </h2>
                 </div>
 
-                <div className="space-y-8">
+                <div className="space-y-4 md:space-y-8">
                     {[row1, row2, row3].map((row, rowIndex) => (
                         <div key={rowIndex} className="relative">
-                            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-                            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+                            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+                            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
                             <div className="flex overflow-hidden">
-                                <div className={`flex ${rowIndex === 1 ? 'animate-scroll-right' : 'animate-scroll-left'} gap-12`}>
+                                <div className={`flex ${rowIndex === 1 ? 'animate-scroll-right' : 'animate-scroll-left'} gap-6 md:gap-12
+`}>
                                     {row.map((partner, index) => (
                                         <div
                                             key={`${rowIndex}-${index}`}
@@ -83,7 +80,7 @@ export default function OurPartners({
                                                 alt={partner.name}
                                                 width={120} sizes="(max-width: 768px) 90px, 120px !important"
                                                 height={120}
-                                                className="object-contain opacity-90 hover:opacity-100 hover:scale-110 transition duration-300 w-[80px] md:w-[120px]"
+                                                className="object-contain opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 w-[55px] md:w-[120px]"
                                             />
                                         </div>
                                     ))}
