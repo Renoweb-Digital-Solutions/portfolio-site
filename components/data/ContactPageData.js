@@ -6,8 +6,8 @@ export const contactInfo = [
             </svg>
         ),
         title: "Email",
-        value: "hello@yourcompany.com",
-        link: "mailto:hello@yourcompany.com"
+        value: "renowebhq@gmail.com",
+        link: "mailto:renowebhq@gmail.com"
     },
     {
         icon: (
@@ -16,8 +16,8 @@ export const contactInfo = [
             </svg>
         ),
         title: "Phone",
-        value: "+1 (555) 123-4567",
-        link: "tel:+15551234567"
+        value: "+91 90384-67751",
+        link: "tel:+919038467751"
     },
     {
         icon: (
@@ -27,7 +27,7 @@ export const contactInfo = [
             </svg>
         ),
         title: "Office",
-        value: "123 Business St, Suite 100, San Francisco, CA 94105",
+        value: "7364 Kathleen Road, Lakeland, Florida,33810",
         link: null
     },
     {
@@ -37,7 +37,7 @@ export const contactInfo = [
             </svg>
         ),
         title: "WhatsApp",
-        value: "+1 (555) 123-4567",
-        link: "https://wa.me/15551234567"
+        value: "+91 90384-67751",
+        link: "https://wa.me/919038467751"
     }
 ];
