@@ -1,9 +1,9 @@
 "use client"
 import { policiesData } from '@/components/data/legal';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function PoliciesPage() {
+function PoliciesContent() {
     const searchParams = useSearchParams();
     const policyParam = searchParams.get('policy');
 
@@ -22,7 +22,7 @@ export default function PoliciesPage() {
         if (policyParam && validPolicies.includes(policyParam)) {
             setActivePolicy(policyParam);
         }
-    }, [policyParam]);
+    }, [policyParam, validPolicies]);
 
     const tabs = [
         { id: 'terms', label: 'Terms & Conditions' },
@@ -137,5 +137,20 @@ export default function PoliciesPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function PoliciesPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-black text-white pt-32 pb-20 px-6 flex items-center justify-center">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                    <p className="text-gray-400">Loading...</p>
+                </div>
+            </div>
+        }>
+            <PoliciesContent />
+        </Suspense>
     );
 }
