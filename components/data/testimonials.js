@@ -70,5 +70,13 @@ export const testimonials = [
         position: "Founder",
         company: "Bhromon Bilasi Tours & Travel",
         testimonial: "This is Suman, Founder of Bhromon Bilasi Tours & Travel, specializing in adventure travel. Before working with Renoweb, we struggled to generate quality leads online, as most of our bookings came through offline marketing and referrals. The Renoweb team completely revamped our online marketing strategy - from refining our brand messaging to creating the right content for our campaigns. Once we launched, we began consistently receiving 40-50 high-quality leads per day, and about 90% of them were genuinely interested or responsive, which was a huge \"aha\" moment for us. With their help, we've achieved 2x revenue growth while spending the same amount on ads. Truly impressive results!"
+    },
+    {
+        id: 10,
+        image: "/testimonials/ajasra_das.png",
+        name: "Ajasra Das",
+        position: "Co-founder and CTO",
+        company: "Gafazpues",
+        testimonial: "Working with Renoweb has been an excellent experience from start to finish. Their technical knowledge is outstanding – they quickly identified and resolved several underlying SEO and performance issues on gafazpues.com that had been limiting our growth. From site structure to technical SEO and optimization, their team demonstrated a deep understanding of what actually drives results. What truly stood out was their adaptability in working with a new language and market. Despite the language differences, they took the time to understand our audience, content nuances, and local search intent, ensuring that every recommendation was both technically sound and culturally relevant. In addition, RenoWeb delivered a clear and effective marketing strategy that aligned SEO, content, and digital visibility goals. Their approach was well thought out, data-driven, and practical to implement. Overall, RenoWeb is a reliable, skilled, and forward-thinking digital marketing partner, and we highly recommend them to any business looking to strengthen their online presence."
     }
 ];
