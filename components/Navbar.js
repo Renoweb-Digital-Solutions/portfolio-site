@@ -51,7 +51,7 @@ const Navbar = () => {
                 className='bg-[#1D1A1A]/80 backdrop-blur-xl opacity-80 text-white md:rounded-lg md:border-4 md:border-[#3877F0]/20 md:bg-transparent-50 poppins-regular w-auto h-18 lg:w-[98%] md:mx-5 md:my-5 flex flex-row justify-between fixed top-0 left-0 right-0 z-50'
             >
                 <Link href="/">
-                    <Image src="/renowebLogo.png" width={70} height={70} alt='Renoweb logo' />
+                    <Image src="/renoweb_logo_2.png" width={70} height={70} alt='Renoweb logo' className='w-[50px] h-[50px] mt-3 md:mt-2 ml-5' />
                 </Link>
 
                 <div className='hidden md:flex md:flex-row md:space-x-10 lg:space-x-16 my-auto'>

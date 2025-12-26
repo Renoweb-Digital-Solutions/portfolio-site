@@ -17,7 +17,7 @@ const Footer = () => {
                             {/* Logo and Description - Takes up more space */}
                             <div className="lg:col-span-4">
                                 <div className="mb-6">
-                                    <Image width={180} height={180} src="/renowebLogo.png" alt="renoweb logo" />
+                                    <Image width={180} height={180} src="/renoweb_logo.png" alt="renoweb logo" />
                                 </div>
                                 <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
                                     Transforming businesses through innovative digital solutions and strategic growth frameworks. Partner with us to unlock your full potential.
