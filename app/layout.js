@@ -17,7 +17,7 @@ export const metadata = {
   title: "Renoweb Digital Solutions",
   description: "Don't Rent an Audience. Build Your Empire!",
   openGraph: {
-    title: "Renoweb - Don't Rent an Audience. Build Your Empire!",
+    title: "Renoweb Digital Solutions",
     description: "Don't Rent an Audience. Build Your Empire! ",
     url: 'https://renowebhq.com',
     siteName: 'Renoweb Digital Solutions',
