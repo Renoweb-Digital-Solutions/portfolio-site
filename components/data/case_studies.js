@@ -1,6 +1,16 @@
 export const case_studies_data = [
 
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "lead-gen-edtech-daily-demos",
     "category": "Lead Gen",
     "title": "How We Achieved 5+ Qualified Demo Bookings Daily in 30 Days for an EdTech SaaS",
@@ -29,6 +39,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "lead-gen-ai-assessment-us",
     "category": "Lead Gen",
     "title": "Scaling a B2B AI Assessment Platform in the US Higher Education Sector",
@@ -71,6 +91,16 @@ export const case_studies_data = [
     conclusion: "Our omnichannel lead generation strategy helped the US healthcare group drive significant growth and revenue. By leveraging local SEO, email marketing, and automation workflows, we reduced no-show rates and increased appointment bookings. This case study demonstrates the effectiveness of a comprehensive lead generation strategy in driving business success."
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "mca-community",
     "category": "Community Management",
     "title": "Building a Merchant Cash Advance Community: A Pioneering Reddit Initiative",
@@ -95,6 +125,16 @@ export const case_studies_data = [
     "link": "/case-studies/mca-community"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "property-management-saas",
     "category": "Community Management",
     "title": "Community Management for a Property Management SaaS Company",
@@ -120,6 +160,16 @@ export const case_studies_data = [
   },
 
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "linkedin-personal-branding-web-agency-founder",
     "category": "LinkedIn",
     "title": "Transforming the LinkedIn Presence of a Web Design & Development Agency Founder",
@@ -146,6 +196,16 @@ export const case_studies_data = [
   },
 
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "linkedin-branding-uae-ai-founder",
     "category": "LinkedIn",
     "title": "LinkedIn Presence of a UAE-Based AI & Software Development Founder",
@@ -171,6 +231,16 @@ export const case_studies_data = [
     "link": "/case-studies/linkedin-branding-uae-ai-founder"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-ga4-gtm-analytics-integrity",
     "category": "Organic",
     "title": "Restoring Analytics Integrity with a GA4 + GTM Conversion Tracking Framework",
@@ -198,6 +268,16 @@ export const case_studies_data = [
     "link": "/case-studies/organic-ga4-gtm-analytics-integrity"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-australian-martech-growth",
     "category": "Organic",
     "title": "A Transformative Success Story in the Competitive Martech Space",
@@ -223,6 +303,16 @@ export const case_studies_data = [
     "link": "/case-studies/organic-australian-martech-growth"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-canadian-martech-seo",
     "category": "Organic",
     "title": "Organic Excellence Through Strategic SEO & Content Optimization",
@@ -248,6 +338,16 @@ export const case_studies_data = [
     "link": "/case-studies/organic-canadian-martech-seo"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-zero-to-authority-tech-blog",
     "category": "Organic",
     "title": "From Zero to Authority: How a Tech Blog Achieved Unstoppable Organic Growth",
@@ -274,6 +374,16 @@ export const case_studies_data = [
     "link": "/case-studies/organic-zero-to-authority-tech-blog"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-us-proptech-growth",
     "category": "Organic",
     "title": "Growth for a US PropTech Startup: A Blueprint for Scaling Traffic and Revenue",
@@ -302,6 +412,16 @@ export const case_studies_data = [
   },
 
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-us-vitamin-seo",
     "category": "Organic",
     "title": "Revitalizing Online Sales: SEO Transformation for a US Vitamin Supplements Brand",
@@ -329,6 +449,16 @@ export const case_studies_data = [
     "link": "/case-studies/organic-us-vitamin-seo"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-uk-healthcare-visibility",
     "category": "Organic",
     "title": "Revolutionizing Healthcare Visibility & Patient Reach",
@@ -355,6 +485,16 @@ export const case_studies_data = [
     "link": "/case-studies/organic-uk-healthcare-visibility"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-b2b-travel-aggregator-growth",
     "category": "Organic",
     "title": "How a B2B Travel Aggregator Achieved 461% Lead Growth",
@@ -379,6 +519,16 @@ export const case_studies_data = [
     "link": "/case-studies/organic-b2b-travel-aggregator-growth"
   },
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "organic-indian-fintech-ipo-growth",
     "category": "Organic",
     "title": "Pioneering Growth for an Indian Fintech Giant",
@@ -405,6 +555,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "performance-os-nextgen-framework",
     "category": "Performance OS",
     "title": "PerfOS: Our Next-Gen Performance Marketing Framework",
@@ -431,6 +591,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "performance-os-edtech-growth",
     "category": "Performance OS",
     "title": "Achieving Explosive Growth for an EdTech SaaS Through a From-Scratch Performance OS System",
@@ -464,6 +634,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "smmos-global-adventure-growth",
     "category": "SMM OS",
     "title": "Achieving Massive Growth for a Global Adventure Brand Through Content-Led Social Media",
@@ -489,6 +669,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "smmos-finance-company-analytics",
     "category": "SMM OS",
     "title": "Driving Financial Brand Growth Through Data-Led Social Media Strategy",
@@ -514,6 +704,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "smmos-logistics-infrastructure-growth",
     "category": "SMM OS",
     "title": "Hyper-Targeted Social Media Strategy for a Logistics & Infrastructure Company",
@@ -539,6 +739,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "smmos-fashion-ecommerce-growth",
     "category": "SMM OS",
     "title": "Transforming a Fashion E-Commerce Startup Through a High-Impact Social Media OS",
@@ -565,6 +775,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "smmos-usa-saas-instagram-growth",
     "category": "SMM OS",
     "title": "Scaling User Acquisition for a USA-Based SaaS Through Social Media Systems",
@@ -591,6 +811,16 @@ export const case_studies_data = [
   }
   ,
   {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
     "id": "smmos-global-adventure-growth-v2",
     "category": "SMM OS",
     "title": "Achieving Exceptional Growth for a Global Adventure Company Through Content-Driven SMM",
@@ -613,4 +843,143 @@ export const case_studies_data = [
     "conclusion": "The adventure brand significantly improved visibility and community engagement, reinforcing social presence and trust in a niche market.",
     "takeaway": "In experience-driven industries, authenticity and storytelling outperform aggressive promotion—audiences want connection before conversion.",
     "link": "/case-studies/smmos-global-adventure-growth-v2"
-  }]
+  },
+  //DEV OS
+  {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
+    "coAuthor": {
+      "name": "Samaresh Das",
+      "role": "Full Stack Developer",
+      "bio": "Samaresh Das is a MERN stack developer with expertise in front-end development, React.js, and modern JavaScript. He develops responsive, user-centric web applications optimized for real-world use.",
+      "image": "/profile_photos/samaresh_das.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/samaresh-d-ab9621212/",
+        "email": "samareshmail679@gmail.com"
+      }
+    },
+    "id": "moovana-premium-d2c-shopify",
+    "category": "Dev OS",
+    "title": "Crafting a Premium D2C Dairy Experience on Shopify",
+    "about_client": "Moovana is a premium dairy brand focused on delivering authentic, high-quality products such as ghee and paneer. As a direct-to-consumer brand, Moovana needed a digital storefront that could instantly communicate purity, trust, and freshness, while enabling a seamless and intuitive shopping journey.",
+    "challenges": [
+      "Building trust in a commodity-driven category where differentiation is driven more by perception than features.",
+      "Avoiding visual clutter while keeping the site premium and informative without overloading users with text, compromising speed or usability, or making navigation complex for first-time buyers.",
+      "Ensuring scalability and ease of management with a solution that was easy for the internal team to manage, flexible for new products and collections, and stable within Shopify’s ecosystem."
+    ],
+    "solutions": {
+      "approach": "The design strategy emphasized natural, warm color palettes, clean layouts with generous whitespace, and clear visual hierarchy for products and messaging to reinforce Moovana’s premium and organic positioning.",
+      "process": [
+        "Adopted a brand-led design system with clear visual hierarchy.",
+        "Prioritized visual storytelling over text using custom icons, product mockups, and informative banners to reduce cognitive load.",
+        "Implemented a customized Shopify theme using native Shopify capabilities for reliability.",
+        "Followed performance and SEO best practices.",
+        "Designed clear homepage structure highlighting flagship products and brand values.",
+        "Built clean product pages enabling quick understanding and confident purchase decisions.",
+        "Designed supporting pages including About Us, Collections, Policies, and Contact pages for consistency and trust."
+      ]
+    },
+    "conclusion": "The Moovana Shopify project illustrates how brand-led design, platform-native development, and visual clarity can elevate a D2C food brand’s digital presence. Moovana now has a fast, scalable, and conversion-ready eCommerce platform built to support long-term growth.",
+    "takeaway": "A refined digital storefront that builds trust, drives engagement, and scales with the brand.",
+    "link": "/case-studies/moovana-premium-d2c-shopify"
+  },
+  //DEV <OS></OS>
+  {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
+    "coAuthor": {
+      "name": "Samaresh Das",
+      "role": "Full Stack Developer",
+      "bio": "Samaresh Das is a MERN stack developer with expertise in front-end development, React.js, and modern JavaScript. He develops responsive, user-centric web applications optimized for real-world use.",
+      "image": "/profile_photos/samaresh_das.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/samaresh-d-ab9621212/",
+        "email": "samareshmail679@gmail.com"
+      }
+    },
+    "id": "nidaan-dental-digital-modernization",
+    "category": "Dev OS",
+    "title": "Modernizing a Legacy Healthcare Brand with a Tech-Forward Digital Experience",
+    "about_client": "Nidaan is a trusted dental diagnostics and radiology group founded in 1985, serving dentists, dental clinics, hospitals, and franchise partners. While clinically strong, its digital presence did not reflect its technological depth or future-forward vision.",
+    "challenges": [
+      "Design versus platform misalignment where modern staircase layouts, layered sections, and pseudo-3D components were not inherently WordPress-friendly.",
+      "WordPress sandbox limitations restricting deep DOM manipulation and advanced animations, causing rendering inconsistencies and performance trade-offs.",
+      "Advanced frontend expectations requiring high-tech visual experience while staying within WordPress’s architectural boundaries."
+    ],
+    "solutions": {
+      "approach": "A constraint-driven design and engineering strategy was adopted instead of forcing WordPress to behave like a full custom framework.",
+      "process": [
+        "Applied constraint-first thinking to identify what should be custom-coded and what must remain manageable via CMS.",
+        "Used AI-assisted planning to break complex layouts into modular HTML/CSS components and predict WordPress conflicts.",
+        "Implemented a hybrid development model using static HTML templates for complex sections, custom CSS and JavaScript for interactions, and WordPress for content management, SEO structure, and scalability.",
+        "Executed multiple redesign and refinement cycles to ensure brand alignment, stakeholder buy-in, and clinical professionalism with modern aesthetics.",
+        "Performed cross-browser testing, mobile responsiveness tuning, and performance optimization."
+      ]
+    },
+    "conclusion": "This project demonstrates how legacy healthcare brands can modernize digitally without disrupting internal workflows. Nidaan’s new website reflects technological leadership, appeals to high-intent B2B stakeholders, and balances elegance, performance, and scalability.",
+    "takeaway": "A transformation from a static presence to a modern, precision-driven digital identity.",
+    "link": "/case-studies/nidaan-dental-digital-modernization"
+  },
+  {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
+    "coAuthor": {
+      "name": "Samaresh Das",
+      "role": "Full Stack Developer",
+      "bio": "Samaresh Das is a MERN stack developer with expertise in front-end development, React.js, and modern JavaScript. He develops responsive, user-centric web applications optimized for real-world use.",
+      "image": "/profile_photos/samaresh_das.jpg", // optional
+      "social": { // optional
+        "linkedin": "https://www.linkedin.com/in/samaresh-d-ab9621212/",
+        "email": "samareshmail679@gmail.com"
+      }
+    },
+    "id": "nexority-3d-experiences-wordpress",
+    "category": "Dev OS",
+    "title": "Engineering 3D Experiences Inside WordPress",
+    "about_client": "Nexority Infotech is a technology-driven organization that wanted its digital presence to reflect innovation, modernity, and technical depth. The client envisioned a visually captivating website with advanced 3D animations and interactive elements while retaining WordPress as the core CMS for long-term manageability.",
+    "challenges": [
+      "Implementing complex 3D designs in a WordPress environment with sandboxed architecture limiting rendering pipelines and animation layers.",
+      "Design-system mismatch where visually ambitious Figma designs were not inherently WordPress-friendly.",
+      "Evolving design requirements requiring rapid iteration cycles, partial redesign, and redevelopment while maintaining visual consistency.",
+      "Balancing visual fidelity versus platform constraints and custom engineering versus long-term CMS stability."
+    ],
+    "solutions": {
+      "approach": "The strategy focused on constraint-aware innovation—maximizing visual impact without breaking the WordPress ecosystem.",
+      "process": [
+        "Conducted deep platform analysis to assess native WordPress capabilities and performance bottlenecks.",
+        "Used AI-assisted planning to deconstruct complex 3D layouts into modular components and forecast development risks.",
+        "Adopted selective custom engineering using clean HTML templates, custom CSS for depth and layering, and JavaScript-driven animation logic.",
+        "Implemented GSAP (GreenSock Animation Platform) for pixel-accurate animations, smooth transitions, and consistent cross-browser behavior.",
+        "Performed cross-browser and multi-device testing with performance optimization for animation-heavy pages."
+      ]
+    },
+    "conclusion": "This project demonstrates how advanced 3D experiences can be engineered inside WordPress when custom development, animation frameworks like GSAP, and strategic planning are combined effectively.",
+    "takeaway": "A strong example of engineering-led design executed with precision inside a CMS-first ecosystem.",
+    "link": "/case-studies/nexority-3d-experiences-wordpress"
+  },
+
+]
