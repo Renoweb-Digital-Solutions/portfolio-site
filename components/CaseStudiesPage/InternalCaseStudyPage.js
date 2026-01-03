@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import AuthorSection from '../Author/AuthorSection';
 
 export default function InternalCaseStudyPage({ caseStudy }) {
 
@@ -116,6 +117,7 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                     </Link>
                 )}
 
+                <AuthorSection author={caseStudy.author} coAuthor={caseStudy.coAuthor} />
                 {/* CTA Section */}
                 <div className="mt-20 text-center">
                     <div className="bg-gradient-to-r from-blue-600/20 to-blue-800/20 border border-blue-600/30 rounded-2xl p-12">
@@ -126,6 +128,7 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                         </button>
                     </div>
                 </div>
+
             </main>
         </div>
     );
