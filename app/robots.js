@@ -14,7 +14,7 @@ export default function robots() {
                 ],
             },
         ],
-        // sitemap: 'https://renowebhq.com/sitemap.xml',
-        sitemap: 'https://localhost:3000/sitemap.xml',
+        sitemap: 'https://renowebhq.com/sitemap.xml',
+        // sitemap: 'https://localhost:3000/sitemap.xml',
     }
 }
