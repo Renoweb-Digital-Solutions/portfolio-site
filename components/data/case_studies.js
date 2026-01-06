@@ -5,8 +5,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -43,8 +43,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -77,26 +77,26 @@ export const case_studies_data = [
   }
   ,
   {
-    id: 2,
-    category: "SMM OS",
-    title: "Building a Merchant Cash Advance Community: A Pioneering Reddit Initiative",
-    about_client: "Our client, a Merchant Cash Advance (MCA) software company based in the USA, approached us with a unique challenge: establishing a cohesive community for MCA professionals in a niche B2B SaaS market. The industry was riddled with fragmented, spam-filled platforms, and the client wanted to stand out by building a brand that could attract and qualify merchant prospects while driving meaningful engagement.",
-    challenges: ["Zero Demand for MCA Communities: Search demand for MCA-related forums was practically non-existent.", "High Competition in SEO and Paid Search: Established players like debanked.com, funderintel.com, and dailyfunder.com dominated the digital space.", "Scepticism of Niche Market Viability: There were no successful MCA-focused communities to benchmark."],
-    solutions: {
-      approach: "We designed and implemented an omnichannel lead generation funnel that included:",
+    "id": "mca-healthcare-omnichannel",
+    "category": "SMM OS",
+    "title": "Building a Merchant Cash Advance Community: A Pioneering Reddit Initiative",
+    "about_client": "Our client, a Merchant Cash Advance (MCA) software company based in the USA, approached us with a unique challenge: establishing a cohesive community for MCA professionals in a niche B2B SaaS market. The industry was riddled with fragmented, spam-filled platforms, and the client wanted to stand out by building a brand that could attract and qualify merchant prospects while driving meaningful engagement.",
+    "challenges": ["Zero Demand for MCA Communities: Search demand for MCA-related forums was practically non-existent.", "High Competition in SEO and Paid Search: Established players like debanked.com, funderintel.com, and dailyfunder.com dominated the digital space.", "Scepticism of Niche Market Viability: There were no successful MCA-focused communities to benchmark."],
+    "solutions": {
+      "approach": "We designed and implemented an omnichannel lead generation funnel that included:",
 
-      process: ["Local SEO optimization to increase online visibility", "Landing pages to capture leads and book appointments", "Email cadence to nurture leads and reduce no-shows", "Local ads to drive traffic and bookings", "Social media lead ads and funnel to capture leads", "Automation workflow to streamline lead follow-up and appointment reminders"]
+      "process": ["Local SEO optimization to increase online visibility", "Landing pages to capture leads and book appointments", "Email cadence to nurture leads and reduce no-shows", "Local ads to drive traffic and bookings", "Social media lead ads and funnel to capture leads", "Automation workflow to streamline lead follow-up and appointment reminders"]
 
     },
-    conclusion: "Our omnichannel lead generation strategy helped the US healthcare group drive significant growth and revenue. By leveraging local SEO, email marketing, and automation workflows, we reduced no-show rates and increased appointment bookings. This case study demonstrates the effectiveness of a comprehensive lead generation strategy in driving business success."
+    "conclusion": "Our omnichannel lead generation strategy helped the US healthcare group drive significant growth and revenue. By leveraging local SEO, email marketing, and automation workflows, we reduced no-show rates and increased appointment bookings. This case study demonstrates the effectiveness of a comprehensive lead generation strategy in driving business success."
   },
   {
     "author": {
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -129,8 +129,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -164,8 +164,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -200,8 +200,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -235,8 +235,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -272,8 +272,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -307,8 +307,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -342,8 +342,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -378,8 +378,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -416,8 +416,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -453,8 +453,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -489,8 +489,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -523,8 +523,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -559,8 +559,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -595,8 +595,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -638,8 +638,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -673,8 +673,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -708,8 +708,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -743,8 +743,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -779,8 +779,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -815,8 +815,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -850,8 +850,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -860,8 +860,8 @@ export const case_studies_data = [
       "name": "Samaresh Das",
       "role": "Full Stack Developer",
       "bio": "Samaresh Das is a MERN stack developer with expertise in front-end development, React.js, and modern JavaScript. He develops responsive, user-centric web applications optimized for real-world use.",
-      "image": "/profile_photos/samaresh_das.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/samaresh_das.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/samaresh-d-ab9621212/",
         "email": "samareshmail679@gmail.com"
       }
@@ -897,8 +897,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -907,8 +907,8 @@ export const case_studies_data = [
       "name": "Samaresh Das",
       "role": "Full Stack Developer",
       "bio": "Samaresh Das is a MERN stack developer with expertise in front-end development, React.js, and modern JavaScript. He develops responsive, user-centric web applications optimized for real-world use.",
-      "image": "/profile_photos/samaresh_das.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/samaresh_das.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/samaresh-d-ab9621212/",
         "email": "samareshmail679@gmail.com"
       }
@@ -941,8 +941,8 @@ export const case_studies_data = [
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
       "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
         "email": "sarah@renoweb.com"
       }
@@ -951,8 +951,8 @@ export const case_studies_data = [
       "name": "Samaresh Das",
       "role": "Full Stack Developer",
       "bio": "Samaresh Das is a MERN stack developer with expertise in front-end development, React.js, and modern JavaScript. He develops responsive, user-centric web applications optimized for real-world use.",
-      "image": "/profile_photos/samaresh_das.jpg", // optional
-      "social": { // optional
+      "image": "/profile_photos/samaresh_das.jpg",
+      "social": {
         "linkedin": "https://www.linkedin.com/in/samaresh-d-ab9621212/",
         "email": "samareshmail679@gmail.com"
       }
