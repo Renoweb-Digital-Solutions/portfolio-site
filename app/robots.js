@@ -5,7 +5,6 @@ export default function robots() {
         rules: [
             {
                 userAgent: '*',
-                allow: '/',
                 disallow: [
                     '/api',
                     '/_next',
@@ -13,8 +12,11 @@ export default function robots() {
                     '/dashboard',
                 ],
             },
+            {
+                userAgent: '*',
+                allow: '/',
+            },
         ],
         sitemap: 'https://renowebhq.com/sitemap.xml',
-        // sitemap: 'https://localhost:3000/sitemap.xml',
     }
 }
