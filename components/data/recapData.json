@@ -1,0 +1,320 @@
+{
+  "seo": {
+    "title": "SEO RECAP",
+    "year": "2025",
+    "industries": [
+      "Health Care",
+      "Edtech",
+      "E-Commerce",
+      "News & Blogs",
+      "Customer Experience"
+    ],
+    "clients": [
+      { "name": "Numr", "logo": "/recap/client_logos/numr.png" },
+      { "name": "Moovana", "logo": "/recap/client_logos/moovana.png" },
+      { "name": "Nidaan", "logo": "/recap/client_logos/nidaan.png" },
+      {
+        "name": "Hopium Health",
+        "logo": "/recap/client_logos/hopium_health.png"
+      },
+      { "name": "Nexority", "logo": "/recap/client_logos/nexority.png" },
+      { "name": "Numr", "logo": "/recap/client_logos/numr.png" }
+    ],
+    "results": [
+      {
+        "title": "Traffic Growth Success",
+        "stats": [
+          { "label": "Traffic growth in 30 days", "value": "43.9%" },
+          { "label": "Growth in 90 days", "value": "230.5%" }
+        ],
+        "beforeImage": "/recap/seo/nexority_seo_before.png",
+        "afterImage": "/recap/seo/nexority_seo_after.png"
+      },
+      {
+        "title": "Position & Traffic Improvement",
+        "stats": [
+          {
+            "label": "Direct and Organic Traffic",
+            "value": "4.5k direct and 1.3k organic"
+          },
+          { "label": "Avg Position Improvement", "value": "48 to 18" }
+        ],
+        "beforeImage": "/recap/seo/numr_before.png",
+        "afterImage": "/recap/seo/numr_after.png"
+      }
+    ],
+    "whyBest": [
+      {
+        "number": "1",
+        "title": "ICP-Focused Strategy",
+        "description": "We focus on not only ranking and traffic. We focus making website visible to exact ICP"
+      },
+      {
+        "number": "2",
+        "title": "Deep Market Research",
+        "description": "We do the best market research before work"
+      },
+      {
+        "number": "3",
+        "title": "Beyond Traditional SEO",
+        "description": "We don't just do SEO. We do AEO and GEO"
+      },
+      {
+        "number": "4",
+        "title": "AI-Powered Content",
+        "description": "We have made content writing system using AI to write high value content"
+      }
+    ]
+  },
+  "leadGeneration": {
+    "title": "LEAD GENERATION RECAP",
+    "year": "2025",
+    "period": "September - December",
+    "industries": [
+      "Event Agencies",
+      "Edtech",
+      "E-Commerce",
+      "Mobile App",
+      "Software Dev",
+      "Agency"
+    ],
+    "clients": [
+      { "name": "QCBT", "logo": "/recap/client_logos/qcbt.png" },
+      {
+        "name": "Community Club",
+        "logo": "/recap/client_logos/community_club.png"
+      },
+      { "name": "MMJ", "logo": "/recap/client_logos/MMJ.png" },
+      { "name": "Nexority", "logo": "/recap/client_logos/nexority.png" }
+    ],
+    "results": [
+      {
+        "client": "QCBT",
+        "title": "Qualified Lead Generation",
+        "period": "July-November",
+        "stats": [
+          { "label": "Total Spend", "value": "53380" },
+          { "label": "Qualified Leads", "value": "202" },
+          { "label": "Avg CPL", "value": "264+" },
+          { "label": "Reach", "value": "83681" },
+          { "label": "Additional Leads", "value": "410" }
+        ],
+        "image": "/recap/lead_gen/qcbt.jpg"
+      },
+      {
+        "client": "Community Club",
+        "title": "Real-time Lead Scraping",
+        "period": "In just 105 Days",
+        "stats": [
+          {
+            "label": "Real-time & Unique Facebook Leads Scraped",
+            "value": "200,484"
+          },
+          {
+            "label": "Real-time Unique Google Maps Leads Scraped",
+            "value": "33,439"
+          },
+          {
+            "label": "Real-time YouTube Leads Scraped with Original Emails (via Inbuilt Automation)",
+            "value": "7,093"
+          },
+          {
+            "label": "Personalised Facebook DMs Done with Real Human Profiles",
+            "value": "5,885"
+          }
+        ],
+        "image": "/recap/lead_gen/community_club.png"
+      },
+      {
+        "client": "Nexority",
+        "title": "Call & Lead Conversion",
+        "stats": [
+          { "label": "Nexority - Calls (October)", "value": "200+" },
+          {
+            "label": "Nexority - Total Leads (In just 45 Days)",
+            "value": "198"
+          }
+        ],
+        "image": "/recap/lead_gen/nexority.jpg"
+      },
+      {
+        "client": "MMJ",
+        "title": "Call & Lead Conversion",
+        "stats": [
+          { "label": "MMJ - Calls (September)", "value": "80+" },
+          { "label": "MMJ - Total Leads (In just 75 Days)", "value": "625" }
+        ],
+        "image": "/recap/lead_gen/MMJ.jpg"
+      }
+    ],
+    "whyBest": [
+      {
+        "number": "1",
+        "title": "Multi-Channel Strategy",
+        "description": "We don't rely on a single method; instead, we deploy a diversified approach using cold calls, LinkedIn DMs, and direct emails to reach prospects."
+      },
+      {
+        "number": "2",
+        "title": "Social Selling Proficiency",
+        "description": "We leverage professional networks effectively, sending 45+ LinkedIn DMs in December and successfully securing replies."
+      },
+      {
+        "number": "3",
+        "title": "Proven Conversion Capability",
+        "description": "Our outreach efforts translate directly into booked appointments, maintaining a steady flow of meetings even in typically slower months like December (12 meetings)."
+      },
+      {
+        "number": "4",
+        "title": "Dedicated Intensity",
+        "description": "We commit significant effort to campaign success, illustrated by making 200+ calls and sending 70+ emails for the Renoweb campaign in just one month."
+      },
+      {
+        "number": "5",
+        "title": "High-Volume Execution",
+        "description": "We demonstrate the capacity for aggressive outreach, executing over 500 cold calls for a single client (QCBT) between September and December."
+      },
+      {
+        "number": "6",
+        "title": "Consistent Performance Growth",
+        "description": "Our strategies deliver improving results over time, evidenced by the steady increase in secured meetings from 9 in September to 13 in October and 19 in November."
+      },
+      {
+        "number": "7",
+        "title": "Rapid Pipeline Building",
+        "description": "We excel at quickly identifying opportunities, generating 15 potential meetings for Renoweb in December alone."
+      }
+    ]
+  },
+  "branding": {
+    "title": "BRANDING RECAP",
+    "year": "2025",
+    "industries": [
+      "HealthCare",
+      "Edtech",
+      "E-Commerce",
+      "News & Blogs",
+      "Community Management",
+      "Dental Diagnostic Centre",
+      "Customer Experience",
+      "Design & Fashion"
+    ],
+    "clients": [
+      { "name": "Moovana", "logo": "/recap/client_logos/moovana.png" },
+      { "name": "Nidaan", "logo": "/recap/client_logos/nidaan.png" },
+      { "name": "Nexority", "logo": "/recap/client_logos/nexority.png" },
+      { "name": "QCBT", "logo": "/recap/client_logos/qcbt.png" },
+      {
+        "name": "Hopium Health",
+        "logo": "/recap/client_logos/hopium_health.png"
+      },
+      { "name": "Numr", "logo": "/recap/client_logos/Numr.png" },
+      { "name": "MMJ", "logo": "/recap/client_logos/MMJ.png" },
+      {
+        "name": "Community Club",
+        "logo": "/recap/client_logos/community_club.png"
+      }
+    ],
+    "results": [
+      {
+        "title": "MMJ",
+        "beforeImage": "/recap/branding/mmj_before.png",
+        "afterImage": "/recap/branding/mmj_after.png"
+      },
+      {
+        "title": "Nexority",
+        "beforeImage": "/recap/branding/nexority_before.png",
+        "afterImage": "/recap/branding/nexority_after.png"
+      },
+      {
+        "title": "Numr",
+        "beforeImage": "/recap/branding/numr_before.png",
+        "afterImage": "/recap/branding/numr_after.png"
+      },
+      {
+        "title": "QCBT",
+        "beforeImage": "/recap/branding/qcbt_before.png",
+        "afterImage": "/recap/branding/qcbt_after.png"
+      }
+    ],
+    "designTypes": [
+      {
+        "name": "Cover",
+        "link": "#",
+        "image": "/recap/branding/6jp.jpg"
+      },
+      {
+        "name": "Tri-fold",
+        "link": "#",
+        "image": "/placeholder-design-trifold.png"
+      },
+      { "name": "Logo", "link": "#", "image": "/placeholder-design-logo.png" },
+      {
+        "name": "Newsletter",
+        "link": "#",
+        "image": "/placeholder-design-newsletter.png"
+      },
+      {
+        "name": "Brand Guideline",
+        "link": "#",
+        "image": "/placeholder-design-guideline.png"
+      },
+      {
+        "name": "Backdrop",
+        "link": "#",
+        "image": "/placeholder-design-backdrop.png"
+      },
+      {
+        "name": "STATIC & INFOGRAPHIC",
+        "link": "#",
+        "image": "/placeholder-design-static.png"
+      },
+      {
+        "name": "Event Materials",
+        "link": "#",
+        "image": "/placeholder-design-event.png"
+      },
+      {
+        "name": "Carousel",
+        "link": "#",
+        "image": "/placeholder-design-carousel.png"
+      },
+      {
+        "name": "Thumbnail",
+        "link": "#",
+        "image": "/placeholder-design-thumbnail.png"
+      },
+      {
+        "name": "Case Studies",
+        "link": "#",
+        "image": "/placeholder-design-casestudy.png"
+      }
+    ],
+    "whyBest": [
+      {
+        "number": "1",
+        "title": "Purpose-Driven Design",
+        "description": "Every design starts with why—your goal, your audience, and the message you want to deliver."
+      },
+      {
+        "number": "2",
+        "title": "Brand Consistency Across Platforms",
+        "description": "Whether print or digital, we ensure your brand looks strong, unified, and recognizable everywhere."
+      },
+      {
+        "number": "3",
+        "title": "Strategy-Led Creativity",
+        "description": "Creativity is guided by insight, not guesswork. Each visual decision supports the brand's message and objectives."
+      },
+      {
+        "number": "4",
+        "title": "Human-Centric Approach",
+        "description": "Our designs are made for real people—easy to understand, easy to connect with, and easy to trust."
+      },
+      {
+        "number": "5",
+        "title": "Attention to Detail",
+        "description": "From typography to spacing, every element is thoughtfully crafted for clarity and balance."
+      }
+    ]
+  }
+}
