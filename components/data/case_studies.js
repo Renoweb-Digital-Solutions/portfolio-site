@@ -77,160 +77,6 @@ export const case_studies_data = [
   }
   ,
   {
-    "id": "mca-healthcare-omnichannel",
-    "category": "SMM OS",
-    "title": "Building a Merchant Cash Advance Community: A Pioneering Reddit Initiative",
-    "about_client": "Our client, a Merchant Cash Advance (MCA) software company based in the USA, approached us with a unique challenge: establishing a cohesive community for MCA professionals in a niche B2B SaaS market. The industry was riddled with fragmented, spam-filled platforms, and the client wanted to stand out by building a brand that could attract and qualify merchant prospects while driving meaningful engagement.",
-    "challenges": ["Zero Demand for MCA Communities: Search demand for MCA-related forums was practically non-existent.", "High Competition in SEO and Paid Search: Established players like debanked.com, funderintel.com, and dailyfunder.com dominated the digital space.", "Scepticism of Niche Market Viability: There were no successful MCA-focused communities to benchmark."],
-    "solutions": {
-      "approach": "We designed and implemented an omnichannel lead generation funnel that included:",
-
-      "process": ["Local SEO optimization to increase online visibility", "Landing pages to capture leads and book appointments", "Email cadence to nurture leads and reduce no-shows", "Local ads to drive traffic and bookings", "Social media lead ads and funnel to capture leads", "Automation workflow to streamline lead follow-up and appointment reminders"]
-
-    },
-    "conclusion": "Our omnichannel lead generation strategy helped the US healthcare group drive significant growth and revenue. By leveraging local SEO, email marketing, and automation workflows, we reduced no-show rates and increased appointment bookings. This case study demonstrates the effectiveness of a comprehensive lead generation strategy in driving business success."
-  },
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "mca-community",
-    "category": "Community Management",
-    "title": "Building a Merchant Cash Advance Community: A Pioneering Reddit Initiative",
-    "about_client": "Our client, a Merchant Cash Advance (MCA) software company based in the USA, wanted to create an authentic and centralized community for MCA professionals in a niche and fragmented B2B SaaS market. Existing platforms were spam-filled, inactive, and unreliable.",
-    "challenges": [
-      "Zero organic demand for MCA communities and no existing successful forums to benchmark.",
-      "The industry was dominated by established sites such as debanked.com, funderintel.com, and dailyfunder.com.",
-      "High scepticism about whether an MCA-focused community could attract active, relevant users."
-    ],
-    "solutions": {
-      "approach": "We built the first structured Reddit community for MCA professionals and executed a multi-channel community growth strategy.",
-      "process": [
-        "Developed in-community content using keyword-rich and UGC-inspired posts.",
-        "Cross-posted in related subreddits and created Quora threads to funnel traffic.",
-        "Engaged with MCA professionals across Reddit, Quora, Facebook, and LinkedIn.",
-        "Promoted the subreddit through social media marketing and influencer activity.",
-        "Created 200+ manual Web 2.0 backlinks to build early authority."
-      ]
-    },
-    "conclusion": "Despite zero initial demand, the subreddit became the first highly active MCA community, driving engagement, visibility, and industry credibility for the client.",
-    "takeaway": "Even in niches with no existing demand, a well-structured community and multi-channel engagement can create momentum and position a brand as an early leader.",
-    "link": "/case-studies/mca-community"
-  },
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "property-management-saas",
-    "category": "Community Management",
-    "title": "Community Management for a Property Management SaaS Company",
-    "about_client": "A decade-old Property Management SaaS company in the USA struggling with outdated marketing methods, weak customer nurturing, and almost no branding in a competitive B2B space.",
-    "challenges": [
-      "Outdated and ineffective marketing strategies.",
-      "No customer nurturing system, causing low retention and reduced engagement.",
-      "Dry customer acquisition channels with no active lead generation.",
-      "Weak brand presence in a competitive software niche."
-    ],
-    "solutions": {
-      "approach": "We built a community-driven strategy focused on authentic engagement and UGC-led content across major platforms.",
-      "process": [
-        "Created and managed UGC-based community posts on Quora, Facebook, LinkedIn, and niche forums.",
-        "Focused on non-salesy, value-driven interactions to build trust.",
-        "Nurtured potential customers through discussions and expert positioning.",
-        "Strengthened brand identity through consistent multi-platform presence."
-      ]
-    },
-    "conclusion": "Within six months, the company saw a 300% increase in followers, a 250% rise in engagement, 50+ qualified leads, and community-driven traffic growing from 1% to 15%.",
-    "takeaway": "Authentic community engagement remains one of the most impactful strategies for B2B SaaS brands looking to revive or scale their marketing performance.",
-    "link": "/case-studies/property-management-saas"
-  },
-
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "linkedin-personal-branding-web-agency-founder",
-    "category": "LinkedIn",
-    "title": "Transforming the LinkedIn Presence of a Web Design & Development Agency Founder",
-    "about_client": "The founder of a web design and development agency who had repeatedly attempted to grow their LinkedIn presence. Despite investing lakhs in premium coaches and courses, they saw no consistent engagement, no traction, and no inbound leads.",
-    "challenges": [
-      "Inconsistent posting and irregular content output.",
-      "Low-quality content that lacked clarity and structure.",
-      "Very limited visibility and weak credibility.",
-      "No inbound project inquiries despite multiple attempts."
-    ],
-    "solutions": {
-      "approach": "We enrolled the client into our LinkedIn DWY (Done-With-You) mentorship system to create a predictable and consistent personal brand.",
-      "process": [
-        "Conducted weekly strategy sessions to guide content creation.",
-        "Provided readymade resources, AI prompts, and content templates.",
-        "Shared plug-and-play frameworks to simplify posting.",
-        "Shifted focus toward consistency, not perfection.",
-        "Established a structured posting routine to grow impressions and authority."
-      ]
-    },
-    "conclusion": "Within 28 days, the client transformed their visibility on LinkedIn—connections jumped from 400 to 3000, impressions reached 30k+, and inbound project inquiries started flowing from 3rd-degree connections. A single post generated over 20 project orders.",
-    "takeaway": "Consistency and strategic content systems outperform expensive courses. With the right frameworks, founders can build a strong LinkedIn presence and attract inbound opportunities organically.",
-    "link": "https://drive.google.com/file/d/1SRS3DMOXqjiXU3f2A1mywht6fJo91vYj/view?usp=sharing"
-  },
-
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "linkedin-branding-uae-ai-founder",
-    "category": "LinkedIn",
-    "title": "LinkedIn Presence of a UAE-Based AI & Software Development Founder",
-    "about_client": "A UAE-based AI and software development founder who struggled to build a strong LinkedIn presence. Due to the technical nature of their work, they were hesitant to outsource personal branding and had no inbound traction.",
-    "challenges": [
-      "Difficulty creating authentic, authority-building content.",
-      "Inability to maintain consistent posting or build a following.",
-      "Low visibility and weak credibility within the AI space.",
-      "No inbound leads despite multiple attempts to grow the profile."
-    ],
-    "solutions": {
-      "approach": "We executed a complete DFY (Done-For-You) personal branding system tailored for a technical founder.",
-      "process": [
-        "Conducted weekly sessions to extract authentic expertise from the founder.",
-        "Optimized the profile with LinkedIn SEO for industry relevance.",
-        "Created personal branding assets aligned with the client’s expertise.",
-        "Designed a structured content strategy for 5 weekly posts.",
-        "Managed networking, engagement, and audience-building activities."
-      ]
-    },
-    "conclusion": "Within just two weeks, the client’s LinkedIn SSI doubled, and one post went viral with 20k+ impressions and 200+ likes. Over 15 inbound leads were received within the first month, establishing the founder as an industry thought leader.",
-    "takeaway": "Technical founders can build strong industry authority with the right DFY system—consistent expert-led content and positioning lead to visibility, credibility, and inbound lead flow.",
-    "link": "/case-studies/linkedin-branding-uae-ai-founder"
-  },
-  {
     "author": {
       "name": "Gourab Majumder",
       "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
@@ -554,6 +400,7 @@ export const case_studies_data = [
     "link": "/case-studies/organic-indian-fintech-ipo-growth"
   }
   ,
+  //performance os
   {
     "author": {
       "name": "Gourab Majumder",
@@ -565,30 +412,36 @@ export const case_studies_data = [
         "email": "sarah@renoweb.com"
       }
     },
-    "id": "performance-os-nextgen-framework",
+    "id": "edtech-saas-600-percent-growth",
     "category": "Performance OS",
-    "title": "PerfOS: Our Next-Gen Performance Marketing Framework",
-    "about_client": "PerfOS is our proprietary performance marketing system designed to unlock exponential business growth through precision-engineered funnels, targeted ads, automated nurturing, retargeting, and optimized sales workflows. It is used across industries such as travel, tourism, eCommerce, EdTech, coaching, SaaS, and more.",
+    "title": "How We Achieved 600%+ Growth From Scratch in 30 Days for an EdTech SaaS",
+    "about_client": "An AI-driven remote exam platform helping institutions conduct exams efficiently while maintaining high integrity and reducing manual supervision. The product operates on a pay-per-user recurring model serving India and the Middle East.",
     "challenges": [
-      "Businesses relied on generic, one-size-fits-all marketing funnels with inconsistent results.",
-      "Lack of a structured system combining ads, automation, retargeting, and sales processes.",
-      "Unclear market benchmarks leading to inefficient targeting and wasted ad spend.",
-      "Difficulty generating predictable cash flow or qualified lead volume."
+      "Zero outbound leads at the start, relying only on referrals.",
+      "A completely new and unfamiliar product category for the market.",
+      "Low lead quality despite acceptable CPL in early testing.",
+      "High drop-off and poor response rates from WhatsApp funnels.",
+      "Budget constraints requiring fast learning and optimization."
     ],
     "solutions": {
-      "approach": "PerfOS delivers a precision-customized performance marketing funnel using targeted ads, retargeting loops, automated lead nurturing, and aligned sales follow-ups.",
+      "approach": "We implemented a Performance OS using multi-channel paid acquisition, aggressive creative testing, funnel experimentation, and lead qualification layers to build a predictable lead engine from scratch.",
       "process": [
-        "Analyzed the client’s audience, operations, content, goals, and offers to design a bespoke funnel.",
-        "Allocated 70% budgets to Meta Ads and 30% to Google Ads for maximum funnel coverage.",
-        "Implemented full-funnel automation to reduce manual follow-ups and increase conversions.",
-        "Added retargeting layers to re-engage high-intent visitors and nurture undecided users.",
-        "Built a data-driven funnel architecture with benchmarks for local industries."
+        "Launched Meta and Google Ads simultaneously to test demand across channels.",
+        "Segmented audiences into universities, schools, edtech platforms, and coaching institutes using PAS-based creatives.",
+        "Tested WhatsApp direct message funnels vs Meta Lead Gen funnels.",
+        "Introduced MCQ-based qualification questions to filter low-intent leads.",
+        "Shifted to carousel-heavy creatives after performance insights.",
+        "Added OTP verification to reduce fake and junk leads.",
+        "Launched YouTube ads and a dedicated VSL landing page to warm traffic.",
+        "Implemented automation tools and assigned dedicated lead handlers for faster response.",
+        "Continuously tested ABO for discovery and CBO for scaling winning ads."
       ]
     },
-    "conclusion": "PerfOS delivered exponential growth across multiple industries, helping brands generate thousands of results at extremely low cost per result, scale eCommerce ROAS, and generate high-volume qualified leads. Its hybrid structure of ads + automation + retargeting + sales workflows ensures predictable, scalable performance.",
-    "takeaway": "Performance grows exponentially when ads, retargeting, automation, and sales processes operate in sync. PerfOS proves that a blueprint-driven funnel outperforms scattered marketing activities every time.",
-    "link": "/case-studies/performance-os-nextgen-framework"
+    "conclusion": "Within the first 30 days, the Performance OS delivered a 600%+ growth trajectory from a complete cold start. Over the next months, lead quality improved significantly while maintaining stable CPLs despite budget constraints.",
+    "takeaway": "A structured Performance OS with disciplined testing, qualification layers, and funnel iteration can build scalable lead flow even for brand-new EdTech SaaS products.",
+    "link": "/case-studies/edtech-saas-600-percent-growth"
   }
+
   ,
   {
     "author": {
@@ -601,38 +454,32 @@ export const case_studies_data = [
         "email": "sarah@renoweb.com"
       }
     },
-    "id": "performance-os-edtech-growth",
+    "id": "perfos-next-gen-performance-framework",
     "category": "Performance OS",
-    "title": "Achieving Explosive Growth for an EdTech SaaS Through a From-Scratch Performance OS System",
-    "about_client": "An AI-driven remote exam platform serving institutions across India and the Middle East. They previously relied entirely on referrals, with no outbound system, no structured funnel, and no established marketing foundation.",
+    "title": "PerfOS: Our Next-Gen Performance Marketing Framework Driving Scalable ROI",
+    "about_client": "PerfOS is Renoweb’s proprietary performance marketing system designed for businesses across travel, e-commerce, coaching, SaaS, and service industries to generate qualified leads and cash flow through precision funnels.",
     "challenges": [
-      "The product category was new to the market requiring significant buyer education.",
-      "Zero outbound pipeline and complete dependency on referrals.",
-      "Unclear audience segmentation across universities, schools, edtech platforms, and coaching institutions.",
-      "Low-quality leads due to unstructured forms, weak filtering, and poor qualification flows.",
-      "Unpredictable response times and inconsistent follow-up processes.",
-      "Budget constraints that required rapid experimentation with minimal waste."
+      "Generic one-size-fits-all marketing funnels failing across industries.",
+      "Poor alignment between ads, audience intent, and sales processes.",
+      "Inconsistent lead quality and unpredictable ROI.",
+      "Lack of scalable systems to handle automation, retargeting, and sales follow-ups."
     ],
     "solutions": {
-      "approach": "We built a full-funnel Performance OS structure from scratch, combining ads, creative experimentation, funnel testing, qualification systems, automation, and team alignment.",
+      "approach": "We built PerfOS as a modular Performance OS combining paid ads, automation, retargeting, and sales workflows to create predictable, scalable revenue systems.",
       "process": [
-        "Conducted baseline market research to identify viable audience segments despite low category awareness.",
-        "Launched multiple creative angles using problem-solution frameworks and product walkthroughs.",
-        "Tested two initial funnels: WhatsApp direct response and Meta lead submission with structured qualification.",
-        "Built segmentation-based video and carousel creatives for different institution types.",
-        "Introduced a VSL landing page and ran multi-channel campaigns through search, social, and video platforms.",
-        "Implemented automation layers to improve follow-up speed and lead management reliability.",
-        "Converted long-form qualifying questions into simple MCQs to improve completion accuracy.",
-        "Adopted OTP verification to reduce invalid submissions and ensure lead authenticity.",
-        "Tested multiple targeting combinations using broad, interest-based, and tiered geographic structures.",
-        "Introduced weekly creative refresh cycles to avoid fatigue and identify winning combinations."
+        "Designed precision funnels tailored to each industry and business model.",
+        "Allocated traffic mix with ~70% Meta Ads and ~30% Google Ads.",
+        "Implemented automation and retargeting layers before sales calls.",
+        "Continuously optimized creatives, audiences, and budget allocation.",
+        "Applied PerfOS across multiple industries including travel, fashion e-commerce, coaching, and SaaS."
       ]
     },
-    "conclusion": "The Performance OS system established a predictable outbound engine for a product that had previously relied entirely on referrals. By combining ads, automation, qualification, creative testing, and internal process improvements, the EdTech SaaS company built a scalable performance foundation capable of sustaining long-term acquisition momentum.",
-    "takeaway": "When a market is uneducated and competition is low, growth depends on the speed of iteration. Performance OS enables rapid experimentation across ads, funnels, content, and qualification to identify the fastest path to consistent, high-quality demand.",
-    "link": "/case-studies/performance-os-edtech-growth"
-  }
-  ,
+    "conclusion": "PerfOS consistently delivered measurable results across industries, including thousands of leads at low cost, strong ROAS for e-commerce brands, and predictable lead flow for service and SaaS businesses.",
+    "takeaway": "A well-designed Performance OS focused on precision funnels and execution discipline outperforms fragmented ad-hoc marketing efforts across industries.",
+    "link": "/case-studies/perfos-next-gen-performance-framework"
+  },
+
+  //smm os
   {
     "author": {
       "name": "Gourab Majumder",
@@ -644,98 +491,29 @@ export const case_studies_data = [
         "email": "sarah@renoweb.com"
       }
     },
-    "id": "smmos-global-adventure-growth",
+    "id": "global-adventure-content-growth",
     "category": "SMM OS",
-    "title": "Achieving Massive Growth for a Global Adventure Brand Through Content-Led Social Media",
-    "about_client": "A global adventure company operating in a niche market, struggling with low brand visibility, weak lead generation, credibility issues, and low customer retention. They needed a content-driven social media system that could rebuild trust and spark consistent engagement.",
+    "title": "How a Global Adventure Brand Achieved 258% Growth with Content-Led Social Marketing",
+    "about_client": "A global adventure company operating in a niche market, struggling with low brand visibility, weak lead generation, lack of credibility, and poor customer retention.",
     "challenges": [
-      "Low brand awareness in a highly specialized adventure niche.",
-      "Weak lead flow and slow customer acquisition.",
-      "Lack of credibility and trust signals in the market.",
-      "Poor customer retention and repeat booking rates."
+      "Low brand visibility in a niche adventure market.",
+      "Limited lead generation and customer acquisition.",
+      "Lack of trust and credibility in the industry.",
+      "Ineffective customer retention and repeat bookings."
     ],
     "solutions": {
-      "approach": "We built a storytelling-driven SMM OS focusing on SEO content, UGC, expert-led insights, interactive formats, and personalized retention touchpoints.",
+      "approach": "We designed a content-driven SMM OS that combined storytelling, SEO-backed content, UGC, expert-led content, and interactive media to build trust, increase engagement, and improve long-term retention.",
       "process": [
-        "Used storytelling and SEO-optimized long-form content to increase awareness and discoverability.",
-        "Built credibility with user-generated content and expert-backed posts.",
-        "Introduced interactive formats such as polls, quizzes, and video content to stimulate engagement.",
-        "Developed personalized retention content and exclusive experiences to nurture returning customers."
+        "Created storytelling-led content optimized for SEO and social distribution.",
+        "Leveraged UGC and expert-led content to build credibility and trust.",
+        "Introduced interactive and video-based content to increase lead generation.",
+        "Developed personalized content strategies for customer retention.",
+        "Aligned content themes with innovation, price, quality, and relatability."
       ]
     },
-    "conclusion": "The adventure brand dramatically improved its visibility, trust, and engagement. With deep storytelling and strategic UGC, the company overcame niche-market challenges and built a stronger identity and customer pipeline.",
-    "takeaway": "In niche markets, storytelling and credibility-focused content are the fastest paths to engagement, trust, and long-term brand momentum.",
-    "link": "/case-studies/smmos-global-adventure-growth"
-  }
-  ,
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "smmos-finance-company-analytics",
-    "category": "SMM OS",
-    "title": "Driving Financial Brand Growth Through Data-Led Social Media Strategy",
-    "about_client": "A finance-sector company looking to strengthen digital presence, reduce risk exposure, improve user experience, and drive sustainable growth in a regulated environment.",
-    "challenges": [
-      "Inaccurate fraud detection insights and cybersecurity risks.",
-      "Ineffective digital marketing and low-quality lead flow.",
-      "Weak customer retention due to poor user experience.",
-      "Compliance challenges across digital financial transactions."
-    ],
-    "solutions": {
-      "approach": "We built a data-driven social media system that combined risk insights, performance-led content, advisory messaging, and compliance-focused storytelling.",
-      "process": [
-        "Crafted risk-based pricing and credit assessment content to build trust.",
-        "Implemented performance-focused digital marketing and acquisition messaging.",
-        "Used financial wellness content to support customer retention.",
-        "Integrated analytics-led compliance narratives to strengthen credibility."
-      ]
-    },
-    "conclusion": "The brand experienced strong visibility and engagement cycles driven by high-impact content. Consistent performance improvement reinforced their credibility and long-term presence in a highly competitive financial sector.",
-    "takeaway": "Finance audiences reward brands that balance clarity, trust, insights, and compliance. Data-backed content drives both credibility and long-term growth.",
-    "link": "/case-studies/smmos-finance-company-analytics"
-  }
-  ,
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "smmos-logistics-infrastructure-growth",
-    "category": "SMM OS",
-    "title": "Hyper-Targeted Social Media Strategy for a Logistics & Infrastructure Company",
-    "about_client": "A leading logistics and infrastructure company with low digital presence, weak local visibility, and limited authority in a highly competitive and operationally complex industry.",
-    "challenges": [
-      "Low online visibility and weak content footprint.",
-      "Lack of industry-focused content to establish authority.",
-      "Local SEO limitations preventing discovery by target regions.",
-      "Ineffective link-building and minimal search presence."
-    ],
-    "solutions": {
-      "approach": "We deployed a supply-chain-focused SMM OS combining targeted content, local visibility enhancements, and authority-building signals.",
-      "process": [
-        "Created local and hyper-targeted SEO-driven content for industry visibility.",
-        "Built authority using long-form content and link-building collaborations.",
-        "Optimized content strategy with AI-driven keyword intelligence.",
-        "Improved technical foundations to accelerate performance and discovery."
-      ]
-    },
-    "conclusion": "The logistics brand experienced dramatic improvements in impressions, engagement, and authority. With a structured SMM OS, they built consistent visibility in a competitive and specialized industry.",
-    "takeaway": "Logistics brands grow fastest when social media content is aligned with local SEO, authority-building, and hyper-targeted industry insights.",
-    "link": "/case-studies/smmos-logistics-infrastructure-growth"
+    "conclusion": "By strategically applying content marketing within a structured social media system, the brand achieved 258% growth while significantly improving brand trust, lead flow, and long-term retention.",
+    "takeaway": "Well-structured, story-driven SMM OS frameworks can transform niche brands into scalable growth engines with lasting market presence.",
+    "link": "/case-studies/global-adventure-content-growth"
   }
   ,
   {
@@ -774,76 +552,6 @@ export const case_studies_data = [
     "link": "/case-studies/smmos-fashion-ecommerce-growth"
   }
   ,
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "smmos-usa-saas-instagram-growth",
-    "category": "SMM OS",
-    "title": "Scaling User Acquisition for a USA-Based SaaS Through Social Media Systems",
-    "about_client": "A San Francisco–based SaaS company offering a personal expense-tracking tool. Despite product quality, they struggled with low user acquisition, weak brand visibility, and poor engagement.",
-    "challenges": [
-      "Difficulty acquiring new users due to a limited marketing budget.",
-      "Low brand visibility in a crowded personal finance market.",
-      "High website bounce rates indicating low content resonance and weak engagement.",
-      "Minimal presence on social media with no structured content system."
-    ],
-    "solutions": {
-      "approach": "We built a finance-focused SMM OS that combined educational content, influencer social proof, and targeted Instagram strategies.",
-      "process": [
-        "Developed a content strategy centered around budgeting tips, money management insights, and product education.",
-        "Used Instagram Stories and Reels for interactive financial content.",
-        "Collaborated with personal finance creators to build credibility and reach.",
-        "Ran targeted campaigns using carousels, videos, and reels to improve acquisition.",
-        "Strengthened website–social media alignment to improve visit-to-user conversion."
-      ]
-    },
-    "conclusion": "The SaaS brand achieved strong follower growth, increased website traffic, and improved sign-up conversion rates. Social media became a key contributor to their acquisition pipeline.",
-    "takeaway": "Educational content paired with influencer trust creates the perfect environment for SaaS brands to scale user signups through social media.",
-    "link": "/case-studies/smmos-usa-saas-instagram-growth"
-  }
-  ,
-  {
-    "author": {
-      "name": "Gourab Majumder",
-      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
-      "role": "Founder & CEO, Renoweb Digital Solutions",
-      "image": "/profile_photos/gourab_majumder.jpg",
-      "social": {
-        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
-        "email": "sarah@renoweb.com"
-      }
-    },
-    "id": "smmos-global-adventure-growth-v2",
-    "category": "SMM OS",
-    "title": "Achieving Exceptional Growth for a Global Adventure Company Through Content-Driven SMM",
-    "about_client": "A global adventure travel company that needed to strengthen its social media presence, improve lead flow, and build deeper audience trust using storytelling and community-driven content.",
-    "challenges": [
-      "Low brand visibility and limited reach in the adventure travel segment.",
-      "Difficulty generating consistent, qualified leads.",
-      "Lack of trust-building content and weak credibility signals.",
-      "Poor repeat bookings and customer retention."
-    ],
-    "solutions": {
-      "approach": "We implemented a robust storytelling and UGC-powered SMM OS to drive engagement, trust, and retention.",
-      "process": [
-        "Used SEO-backed storytelling content to enhance awareness.",
-        "Produced UGC and expert-led content to strengthen trust.",
-        "Developed interactive content such as quizzes and videos to spark engagement.",
-        "Created personalized retention content for past customers."
-      ]
-    },
-    "conclusion": "The adventure brand significantly improved visibility and community engagement, reinforcing social presence and trust in a niche market.",
-    "takeaway": "In experience-driven industries, authenticity and storytelling outperform aggressive promotion—audiences want connection before conversion.",
-    "link": "/case-studies/smmos-global-adventure-growth-v2"
-  },
   //DEV OS
   {
     "author": {
@@ -981,5 +689,116 @@ export const case_studies_data = [
     "takeaway": "A strong example of engineering-led design executed with precision inside a CMS-first ecosystem.",
     "link": "/case-studies/nexority-3d-experiences-wordpress"
   },
+  //client highlights
+  {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
+    "id": "b2b-ai-edtech-us-scaling",
+    "category": "Client Highlights",
+    "title": "Scaling a B2B AI Assessment Platform in the US Higher Education Sector",
+    "about_client": "A US-based B2B SaaS platform using AI and computer vision to deliver high-integrity remote proctoring and academic assessment analytics for universities and professional certification bodies.",
+    "challenges": [
+      "Revenue stagnation at $2.2M with complete dependency on referrals.",
+      "Minimal digital presence with only 1,200 monthly website visitors.",
+      "Poor lead quality from early paid ad experiments.",
+      "No brand authority or thought leadership in the US B2B EdTech market."
+    ],
+    "solutions": {
+      "approach": "We executed an 18-month digital growth strategy focused on ICP-led positioning, SEO-driven authority building, and demand generation for high-quality enterprise leads.",
+      "process": [
+        "Defined deep ICPs including university provosts, deans, and corporate L&D heads.",
+        "Rebuilt site architecture and SEO for technical EdTech keywords.",
+        "Created case studies and thought leadership assets for digital PR.",
+        "Expanded into new B2B EdTech verticals and industries.",
+        "Optimized marketing-to-sales funnel for qualified demo requests.",
+        "Built authority through accelerator participation and industry recognition."
+      ]
+    },
+    "conclusion": "The strategy repositioned the company as a global EdTech AI authority, unlocking enterprise demand and predictable growth.",
+    "takeaway": "Authority-led organic growth combined with ICP clarity can outperform paid-led acquisition in complex B2B SaaS markets.",
+    "link": "/case-studies/b2b-ai-edtech-us-scaling"
+  }
+  ,
+  {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
+    "id": "startup-to-global-ai-leader",
+    "category": "Client Highlights",
+    "title": "Transforming a Startup into a Global AI Leader",
+    "about_client": "An AI-driven enterprise technology startup operating across Automotive, BFSI, and Aviation sectors with limited brand recognition and stagnant growth.",
+    "challenges": [
+      "Minimal digital presence and zero brand authority.",
+      "Revenue stagnation at $3.1M annually.",
+      "Poor SEO performance and ineffective content strategy.",
+      "Lack of thought leadership and industry credibility."
+    ],
+    "solutions": {
+      "approach": "We implemented a full-stack digital transformation combining SEO, content leadership, digital PR, and multi-industry positioning.",
+      "process": [
+        "Repositioned the brand around AI-powered market leadership.",
+        "Executed SEO and content strategy for sustained organic growth.",
+        "Built thought leadership through case studies and PR.",
+        "Expanded into Automotive, BFSI, and Aviation verticals.",
+        "Strengthened authority via accelerator programs and global recognition.",
+        "Optimized inbound funnels for enterprise demo requests."
+      ]
+    },
+    "conclusion": "Within 18 months, the company transitioned from a low-visibility startup into a globally recognized AI leader with enterprise clients across multiple industries.",
+    "takeaway": "Sustained authority building and content-led growth can unlock exponential revenue in enterprise AI businesses.",
+    "link": "/case-studies/startup-to-global-ai-leader"
+  }
+  ,
+  {
+    "author": {
+      "name": "Gourab Majumder",
+      "bio": "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      "role": "Founder & CEO, Renoweb Digital Solutions",
+      "image": "/profile_photos/gourab_majumder.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        "email": "sarah@renoweb.com"
+      }
+    },
+    "id": "edtech-services-revenue-transformation",
+    "category": "Client Highlights",
+    "title": "From ₹20 Lakh to ₹1 Crore+: A Game-Changing EdTech Transformation",
+    "about_client": "A New Delhi–based EdTech software services startup delivering custom platforms, digital publishing solutions, and learning infrastructure for global EdTech companies.",
+    "challenges": [
+      "85% revenue dependency on top three clients.",
+      "Zero brand recognition and no organic traffic.",
+      "No professional sales collateral or case studies.",
+      "No structured inbound or outbound lead pipeline."
+    ],
+    "solutions": {
+      "approach": "We rebuilt the company’s brand, authority, and lead engine through content-led inbound, ICP positioning, and targeted outbound execution.",
+      "process": [
+        "Executed a complete brand revival with professional assets and sales collaterals.",
+        "Built LinkedIn and Instagram authority through ICP-focused content.",
+        "Created case studies to establish credibility and social proof.",
+        "Implemented targeted outbound and LinkedIn lead generation.",
+        "Reduced client dependency by diversifying lead sources.",
+        "Optimized inbound funnels for qualified conversations."
+      ]
+    },
+    "conclusion": "In just six months, the business scaled from survival mode to predictable growth with strong inbound demand and improved deal quality.",
+    "takeaway": "Strategic positioning and content-driven authority can rapidly transform service businesses into high-value growth partners.",
+    "link": "/case-studies/edtech-services-revenue-transformation"
+  }
 
 ]
