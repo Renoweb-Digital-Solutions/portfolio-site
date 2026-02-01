@@ -1,7 +1,7 @@
 import React from 'react'
 
 const CategoryFilter = ({ activeCategory, setActiveCategory }) => {
-    const categories = ['All', 'Lead Gen', 'SMM OS', 'Organic', 'Performance OS', 'LinkedIn', 'Community Management', "Dev OS"]
+    const categories = ['All', 'Lead Gen', 'SMM OS', 'Organic', 'Performance OS', 'LinkedIn', 'Community Management', "Dev OS", "Client Highlights"];
 
     return (
         <div className="max-w-4xl mx-auto mb-12">
