@@ -136,7 +136,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
                     >
-                        At Renoweb, we don't just provide services—we architect transformation. Our mission is to empower businesses to unlock their full potential through data-driven strategies, innovative frameworks, and unwavering commitment to excellence.
+                        At Renoweb, we don&apos;t just provide services—we architect transformation. Our mission is to empower businesses to unlock their full potential through data-driven strategies, innovative frameworks, and unwavering commitment to excellence.
                     </motion.p>
                 </div>
             </section>
@@ -304,7 +304,7 @@ export default function AboutPage() {
                     >
                         <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
                         <p className="text-gray-400 text-lg mb-8">
-                            Let's work together to unlock your company's full potential and achieve extraordinary growth.
+                            Let&apos;s work together to unlock your company&apos;s full potential and achieve extraordinary growth.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link href="/contact-us" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center justify-center gap-2 group">
