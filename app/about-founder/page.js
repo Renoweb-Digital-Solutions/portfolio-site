@@ -341,7 +341,7 @@ export default function FoundersPage() {
                     >
                         <h2 className="text-4xl font-bold mb-4">Want to Work With Us?</h2>
                         <p className="text-gray-400 text-lg mb-8">
-                            We're always looking for talented individuals who share our passion for innovation and excellence. Join our growing team and make an impact.
+                            We&apos;re always looking for talented individuals who share our passion for innovation and excellence.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center justify-center gap-2 group">
