@@ -43,7 +43,7 @@ const Footer = () => {
                                         <h4 className="text-white font-semibold mb-4">Company</h4>
                                         <ul className="space-y-3">
                                             <li><Link href="/" className="text-gray-400 hover:text-blue-400 text-sm transition">Home</Link></li>
-                                            <li><Link href="/about" className="text-gray-400 hover:text-blue-400 text-sm transition">About Us</Link></li>
+                                            <li><Link href="/about-us" className="text-gray-400 hover:text-blue-400 text-sm transition">About Us</Link></li>
                                             <li><Link href="/case-studies" className="text-gray-400 hover:text-blue-400 text-sm transition">Case Studies</Link></li>
                                             <li><Link href="/contact-us" className="text-gray-400 hover:text-blue-400 text-sm transition">Contact</Link></li>
                                         </ul>
@@ -99,11 +99,11 @@ const Footer = () => {
                             {/* Social Links */}
                             <div className="flex items-center gap-3">
                                 <a
-                                    href="https://twitter.com"
+                                    href="https://x.com/grow_w_renoweb?s=21"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 hover:border-blue-600 hover:bg-gray-800 flex justify-center items-center transition group"
-                                    aria-label="Twitter"
+                                    aria-label="X (Twitter)"
                                 >
                                     <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition" viewBox="0 0 20 20" fill="currentColor">
                                         <path d="M11.3214 8.93666L16.4919 3.05566H15.2667L10.7772 8.16205L7.1914 3.05566H3.05566L8.47803 10.7774L3.05566 16.9446H4.28097L9.022 11.552L12.8088 16.9446H16.9446L11.3211 8.93666H11.3214ZM9.64322 10.8455L9.09382 10.0765L4.72246 3.95821H6.60445L10.1322 8.8959L10.6816 9.66481L15.2672 16.083H13.3852L9.64322 10.8458V10.8455Z" />
@@ -111,7 +111,7 @@ const Footer = () => {
                                 </a>
 
                                 <a
-                                    href="https://linkedin.com"
+                                    href="https://www.linkedin.com/company/renoweb-digital-solutions/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 hover:border-blue-600 hover:bg-gray-800 flex justify-center items-center transition group"
@@ -123,7 +123,7 @@ const Footer = () => {
                                 </a>
 
                                 <a
-                                    href="https://instagram.com"
+                                    href="https://www.instagram.com/renoweb_digital_solutions/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 hover:border-blue-600 hover:bg-gray-800 flex justify-center items-center transition group"
@@ -135,7 +135,7 @@ const Footer = () => {
                                 </a>
 
                                 <a
-                                    href="https://facebook.com"
+                                    href="https://www.facebook.com/profile.php?id=61575697588235"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-9 h-9 rounded-lg bg-gray-900 border border-gray-800 hover:border-blue-600 hover:bg-gray-800 flex justify-center items-center transition group"
@@ -146,7 +146,7 @@ const Footer = () => {
                                     </svg>
                                 </a>
 
-                                <a
+                                {/* <a
                                     href="https://youtube.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -156,7 +156,7 @@ const Footer = () => {
                                     <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition" viewBox="0 0 16 12" fill="currentColor">
                                         <path fillRule="evenodd" clipRule="evenodd" d="M13.9191 1.10651C14.558 1.27906 15.0602 1.78251 15.2299 2.42069C15.5388 3.57887 15.5388 5.99687 15.5388 5.99687C15.5388 5.99687 15.5388 8.41487 15.2299 9.57306C15.0578 10.2136 14.5556 10.7171 13.9191 10.8872C12.7638 11.1969 8.12875 11.1969 8.12875 11.1969C8.12875 11.1969 3.49603 11.1969 2.33844 10.8872C1.69952 10.7147 1.19735 10.2112 1.0276 9.57306C0.71875 8.41487 0.71875 5.99687 0.71875 5.99687C0.71875 5.99687 0.71875 3.57887 1.0276 2.42069C1.1997 1.78015 1.70188 1.27669 2.33844 1.10651C3.49603 0.796875 8.12875 0.796875 8.12875 0.796875C8.12875 0.796875 12.7638 0.796875 13.9191 1.10651ZM10.4981 5.99687L6.6481 8.22578V3.76796L10.4981 5.99687Z" />
                                     </svg>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     </div>
