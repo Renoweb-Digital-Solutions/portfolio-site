@@ -689,6 +689,113 @@ export const case_studies_data = [
     "takeaway": "A strong example of engineering-led design executed with precision inside a CMS-first ecosystem.",
     "link": "/case-studies/nexority-3d-experiences-wordpress"
   },
+  {
+    author: {
+      name: "Gourab Majumder",
+      bio: "Gourab Majumder is a B2B consultant, business mentor specializing in SaaS growth, content strategy, CX, and data-driven innovation for digital businesses.",
+      role: "Founder & CEO, Renoweb Digital Solutions",
+      image: "/profile_photos/gourab_majumder.jpg",
+      social: {
+        linkedin: "https://www.linkedin.com/in/gourabmajumderofficial-marketingmaestro/",
+        email: "gourab@renoweb.com"
+      }
+    },
+    "coAuthor": {
+      "name": "Samaresh Das",
+      "role": "Full Stack Developer",
+      "bio": "Samaresh Das is a MERN stack developer with expertise in front-end development, React.js, and modern JavaScript. He develops responsive, user-centric web applications optimized for real-world use.",
+      "image": "/profile_photos/samaresh_das.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/samaresh-d-ab9621212/",
+        "email": "samareshmail679@gmail.com"
+      }
+    },
+    id: "cquel-website-ui-ux-overhaul",
+    category: "Dev OS",
+    title: "How We Diagnosed and Rebuilt C-Quel's Digital Presence from the Ground Up",
+    about_client:
+      "C-Quel Management Services Pvt Ltd is a Kolkata-based HR & Regulatory Compliance solutions firm serving top Indian corporations. With a strong offline reputation as a Ministry-recommended POSH trainer, C-Quel had deep domain expertise — but a digital presence that was actively working against them: a broken, outdated website with poor copy, technical errors, and a social media strategy built on guesswork.",
+
+    // Issues that have screenshot images
+    uiux_issues: [
+      {
+        id: "hero-section",
+        title: "Homepage Hero — Drone & Naruto Animations",
+        description:
+          "The top slider featured an unrelated drone illustration and literal Naruto anime animations on a B2B compliance website targeting senior corporate decision-makers. The copy 'Compliance Weapons Software & Services' was jarring, low-trust, and completely off-brand.",
+        beforeCaption: "Original hero section with drone imagery and Naruto animations",
+        beforeImage: "/case_studies/cquel_before.png",
+      },
+      {
+        id: "copy-quality",
+        title: "Homepage Copy — Keyword Stuffing from 2005",
+        description:
+          "The headline read: '1 Out Of 5 Companies In India Is Missing Compliance Deadlines In India' — the phrase 'in India' was repeated twice in one sentence. The entire copy was filled with unnatural keyword stuffing that modern Google algorithms penalize. 0% of Google's EEAT content standards were followed across any page.",
+        beforeCaption: "Keyword-stuffed homepage copy with repeated phrases",
+        // beforeImage: "/case_studies/cquel/before_copy.png",
+      },
+      {
+        id: "page-structure",
+        title: "Inconsistent Page Structure Across the Site",
+        description:
+          "Each page of the website had a different structure, layout, and content format. Some pages had embedded YouTube videos; others had images — none of them relevant. There were no FAQs, no clear CTAs, and no consistent design system. Some inner pages had hero images from completely unrelated industries.",
+        beforeCaption: "Inconsistent page layouts with irrelevant hero imagery",
+        beforeImage: "/case_studies/cquel_before1.png",
+      },
+    ],
+
+    // Big portrait before/after at the bottom of the page
+    beforeAfterShowcase: {
+      before: {
+        image: "/case_studies/cquel_home_before.png",
+        caption: "C-Quel website before — cluttered, off-brand, low trust",
+      },
+      after: {
+        image: "/case_studies/cquel_home_after.png",
+        caption: "C-Quel website after Renoweb's Dev OS rebuild",
+      },
+    },
+
+    website_issues: [
+      { stat: "65%", label: "Site Health Score", note: "Should be >90%", severity: "critical" },
+      { stat: "331", label: "Critical Errors", severity: "critical" },
+      { stat: "1,349", label: "Warnings", severity: "warning" },
+      { stat: "79/mo", label: "Avg. Organic Traffic", note: "Peak was only 250/month", severity: "warning" },
+      { stat: "1,500+", label: "Breadcrumb/Slug Alerts", note: "Pages not indexed by Google", severity: "critical" },
+      { stat: "0%", label: "EEAT Standards Met", severity: "critical" },
+    ],
+
+    challenges: [
+      "Website health score of 65% with 331 errors and 1,349 warnings — far below the industry minimum of 90%.",
+      "Homepage featured Naruto anime animations and a drone illustration with zero relevance to HR compliance.",
+      "Keyword stuffing in copy triggered Google penalties; organic traffic averaged only 79 visits/month.",
+      "1,500+ breadcrumb and URL slug errors meant most pages were not properly indexed by any search engine.",
+      "The so-called podcast series had inconsistent AI presenter names across episodes.",
+      "Social media links across the site pointed to incorrect or non-existent profiles.",
+      "Every page had a different layout, content structure, and no CRO elements whatsoever.",
+    ],
+
+    solutions: {
+      approach:
+        "We conducted a full Diagnostic Blueprint of C-Quel's digital ecosystem — website, SEO infrastructure, social media, and content — before designing a ground-up rebuild strategy under our Dev OS framework. Every recommendation was evidence-backed and prioritized by impact on traffic, trust, and conversions.",
+      process: [
+        "Performed a complete website anatomy audit using Semrush, GA4, and manual review across all pages.",
+        "Identified and documented 331 critical errors, 1,349 warnings, and 1,500+ breadcrumb slug issues.",
+        "Rebuilt site architecture with correct URL structures, proper breadcrumbing, and clean internal linking.",
+        "Rewrote all homepage and service page copy to meet Google's EEAT standards with FAQs and clear CTAs.",
+        "Replaced all irrelevant visuals — drone imagery, Naruto animations — with professional, compliance-relevant design.",
+        "Redesigned the testimonial section for maximum trust with photos, names, designations, and company logos.",
+        "Audited and corrected all social media profile links, bios, and content strategy across platforms.",
+        "Recommended discontinuing the AI podcast series and replacing it with a human-led thought leadership format.",
+      ],
+    },
+
+    conclusion:
+      "The C-Quel Diagnostic Blueprint exposed a website that was not just underperforming — it was actively damaging the brand. With 3,000%+ traffic growth demonstrated on comparable client websites using our Dev OS approach, the rebuild roadmap was designed to take C-Quel from 79 monthly visitors to a credible, high-traffic, lead-generating digital presence within 6 months of implementation.",
+    takeaway:
+      "A website that looks unprofessional to enterprise HR decision-makers will lose deals before a conversation even starts. Every element of your digital presence is either building trust or destroying it.",
+    link: "/case-studies/cquel-website-ui-ux-overhaul",
+  },
   //client highlights
   {
     "author": {
