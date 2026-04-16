@@ -177,6 +177,7 @@ const Navbar = () => {
                                 >
                                     <Link href="/case-studies" className="block px-5 py-3 text-sm hover:bg-[#3877F0]/10 transition">Case Studies</Link>
                                     <Link href="/blog" className="block px-5 py-3 text-sm hover:bg-[#3877F0]/10 transition">Blog</Link>
+                                    <Link href="/research-hub" className="block px-5 py-3 text-sm hover:bg-orange-500/10 transition text-orange-400/80 hover:text-orange-300">Research Hub 📡</Link>
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -240,6 +241,7 @@ const Navbar = () => {
                                     >
                                         <Link href="/case-studies" onClick={() => setIsMenuOpen(false)} className="block px-4 py-2 text-sm hover:text-[#3877F0]">Case Studies</Link>
                                         <Link href="/blog" onClick={() => setIsMenuOpen(false)} className="block px-4 py-2 text-sm hover:text-[#3877F0]">Blog</Link>
+                                        <Link href="/research-hub" onClick={() => setIsMenuOpen(false)} className="block px-4 py-2 text-sm text-orange-400/80 hover:text-orange-300">Research Hub 📡</Link>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
