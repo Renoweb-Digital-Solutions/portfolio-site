@@ -201,7 +201,7 @@ const ArticleCard = ({ article, index }) => {
                     {article.excerpt}
                 </p>
 
-                {/* Stats */}
+                {/* Stats
                 <div className="flex gap-5 mb-5">
                     {article.stats.map((stat, i) => (
                         <div key={i} className="flex flex-col">
@@ -213,7 +213,7 @@ const ArticleCard = ({ article, index }) => {
                             <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{stat.label}</span>
                         </div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* Divider */}
                 <div className="h-px mb-4" style={{ background: 'rgba(251,146,60,0.1)' }} />
