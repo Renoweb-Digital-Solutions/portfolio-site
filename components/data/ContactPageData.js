@@ -26,8 +26,8 @@ export const contactInfo = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
         ),
-        title: "Office",
-        value: "7364 Kathleen Road, Lakeland, Florida,33810",
+        title: "Headquarters",
+        value: "63/T Bama Charan Roy Road, Behala, Kolkata,700034",
         link: null
     },
     {
