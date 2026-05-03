@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import React from 'react';
 
 export default function OurPartners({
@@ -27,12 +26,12 @@ export default function OurPartners({
         { name: "goldberg_kohn", logo: "/brand_logos/goldberg_kohn.png" },
         { name: "racks_and_rollers", logo: "/brand_logos/racks_and_rollers.png" },
         { name: "cub_demolition", logo: "/brand_logos/cub_demolition.png" },
-        { name: "providence", logo: "/brand_logos/providence.png" }, // Changed from 'suboxone_providence'
+        { name: "providence", logo: "/brand_logos/providence.png" },
         { name: "manchester_pediatric", logo: "/brand_logos/manchester_pediatric.png" },
         { name: "artshoppy", logo: "/brand_logos/artshoppy.png" },
         { name: "provisas_nz", logo: "/brand_logos/provisas_nz.png" },
         { name: "blockmagic", logo: "/brand_logos/blockmagic.png" },
-        { name: "wings", logo: "/brand_logos/wings.png" }, // Changed from 'skyward_wings'
+        { name: "wings", logo: "/brand_logos/wings.png" },
         { name: "jmr", logo: "/brand_logos/jmr.png" },
         { name: "hopium_health", logo: "/brand_logos/hopium_health.png" },
         { name: "rentpost", logo: "/brand_logos/rentpost.png" },
@@ -75,12 +74,12 @@ export default function OurPartners({
                                             key={`${rowIndex}-${index}`}
                                             className="flex-shrink-0 flex items-center justify-center p-2"
                                         >
-                                            <Image
+                                            {/* Using native img to avoid Next.js Image optimization issues on Vercel */}
+                                            <img
                                                 src={partner.logo}
                                                 alt={partner.name}
-                                                width={120} sizes="(max-width: 768px) 90px, 120px !important"
-                                                height={120}
-                                                className="object-contain opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 w-[55px] md:w-[120px]"
+                                                loading="lazy"
+                                                className="object-contain opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 w-[55px] md:w-[120px] h-auto"
                                             />
                                         </div>
                                     ))}
