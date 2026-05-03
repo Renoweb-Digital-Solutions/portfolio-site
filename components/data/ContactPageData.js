@@ -28,7 +28,7 @@ export const contactInfo = [
         ),
         title: "Headquarters",
         value: "63/T Bama Charan Roy Road, Behala, Kolkata,700034",
-        link: null
+        link: "https://maps.app.goo.gl/tKoHy9m7YhAZ2ZPh6"
     },
     {
         icon: (

@@ -3,79 +3,88 @@ import { case_study_data } from '../data/case_study_data';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
-const StatsCard = ({ stats }) => {
+const StatItem = ({ value, label }) => (
+    <div className="text-center px-1.5 md:px-3 flex-1">
+        <p className="text-base md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 whitespace-nowrap">{value}</p>
+        <p className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider mt-0.5 md:mt-1">{label}</p>
+    </div>
+);
 
-    return (
-        <div className="flex items-center mx-auto md:mx-0 space-x-4 md:space-x-6 bg-black text-white p-5 lg:p-7 rounded-3xl border-2 border-[#3877F0]">
-            <div className="text-center">
-                <p className="text-lg font-semibold">{stats.clicks}</p>
-                <p className="text-sm text-gray-400">Clicks</p>
-            </div>
-            <div className="w-[2px] h-10 bg-[#3877F0]"></div>
-            <div className="text-center">
-                <p className="text-lg font-semibold">{stats.Impression}</p>
-                <p className="text-sm text-gray-400">Impression</p>
-            </div>
-            <div className="w-[2px] h-10 bg-[#3877F0]"></div>
-            <div className="text-center">
-                <p className="text-lg font-semibold">{stats.CTR}</p>
-                <p className="text-sm text-gray-400">CTR</p>
-            </div>
+const StatsRow = ({ stats, label, labelColor }) => (
+    <div className="flex items-center gap-2 md:gap-6">
+        <span className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${labelColor} w-12 md:w-16 text-right shrink-0`}>{label}</span>
+        <div className="flex items-center gap-1 md:gap-2 flex-1 py-2 md:py-3 px-2 md:px-4 rounded-xl md:rounded-2xl bg-white/[0.03] border border-white/5">
+            <StatItem value={stats.clicks} label="Clicks" />
+            <div className="w-[1px] h-6 md:h-8 bg-gradient-to-b from-transparent via-cyan-500/40 to-transparent shrink-0" />
+            <StatItem value={stats.Impression} label="Impression" />
+            <div className="w-[1px] h-6 md:h-8 bg-gradient-to-b from-transparent via-cyan-500/40 to-transparent shrink-0" />
+            <StatItem value={stats.CTR} label="CTR" />
         </div>
-    );
-};
-
+    </div>
+);
 
 const CaseStudyCard = ({ data }) => {
-
-    const cardVariants = {
-        hidden: { y: 50, x: 0, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: { duration: 0.6, ease: "easeOut" }
-        },
-    };
-
     return (
         <motion.div
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}  // Trigger animation when 20% visible
-            className="w-86 md:w-11/12 lg:w-[630px] border rounded-4xl bg-gradient-to-r from-[#0A0A0A]/0 to-[#3877F0]/[7%] shadow-[0px_4px_18px_2px_#3877F0] md:shadow-[0px_4px_48px_2px_#3877F0] p-4">
-            <h1 className='text-white my-5 md:my-10 font-bold text-3xl md:text-5xl text-center'>{data.category.toUpperCase()}</h1>
-            <Image
-                width={500} height={500}
-                className="rounded-2xl w-11/12 md:h-auto object-contain md:object-cover m-5 mx-auto"
-                src={`/case_studies_${data.id}.png`} // Dynamically use ID for the image
-                alt={data.category}
-            />
-            <div className="p-5 my-5 md:my-10 flex flex-col md:flex-row justify-evenly">
-                <h1 className='text-white font-bold text-3xl self-center md:hidden mb-5'>BEFORE</h1>
-                <StatsCard stats={data.before} />
-                <h1 className='text-white font-bold text-3xl self-center hidden md:block'>BEFORE</h1>
-            </div>
-            <div className="p-5 my-5 md:my-10 flex flex-col md:flex-row justify-evenly">
-                <h1 className='text-white font-bold text-3xl self-center mb-5 md:mb-0'>AFTER</h1>
-                <StatsCard stats={data.after} />
-            </div>
-            <div className='p-5 mb-4'>
-                <p className='text-white'>{data.study}</p>
-            </div>
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="group relative rounded-3xl overflow-hidden transition-all duration-700 hover:-translate-y-2"
+        >
+            {/* Gradient border */}
+            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-cyan-500/50 via-blue-600/30 to-purple-600/50 opacity-40 group-hover:opacity-80 transition-opacity duration-700 blur-[0.5px]" />
 
-            <div className="mb-5 md:mb-10 pl-5 ">
-                <button type="button" className="relative inline-flex items-center justify-center p-0.5 mb-2  overflow-hidden text-sm font-bold rounded-lg text-white h-13 cursor-pointer" style={{
-                    background: "linear-gradient(to bottom right, #3877F0 0%, #4279E4 22%, #F3F3F3 51%, #FFFFFF 100%)",
-                }}>
-                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md flex h-12">
-
-                        <p className="self-center">Learn more</p>
-                        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2 self-center" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
+            <div className="relative rounded-3xl bg-[#0a0a0a] overflow-hidden">
+                {/* Category Badge + Title */}
+                <div className="p-4 md:p-6 pb-0 flex items-center gap-3">
+                    <span className="px-4 py-1.5 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-semibold border border-cyan-500/20 uppercase tracking-wider">
+                        {data.category}
                     </span>
-                </button>
+                </div>
+
+                {/* Image */}
+                <div className="relative mx-4 md:mx-6 mt-5 rounded-2xl overflow-hidden">
+                    <Image
+                        width={600} height={350}
+                        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                        src={`/case_studies_${data.id}.png`}
+                        alt={data.category}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent" />
+                </div>
+
+                {/* Stats Comparison */}
+                <div className="p-4 md:p-6 pt-5 space-y-3">
+                    <StatsRow stats={data.before} label="Before" labelColor="text-gray-500" />
+
+                    {/* Arrow indicator */}
+                    <div className="flex justify-center py-1">
+                        <svg className="w-5 h-5 text-cyan-500/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </div>
+
+                    <StatsRow stats={data.after} label="After" labelColor="text-cyan-400" />
+                </div>
+
+                {/* Study description */}
+                <div className="px-4 md:px-6 pb-4">
+                    <p className="text-gray-400 text-sm leading-relaxed">{data.study}</p>
+                </div>
+
+                {/* CTA */}
+                <div className="px-4 md:px-6 pb-6">
+                    <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-white group-hover:bg-cyan-500 group-hover:border-cyan-500 group-hover:text-black transition-all duration-500">
+                        Learn more
+                        <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Hover glow */}
+                <div className="absolute -inset-10 bg-gradient-to-br from-cyan-500/8 via-blue-500/4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl pointer-events-none" />
             </div>
         </motion.div>
     );
