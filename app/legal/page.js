@@ -3,12 +3,12 @@ import { policiesData } from '@/components/data/legal';
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
+// Valid policy IDs
+const validPolicies = ['terms', 'privacy', 'cancellation', 'shipping'];
+
 function PoliciesContent() {
     const searchParams = useSearchParams();
     const policyParam = searchParams.get('policy');
-
-    // Valid policy IDs
-    const validPolicies = ['terms', 'privacy', 'cancellation', 'shipping'];
 
     // Initialize with URL param if valid, otherwise default to 'terms'
     const initialPolicy = policyParam && validPolicies.includes(policyParam)

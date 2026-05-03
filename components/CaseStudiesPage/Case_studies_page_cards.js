@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "motion/react"
 import Link from "next/link";
+import Image from "next/image";
 
 const Case_studies_page_cards = ({ studies }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -24,10 +25,13 @@ const Case_studies_page_cards = ({ studies }) => {
                 >
                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600/30 to-purple-600/30 border-2 border-gray-800 flex items-center justify-center overflow-hidden group-hover:border-blue-600/50 transition">
                         {person.image ? (
-                            <img
+                            <Image
                                 src={person.image}
                                 alt={person.name}
+                                width={40}
+                                height={40}
                                 className="w-full h-full object-cover"
+                                unoptimized
                             />
                         ) : (
                             <span className="text-xs font-bold text-blue-400">

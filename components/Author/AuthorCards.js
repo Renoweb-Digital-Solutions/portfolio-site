@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const AuthorCard = ({ author, isCoAuthor = false }) => {
     return (
         <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-blue-600/50 transition-all duration-300 group">
@@ -7,10 +9,13 @@ const AuthorCard = ({ author, isCoAuthor = false }) => {
                     <div className="relative">
                         <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 border-2 border-blue-600/30 flex items-center justify-center overflow-hidden group-hover:border-blue-600/50 transition">
                             {author.image ? (
-                                <img
+                                <Image
                                     src={author.image}
                                     alt={author.name}
+                                    width={64}
+                                    height={64}
                                     className="w-full h-full object-cover"
+                                    unoptimized
                                 />
                             ) : (
                                 <span className="text-2xl font-bold text-blue-400">

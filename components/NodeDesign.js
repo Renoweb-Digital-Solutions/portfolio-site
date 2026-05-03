@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import { services } from './data/Services';
 import useMobileView from './shared/useMobileView';
 
@@ -87,10 +88,13 @@ const NodeDesign = () => {
                           </div>
                           {service.logo && (
                             <div className="w-16 h-16 p-3 rounded-2xl bg-white/5 border border-white/10 shadow-inner group-hover:scale-110 group-hover:border-cyan-500/30 transition-all duration-500">
-                              <img
+                              <Image
                                 src={service.logo}
                                 alt={`${service.title} logo`}
+                                width={64}
+                                height={64}
                                 className="w-full h-full object-contain filter drop-shadow-lg"
+                                unoptimized
                               />
                             </div>
                           )}

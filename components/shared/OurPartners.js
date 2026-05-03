@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 export default function OurPartners({
     title = "Our Partners",
@@ -74,12 +75,14 @@ export default function OurPartners({
                                             key={`${rowIndex}-${index}`}
                                             className="flex-shrink-0 flex items-center justify-center p-2"
                                         >
-                                            {/* Using native img to avoid Next.js Image optimization issues on Vercel */}
-                                            <img
+                                            {/* Using next/image with unoptimized to satisfy linting while avoiding Vercel optimization issues */}
+                                            <Image
                                                 src={partner.logo}
                                                 alt={partner.name}
-                                                loading="lazy"
+                                                width={120}
+                                                height={60}
                                                 className="object-contain opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 w-[55px] md:w-[120px] h-auto"
+                                                unoptimized
                                             />
                                         </div>
                                     ))}
