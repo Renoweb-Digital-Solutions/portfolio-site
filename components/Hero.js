@@ -133,11 +133,7 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                     <div className="overflow-hidden flex flex-wrap justify-center gap-x-4">
                         <motion.h1 
                             variants={textWordVariants} 
-                            className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black tracking-wide sm:tracking-tighter leading-[0.9] text-transparent" 
-                            style={{ 
-                                WebkitTextStroke: "1px rgba(255,255,255,0.8)", 
-                                textShadow: "0 0 20px rgba(255,255,255,0.2)" 
-                            }}
+                            className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black tracking-wide sm:tracking-tighter leading-[0.9] hero-outline-text"
                         >
                             SUSTAINABLE
                         </motion.h1>

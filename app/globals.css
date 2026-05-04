@@ -61,3 +61,18 @@ body {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+/* Custom Outlined Text utility with mobile fallback */
+.hero-outline-text {
+  color: rgba(255, 255, 255, 0.5) !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 640px) {
+  .hero-outline-text {
+    color: transparent !important;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8) !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+}
