@@ -126,15 +126,22 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                     className="flex flex-col items-center justify-center gap-2 mb-8"
                 >
                     <div className="overflow-hidden">
-                        <motion.h1 variants={textWordVariants} className="text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] mix-blend-overlay drop-shadow-2xl">
+                        <motion.h1 variants={textWordVariants} className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] mix-blend-overlay drop-shadow-2xl">
                             BUILDING
                         </motion.h1>
                     </div>
                     <div className="overflow-hidden flex flex-wrap justify-center gap-x-4">
-                        <motion.h1 variants={textWordVariants} className="text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black tracking-tighter leading-[0.9] text-transparent" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.8)", textShadow: "0 0 20px rgba(255,255,255,0.2)" }}>
+                        <motion.h1 
+                            variants={textWordVariants} 
+                            className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black tracking-wide sm:tracking-tighter leading-[0.9] text-transparent" 
+                            style={{ 
+                                WebkitTextStroke: "1px rgba(255,255,255,0.8)", 
+                                textShadow: "0 0 20px rgba(255,255,255,0.2)" 
+                            }}
+                        >
                             SUSTAINABLE
                         </motion.h1>
-                        <motion.h1 variants={textWordVariants} className="text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] mix-blend-overlay drop-shadow-2xl">
+                        <motion.h1 variants={textWordVariants} className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] mix-blend-overlay drop-shadow-2xl">
                             SUCCESS
                         </motion.h1>
                     </div>
@@ -176,13 +183,13 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/60 mix-blend-overlay"
+                className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/60 mix-blend-overlay"
             >
                 <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
                 <motion.div 
                     animate={{ y: [0, 8, 0], opacity: [0.3, 1, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"
+                    className="w-[1px] h-8 sm:h-16 bg-gradient-to-b from-white to-transparent"
                 />
             </motion.div>
 
