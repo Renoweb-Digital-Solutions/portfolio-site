@@ -1,148 +1,11 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { getAllResearch } from '@/lib/db'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
-const researchArticles = [
-    {
-        id: 1,
-        category: 'Digital Marketing',
-        title: 'The State of SEO in 2025: How AI is Reshaping Search Rankings',
-        excerpt: 'A deep-dive into how large language models are redefining search intent, featured snippets, and the zero-click economy — and what it means for your content strategy.',
-        author: 'Samara Kline',
-        authorRole: 'Head of Research',
-        date: 'April 10, 2025',
-        readTime: '8 min read',
-        tag: 'Trending',
-        tagColor: 'from-orange-500 to-amber-400',
-        stats: [
-            { label: 'Respondents', value: '4,200+' },
-            { label: 'Countries', value: '12' },
-        ],
-        icon: '🔍',
-        href: '/research-hub/state-of-seo-2025',
-    },
-    {
-        id: 2,
-        category: 'Consumer Behaviour',
-        title: 'Trust in Brands: Why 67% of Buyers Research Before Purchasing',
-        excerpt: 'Our latest survey reveals the surprising weight of peer reviews, case studies, and social proof in consumer purchasing decisions across B2B and B2C verticals.',
-        author: 'Liam Osei',
-        authorRole: 'Data Analyst',
-        date: 'March 28, 2025',
-        readTime: '6 min read',
-        tag: 'New',
-        tagColor: 'from-yellow-400 to-orange-400',
-        stats: [
-            { label: 'Respondents', value: '8,100+' },
-            { label: 'Industries', value: '9' },
-        ],
-        icon: '📊',
-    },
-    {
-        id: 3,
-        category: 'Social Media',
-        title: 'Short-Form Video vs Long-Form: Which Converts Better in 2025?',
-        excerpt: 'We analysed over 500 brand campaigns across TikTok, YouTube Shorts, and Instagram Reels to determine which format drives higher ROI for service-based businesses.',
-        author: 'Priya Mehta',
-        authorRole: 'Content Strategist',
-        date: 'March 15, 2025',
-        readTime: '10 min read',
-        tag: 'Featured',
-        tagColor: 'from-amber-500 to-yellow-300',
-        stats: [
-            { label: 'Campaigns Analysed', value: '500+' },
-            { label: 'Platforms', value: '3' },
-        ],
-        icon: '🎬',
-    },
-    {
-        id: 4,
-        category: 'Lead Generation',
-        title: 'The Hidden Cost of Cold Outreach: A 2025 Benchmark Report',
-        excerpt: 'Cold outreach costs are rising while response rates are falling. Our benchmark report gives you the data to pivot toward inbound lead generation before it\'s too late.',
-        author: 'Daniel Roth',
-        authorRole: 'Growth Lead',
-        date: 'February 22, 2025',
-        readTime: '7 min read',
-        tag: 'Report',
-        tagColor: 'from-orange-600 to-red-400',
-        stats: [
-            { label: 'Companies Surveyed', value: '1,800+' },
-            { label: 'Sectors', value: '6' },
-        ],
-        icon: '📬',
-    },
-    {
-        id: 5,
-        category: 'Branding',
-        title: 'Colour Psychology in Digital Branding: What the Data Says',
-        excerpt: 'From the warmth of amber to the authority of navy — our study breaks down how colour choices in digital branding affect trust, recall, and purchase likelihood.',
-        author: 'Amara Jones',
-        authorRole: 'Brand Researcher',
-        date: 'February 5, 2025',
-        readTime: '5 min read',
-        tag: 'Popular',
-        tagColor: 'from-yellow-500 to-amber-600',
-        stats: [
-            { label: 'Participants', value: '3,400+' },
-            { label: 'Brands Tested', value: '48' },
-        ],
-        icon: '🎨',
-    },
-    {
-        id: 6,
-        category: 'E-Commerce',
-        title: 'Checkout Abandonment: 5 Friction Points Killing Your Conversions',
-        excerpt: 'We tracked 50,000 checkout sessions to identify the exact moments users drop off — and the micro-UX improvements that recover up to 23% of lost revenue.',
-        author: 'Marcus Chen',
-        authorRole: 'UX Researcher',
-        date: 'January 18, 2025',
-        readTime: '9 min read',
-        tag: 'Trending',
-        tagColor: 'from-orange-500 to-amber-400',
-        stats: [
-            { label: 'Sessions Tracked', value: '50,000+' },
-            { label: 'Stores', value: '22' },
-        ],
-        icon: '🛒',
-    },
-    {
-        id: 7,
-        category: 'Digital Marketing',
-        title: 'Email Isn\'t Dead: Open Rates Hit a 7-Year High in Q1 2025',
-        excerpt: 'Amid the noise about AI and social media, email quietly staged a comeback. Our Q1 data shows personalised, segmented emails are outperforming paid ads in several key verticals.',
-        author: 'Sophia Williams',
-        authorRole: 'Email Marketing Lead',
-        date: 'January 9, 2025',
-        readTime: '6 min read',
-        tag: 'New',
-        tagColor: 'from-yellow-400 to-orange-400',
-        stats: [
-            { label: 'Emails Tracked', value: '12M+' },
-            { label: 'Campaigns', value: '340+' },
-        ],
-        icon: '✉️',
-    },
-    {
-        id: 8,
-        category: 'Consumer Behaviour',
-        title: 'Gen Z vs Millennials: The Loyalty Gap in Digital Services',
-        excerpt: 'Retention strategies that work for Millennials are failing with Gen Z. Our cross-generational study reveals where brands are losing younger customers — and how to win them back.',
-        author: 'Aisha Tremblay',
-        authorRole: 'Consumer Insights Lead',
-        date: 'December 20, 2024',
-        readTime: '11 min read',
-        tag: 'Featured',
-        tagColor: 'from-amber-500 to-yellow-300',
-        stats: [
-            { label: 'Participants', value: '6,700+' },
-            { label: 'Age Groups', value: '4' },
-        ],
-        icon: '👥',
-    },
-]
+// Static researchArticles removed, now fetched from DB
 
 const categories = ['All', 'Digital Marketing', 'Consumer Behaviour', 'Social Media', 'Lead Generation', 'Branding', 'E-Commerce']
 
@@ -264,10 +127,64 @@ const ArticleCard = ({ article, index }) => {
 }
 
 const ResearchHubPage = () => {
+    const [articles, setArticles] = useState([])
+    const [loading, setLoading] = useState(true)
     const [activeCategory, setActiveCategory] = useState('All')
     const [searchQuery, setSearchQuery] = useState('')
 
-    const filtered = researchArticles.filter(a => {
+    useEffect(() => {
+        const loadResearch = async () => {
+            setLoading(true)
+            const data = await getAllResearch()
+            
+            // Map Firestore data to UI structure
+            const mapped = data.map(article => ({
+                ...article,
+                id: article.id,
+                category: article.category,
+                title: article.title,
+                excerpt: article.abstract, // Mapping abstract to excerpt
+                author: typeof article.author === 'string' ? article.author : (article.author?.name || 'Renoweb Team'),
+                authorRole: article.author?.role || 'Head of Research',
+                date: article.publishDate,
+                readTime: article.readTime,
+                tag: article.tags?.[0] || 'Report',
+                tagColor: article.tagColor || getCategoryColor(article.category),
+                icon: article.icon || getCategoryIcon(article.category),
+                href: `/research-hub/${article.slug}`
+            }))
+            
+            setArticles(mapped)
+            setLoading(false)
+        }
+        loadResearch()
+    }, [])
+
+    const getCategoryColor = (cat) => {
+        const colors = {
+            'Digital Marketing': 'from-orange-500 to-amber-400',
+            'Consumer Behaviour': 'from-yellow-400 to-orange-400',
+            'Social Media': 'from-amber-500 to-yellow-300',
+            'Lead Generation': 'from-orange-600 to-red-400',
+            'Branding': 'from-yellow-500 to-amber-600',
+            'E-Commerce': 'from-orange-500 to-amber-400'
+        }
+        return colors[cat] || 'from-orange-500 to-amber-400'
+    }
+
+    const getCategoryIcon = (cat) => {
+        const icons = {
+            'Digital Marketing': '🔍',
+            'Consumer Behaviour': '📊',
+            'Social Media': '🎬',
+            'Lead Generation': '📬',
+            'Branding': '🎨',
+            'E-Commerce': '🛒'
+        }
+        return icons[cat] || '📡'
+    }
+
+    const filtered = articles.filter(a => {
         const matchCat = activeCategory === 'All' || a.category === activeCategory
         const matchSearch = a.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             a.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
@@ -430,42 +347,49 @@ const ResearchHubPage = () => {
                 </div>
 
                 {/* ── Articles Grid ── */}
-                <AnimatePresence mode="wait">
-                    {filtered.length > 0 ? (
-                        <motion.div
-                            key={activeCategory + searchQuery}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-                        >
-                            {filtered.map((article, i) => (
-                                <ArticleCard key={article.id} article={article} index={i} />
-                            ))}
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            key="empty"
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="text-center py-24"
-                        >
-                            <div
-                                className="inline-block p-10 rounded-3xl"
-                                style={{
-                                    background: 'rgba(255,255,255,0.03)',
-                                    border: '1px solid rgba(251,146,60,0.15)',
-                                    backdropFilter: 'blur(12px)',
-                                }}
+                {loading ? (
+                    <div className="flex flex-col items-center justify-center py-24">
+                        <div className="w-12 h-12 border-4 border-amber-500/20 border-t-amber-500 rounded-full animate-spin mb-4" />
+                        <p className="text-sm text-white/40 animate-pulse">Gathering data insights...</p>
+                    </div>
+                ) : (
+                    <AnimatePresence mode="wait">
+                        {filtered.length > 0 ? (
+                            <motion.div
+                                key={activeCategory + searchQuery}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
                             >
-                                <span className="text-5xl block mb-4">🔎</span>
-                                <p className="text-xl font-bold text-white mb-1">No results found</p>
-                                <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>Try a different keyword or category</p>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                                {filtered.map((article, i) => (
+                                    <ArticleCard key={article.id} article={article} index={i} />
+                                ))}
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="empty"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                className="text-center py-24"
+                            >
+                                <div
+                                    className="inline-block p-10 rounded-3xl"
+                                    style={{
+                                        background: 'rgba(255,255,255,0.03)',
+                                        border: '1px solid rgba(251,146,60,0.15)',
+                                        backdropFilter: 'blur(12px)',
+                                    }}
+                                >
+                                    <span className="text-5xl block mb-4">🔎</span>
+                                    <p className="text-xl font-bold text-white mb-1">No results found</p>
+                                    <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>Try a different keyword or category</p>
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                )}
 
                 {/* ── Newsletter / CTA Glassmorphism Banner ── */}
                 <motion.div

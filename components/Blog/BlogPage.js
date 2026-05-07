@@ -3,7 +3,9 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { blog_posts, blog_categories } from '@/components/data/blog_posts'
+import { useEffect } from 'react'
+import { getAllBlogs } from '@/lib/db'
+import { blog_categories } from '@/components/data/blog_posts'
 
 // ─── Star field ──────────────────────────────────────────────────────────────
 const STARS = [
@@ -56,7 +58,7 @@ const BlogCard = ({ post, index }) => (
                 />
 
                 {/* Top accent bar */}
-                <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor}`} />
+                <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
 
                 <div className="p-6">
                     {/* Category + Tag row */}
@@ -67,7 +69,7 @@ const BlogCard = ({ post, index }) => (
                         >
                             {post.category}
                         </span>
-                        <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor} text-black`}>
+                        <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'} text-black`}>
                             {post.tag}
                         </span>
                     </div>
@@ -101,7 +103,7 @@ const BlogCard = ({ post, index }) => (
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <div
-                                className={`w-7 h-7 rounded-full bg-gradient-to-br ${post.tagColor} flex items-center justify-center text-xs font-black text-black`}
+                                className={`w-7 h-7 rounded-full bg-gradient-to-br ${post.tagColor || 'from-cyan-500 to-sky-400'} flex items-center justify-center text-xs font-black text-black`}
                                 style={{
                                     boxShadow: '2px 2px 6px rgba(0,0,0,0.5), -1px -1px 4px rgba(255,255,255,0.04)',
                                 }}
@@ -166,7 +168,7 @@ const FeaturedCard = ({ post }) => (
                     }}
                 />
                 {/* Top accent */}
-                <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor}`} />
+                <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
 
                 <div className="p-7 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
                     <div>
@@ -177,7 +179,7 @@ const FeaturedCard = ({ post }) => (
                             >
                                 {post.category}
                             </span>
-                            <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor} text-black`}>
+                            <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'} text-black`}>
                                 {post.tag}
                             </span>
                             <span
@@ -209,7 +211,7 @@ const FeaturedCard = ({ post }) => (
 
                         <div className="flex items-center gap-5 flex-wrap">
                             <div className="flex items-center gap-2">
-                                <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${post.tagColor} flex items-center justify-center text-xs font-black text-black`}>
+                                <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${post.tagColor || 'from-cyan-500 to-sky-400'} flex items-center justify-center text-xs font-black text-black`}>
                                     {post.author.charAt(0)}
                                 </div>
                                 <div>
@@ -343,14 +345,79 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
 const POSTS_PER_PAGE = 6
 
 const BlogPage = () => {
+    const [posts, setPosts] = useState([])
+    const [loading, setLoading] = useState(true)
     const [activeCategory, setActiveCategory] = useState('All')
     const [searchQuery, setSearchQuery] = useState('')
     const [currentPage, setCurrentPage] = useState(1)
     const [showFeaturedOnly, setShowFeaturedOnly] = useState(false)
 
+    useEffect(() => {
+        const loadBlogs = async () => {
+            setLoading(true)
+            const data = await getAllBlogs()
+            
+            // Map Firestore data to UI structure
+            const mapped = data.map(blog => ({
+                ...blog,
+                id: blog.id,
+                slug: blog.slug,
+                category: blog.category,
+                title: blog.title,
+                excerpt: blog.excerpt,
+                author: typeof blog.author === 'string' ? blog.author : (blog.author?.name || 'Renoweb Team'),
+                authorRole: blog.author?.role || 'Expert',
+                date: blog.publishDate,
+                readTime: blog.readTime,
+                tag: blog.tags?.[0] || 'Article',
+                // Fallback UI fields if missing from DB
+                tagColor: blog.tagColor || getCategoryColor(blog.category),
+                icon: blog.icon || getCategoryIcon(blog.category),
+                featured: blog.featured || false
+            }))
+            
+            setPosts(mapped)
+            setLoading(false)
+        }
+        loadBlogs()
+    }, [])
+
+    // Helper to get consistent colors based on category
+    const getCategoryColor = (cat) => {
+        const colors = {
+            'SEO': 'from-cyan-500 to-sky-400',
+            'Web Strategy': 'from-sky-400 to-cyan-400',
+            'Content Marketing': 'from-cyan-500 to-blue-400',
+            'Social Media': 'from-cyan-600 to-sky-400',
+            'Email Marketing': 'from-sky-500 to-cyan-300',
+            'Paid Ads': 'from-cyan-400 to-blue-400',
+            'Branding': 'from-cyan-500 to-blue-500',
+            'CRO': 'from-sky-400 to-cyan-600',
+            'AI & Tools': 'from-cyan-500 to-sky-500',
+            'Lead Generation': 'from-cyan-600 to-sky-400'
+        }
+        return colors[cat] || 'from-cyan-500 to-sky-400'
+    }
+
+    const getCategoryIcon = (cat) => {
+        const icons = {
+            'SEO': '🔍',
+            'Web Strategy': '🌐',
+            'Content Marketing': '📈',
+            'Social Media': '💼',
+            'Email Marketing': '✉️',
+            'Paid Ads': '💰',
+            'Branding': '🎨',
+            'CRO': '⚡',
+            'AI & Tools': '🤖',
+            'Lead Generation': '🎯'
+        }
+        return icons[cat] || '📝'
+    }
+
     // Filter + search
     const filtered = useMemo(() => {
-        return blog_posts.filter(p => {
+        return posts.filter(p => {
             const matchCat = activeCategory === 'All' || p.category === activeCategory
             const matchSearch =
                 p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -359,7 +426,7 @@ const BlogPage = () => {
             const matchFeatured = !showFeaturedOnly || p.featured
             return matchCat && matchSearch && matchFeatured
         })
-    }, [activeCategory, searchQuery, showFeaturedOnly])
+    }, [posts, activeCategory, searchQuery, showFeaturedOnly])
 
     const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE)
     const paginated = filtered.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE)
@@ -367,8 +434,8 @@ const BlogPage = () => {
     // featured hero (first featured post, shown only on All / no search)
     const featuredHero = useMemo(() => {
         if (searchQuery || activeCategory !== 'All' || showFeaturedOnly) return null
-        return blog_posts.find(p => p.featured)
-    }, [searchQuery, activeCategory, showFeaturedOnly])
+        return posts.find(p => p.featured)
+    }, [posts, searchQuery, activeCategory, showFeaturedOnly])
 
     const handleCategoryChange = (cat) => {
         setActiveCategory(cat)
@@ -606,44 +673,51 @@ const BlogPage = () => {
                     )}
                 </AnimatePresence>
 
-                {/* ── Grid ── */}
+                    {/* ── Grid ── */}
                 <div className="max-w-7xl mx-auto">
-                    <AnimatePresence mode="wait">
-                        {paginated.length > 0 ? (
-                            <motion.div
-                                key={activeCategory + searchQuery + currentPage + showFeaturedOnly}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
-                            >
-                                {paginated.map((post, i) => (
-                                    <BlogCard key={post.id} post={post} index={i} />
-                                ))}
-                            </motion.div>
-                        ) : (
-                            <motion.div
-                                key="empty"
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                className="text-center py-24"
-                            >
-                                <div
-                                    className="inline-block p-10 rounded-3xl"
-                                    style={{
-                                        background: 'linear-gradient(145deg, #0e141a, #0a1014)',
-                                        border: '1px solid rgba(6,182,212,0.15)',
-                                        boxShadow: '6px 6px 16px rgba(0,0,0,0.5), -3px -3px 10px rgba(255,255,255,0.02)',
-                                    }}
+                    {loading ? (
+                        <div className="flex flex-col items-center justify-center py-24">
+                            <div className="w-12 h-12 border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin mb-4" />
+                            <p className="text-sm text-white/40 animate-pulse">Loading amazing content...</p>
+                        </div>
+                    ) : (
+                        <AnimatePresence mode="wait">
+                            {paginated.length > 0 ? (
+                                <motion.div
+                                    key={activeCategory + searchQuery + currentPage + showFeaturedOnly}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
                                 >
-                                    <span className="text-5xl block mb-4">🔎</span>
-                                    <p className="text-xl font-bold text-white mb-1">No posts found</p>
-                                    <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>Try a different keyword or category</p>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                                    {paginated.map((post, i) => (
+                                        <BlogCard key={post.id} post={post} index={i} />
+                                    ))}
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    key="empty"
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-center py-24"
+                                >
+                                    <div
+                                        className="inline-block p-10 rounded-3xl"
+                                        style={{
+                                            background: 'linear-gradient(145deg, #0e141a, #0a1014)',
+                                            border: '1px solid rgba(6,182,212,0.15)',
+                                            boxShadow: '6px 6px 16px rgba(0,0,0,0.5), -3px -3px 10px rgba(255,255,255,0.02)',
+                                        }}
+                                    >
+                                        <span className="text-5xl block mb-4">🔎</span>
+                                        <p className="text-xl font-bold text-white mb-1">No posts found</p>
+                                        <p className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>Try a different keyword or category</p>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    )}
 
                     {/* ── Pagination ── */}
                     {totalPages > 1 && (
