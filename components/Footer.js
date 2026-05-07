@@ -78,6 +78,7 @@ const Footer = () => {
                                             <li><Link href="/legal?policy=terms" className="text-gray-400 hover:text-blue-400 text-sm transition">Terms of Service</Link></li>
                                             <li><Link href="/legal?policy=cancellation" className="text-gray-400 hover:text-blue-400 text-sm transition">Cancellation</Link></li>
                                             <li><Link href="/legal?policy=shipping" className="text-gray-400 hover:text-blue-400 text-sm transition">Shipping</Link></li>
+                                            <li><Link href="/sitemap.xml" className="text-gray-400 hover:text-blue-400 text-sm transition">Sitemap</Link></li>
 
                                         </ul>
                                     </div>
