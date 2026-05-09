@@ -67,14 +67,15 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
         offset: ["start start", "end start"],
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+    const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.8]);
+    const filter = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(20px)"]);
 
     return (
         <div ref={containerRef} className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-[#050505]">
             {/* Background Video with Parallax & Scale */}
-            <motion.div style={{ y, scale, opacity }} className="absolute inset-0 w-full h-full z-0">
+            <motion.div style={{ y, scale, opacity, filter }} className="absolute inset-0 w-full h-full z-0 origin-center">
                 <video
                     className="w-full h-full object-cover scale-105"
                     src={videoSrc}

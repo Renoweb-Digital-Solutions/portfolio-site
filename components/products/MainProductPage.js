@@ -2,7 +2,59 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
+
+/* ─── Animation Variants ─── */
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i = 0) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, delay: i * 0.15, ease: [0.2, 0.65, 0.3, 0.9] },
+    }),
+};
+
+const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
+};
+
+const scaleIn = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.7, ease: [0.2, 0.65, 0.3, 0.9] },
+    },
+};
+
+/* ─── Animated Section Wrapper ─── */
+const AnimatedSection = ({ children, className, delay = 0 }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.12, delayChildren: delay },
+                },
+            }}
+            className={className}
+        >
+            {children}
+        </motion.div>
+    );
+};
 
 export default function MainProductPage() {
     const [hoveredProduct, setHoveredProduct] = useState(null);
@@ -91,32 +143,35 @@ export default function MainProductPage() {
 
             {/* Hero Section */}
             <section className="pt-32 pb-16 px-6 relative z-10">
-                <div className="max-w-6xl mx-auto text-center">
-                    <div className="inline-block mb-6 relative">
+                <AnimatedSection className="max-w-6xl mx-auto text-center">
+                    <motion.div variants={fadeUp} className="inline-block mb-6 relative">
                         <div className="absolute inset-0 bg-blue-600/20 blur-xl animate-pulse"></div>
                         <span className="relative px-6 py-2 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium border border-blue-600/30">
                             Transformative Solutions
                         </span>
-                    </div>
-                    <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                    </motion.div>
+                    <motion.h1 variants={fadeUp} custom={1} className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                         Our
                         <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent animate-pulse"> Products</span>
-                    </h1>
-                    <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    </motion.h1>
+                    <motion.p variants={fadeUp} custom={2} className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
                         Discover game-changing frameworks designed to accelerate your business growth and unlock unprecedented success.
-                    </p>
-                </div>
+                    </motion.p>
+                </AnimatedSection>
             </section>
 
             {/* Products Grid */}
             <section className="py-20 px-6 relative z-10">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
-                    {products.map((product) => (
-                        <div
+                <AnimatedSection className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+                    {products.map((product, idx) => (
+                        <motion.div
                             key={product.id}
+                            variants={fadeUp}
+                            custom={idx}
                             onMouseEnter={() => setHoveredProduct(product.id)}
                             onMouseLeave={() => setHoveredProduct(null)}
                             className="relative group"
+                            whileHover={{ y: -8, transition: { duration: 0.4, ease: "easeOut" } }}
                         >
                             {/* Glow Effect */}
                             <div className={`absolute inset-0 bg-gradient-to-r ${product.gradient} opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 rounded-3xl`}></div>
@@ -154,14 +209,17 @@ export default function MainProductPage() {
                                     {/* Features Grid */}
                                     <div className="grid grid-cols-2 gap-3 mb-8">
                                         {product.features.map((feature, index) => (
-                                            <div
+                                            <motion.div
                                                 key={index}
+                                                initial={{ opacity: 0, x: -10 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: index * 0.05, duration: 0.4 }}
                                                 className="flex items-center gap-2 text-sm text-gray-400 group-hover:text-gray-300 transition-colors"
-                                                style={{ animationDelay: `${index * 0.1}s` }}
                                             >
                                                 <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
                                                 <span>{feature}</span>
-                                            </div>
+                                            </motion.div>
                                         ))}
                                     </div>
 
@@ -182,21 +240,25 @@ export default function MainProductPage() {
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </AnimatedSection>
             </section>
 
             {/* Comparison Section */}
             <section className="py-20 px-6 relative z-10">
-                <div className="max-w-5xl mx-auto">
-                    <div className="text-center mb-12">
+                <AnimatedSection className="max-w-5xl mx-auto">
+                    <motion.div variants={fadeUp} className="text-center mb-12">
                         <h2 className="text-4xl font-bold mb-4">Which One Is Right for You?</h2>
                         <p className="text-gray-400 text-lg">Both frameworks are designed to transform your business, but serve different needs.</p>
-                    </div>
+                    </motion.div>
 
                     <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8">
+                        <motion.div
+                            variants={scaleIn}
+                            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                            className="bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8"
+                        >
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="flex items-center">
                                     <Image
@@ -212,22 +274,27 @@ export default function MainProductPage() {
 
                             <p className="text-gray-300 mb-4">Perfect for businesses looking to:</p>
                             <ul className="space-y-2 text-gray-400">
-                                <li className="flex items-start gap-2">
-                                    <span className="text-blue-400 mt-1">→</span>
-                                    <span>Transform their digital presence</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-blue-400 mt-1">→</span>
-                                    <span>Unlock new revenue streams</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-blue-400 mt-1">→</span>
-                                    <span>Build emotional brand connections</span>
-                                </li>
+                                {["Transform their digital presence", "Unlock new revenue streams", "Build emotional brand connections"].map((item, i) => (
+                                    <motion.li
+                                        key={i}
+                                        initial={{ opacity: 0, x: -15 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.1, duration: 0.5 }}
+                                        className="flex items-start gap-2"
+                                    >
+                                        <span className="text-blue-400 mt-1">→</span>
+                                        <span>{item}</span>
+                                    </motion.li>
+                                ))}
                             </ul>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-gradient-to-br from-blue-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8">
+                        <motion.div
+                            variants={scaleIn}
+                            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                            className="bg-gradient-to-br from-blue-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8"
+                        >
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="flex items-center">
                                     <Image
@@ -243,39 +310,43 @@ export default function MainProductPage() {
 
                             <p className="text-gray-300 mb-4">Ideal for leaders who want to:</p>
                             <ul className="space-y-2 text-gray-400">
-                                <li className="flex items-start gap-2">
-                                    <span className="text-blue-400 mt-1">→</span>
-                                    <span>Scale with a proven framework</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-blue-400 mt-1">→</span>
-                                    <span>Navigate complexities of growth</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-blue-400 mt-1">→</span>
-                                    <span>Achieve exponential success</span>
-                                </li>
+                                {["Scale with a proven framework", "Navigate complexities of growth", "Achieve exponential success"].map((item, i) => (
+                                    <motion.li
+                                        key={i}
+                                        initial={{ opacity: 0, x: -15 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.1, duration: 0.5 }}
+                                        className="flex items-start gap-2"
+                                    >
+                                        <span className="text-blue-400 mt-1">→</span>
+                                        <span>{item}</span>
+                                    </motion.li>
+                                ))}
                             </ul>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </AnimatedSection>
             </section >
 
             {/* CTA Section */}
             <section className="py-20 px-6 relative z-10" >
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-800/20 border border-blue-600/40 rounded-3xl p-12 overflow-hidden">
+                <AnimatedSection className="max-w-4xl mx-auto text-center">
+                    <motion.div
+                        variants={scaleIn}
+                        className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-800/20 border border-blue-600/40 rounded-3xl p-12 overflow-hidden"
+                    >
                         {/* Animated background shimmer */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent animate-shimmer"></div>
 
                         <div className="relative z-10">
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold mb-6">
                                 Ready to Transform Your Business?
-                            </h2>
-                            <p className="text-xl text-gray-300 mb-8">
+                            </motion.h2>
+                            <motion.p variants={fadeUp} custom={1} className="text-xl text-gray-300 mb-8">
                                 Choose your path to exponential growth and start your transformation today.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            </motion.p>
+                            <motion.div variants={fadeUp} custom={2} className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link href="/contact-us" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center justify-center gap-2 group">
                                     Schedule Consultation
                                     <svg className="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -283,10 +354,10 @@ export default function MainProductPage() {
                                     </svg>
                                 </Link>
 
-                            </div>
+                            </motion.div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </AnimatedSection>
             </section >
 
             <style jsx>{`

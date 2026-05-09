@@ -1,4 +1,59 @@
-import React from 'react';
+"use client"
+
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+
+/* ─── Animation Variants ─── */
+const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i = 0) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, delay: i * 0.15, ease: [0.2, 0.65, 0.3, 0.9] },
+    }),
+};
+
+const scaleIn = {
+    hidden: { opacity: 0, scale: 0.92 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.7, ease: [0.2, 0.65, 0.3, 0.9] },
+    },
+};
+
+const slideInLeft = {
+    hidden: { opacity: 0, x: -40 },
+    visible: (i = 0) => ({
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.6, delay: i * 0.06, ease: [0.2, 0.65, 0.3, 0.9] },
+    }),
+};
+
+/* ─── Animated Section Wrapper ─── */
+const AnimatedSection = ({ children, className, delay = 0 }) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.12, delayChildren: delay },
+                },
+            }}
+            className={className}
+        >
+            {children}
+        </motion.div>
+    );
+};
 
 export default function GrowthOs() {
     const stages = [
@@ -75,52 +130,73 @@ export default function GrowthOs() {
 
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-6 relative z-10">
-                <div className="max-w-5xl mx-auto text-center">
-                    <div className="inline-block mb-6">
+                <AnimatedSection className="max-w-5xl mx-auto text-center">
+                    <motion.div variants={fadeUp} className="inline-block mb-6">
                         <div className="flex items-center justify-center gap-4 mb-2">
-                            <div className="text-6xl md:text-7xl font-black tracking-tight">G</div>
-                            <div className="text-6xl md:text-7xl font-black tracking-tight">R</div>
-                            <div className="text-6xl md:text-7xl font-black tracking-tight">O</div>
-                            <div className="text-6xl md:text-7xl font-black tracking-tight">W</div>
-                            <div className="text-6xl md:text-7xl font-black tracking-tight">T</div>
-                            <div className="text-6xl md:text-7xl font-black tracking-tight">H</div>
+                            {"GROWTH".split("").map((letter, i) => (
+                                <motion.div
+                                    key={i}
+                                    variants={slideInLeft}
+                                    custom={i}
+                                    className="text-6xl md:text-7xl font-black tracking-tight"
+                                >
+                                    {letter}
+                                </motion.div>
+                            ))}
                         </div>
                         <div className="flex items-center justify-center gap-4">
-                            <div className="text-5xl md:text-6xl font-black bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">O</div>
-                            <div className="text-5xl md:text-6xl font-black bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">S</div>
+                            {"OS".split("").map((letter, i) => (
+                                <motion.div
+                                    key={i}
+                                    variants={slideInLeft}
+                                    custom={i + 6}
+                                    className="text-5xl md:text-6xl font-black bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent"
+                                >
+                                    {letter}
+                                </motion.div>
+                            ))}
                         </div>
-                    </div>
-                    <h1 className="text-3xl md:text-4xl font-bold mb-8 leading-tight max-w-4xl mx-auto">
+                    </motion.div>
+                    <motion.h1 variants={fadeUp} custom={1} className="text-3xl md:text-4xl font-bold mb-8 leading-tight max-w-4xl mx-auto">
                         UNLOCK YOUR BUSINESS&apos;S FULL POTENTIAL WITH GROWTH OS
-                    </h1>
-                    <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    </motion.h1>
+                    <motion.p variants={fadeUp} custom={2} className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
                         Unlock your business&apos;s full potential with GROWTH OS, the ultimate operating system for scaling success. This game-changing framework guides you through seven pivotal stages:
-                    </p>
-                    <a href="https://calendly.com/renowebhq/growth-os-business-scale-session" target="_blank"
-                        rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center gap-2 group">
-                        Start Your Journey
-                        <svg className="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
-                </div>
+                    </motion.p>
+                    <motion.div variants={fadeUp} custom={3}>
+                        <a href="https://calendly.com/renowebhq/growth-os-business-scale-session" target="_blank"
+                            rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center gap-2 group">
+                            Start Your Journey
+                            <svg className="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </motion.div>
+                </AnimatedSection>
             </section>
 
             {/* Stages Section - Circular Flow */}
             <section className="py-20 px-6 relative z-10">
-                <div className="max-w-7xl mx-auto">
+                <AnimatedSection className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {stages.map((stage, index) => (
-                            <div
+                            <motion.div
                                 key={index}
+                                variants={fadeUp}
+                                custom={index}
+                                whileHover={{ y: -6, transition: { duration: 0.3 } }}
                                 className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 hover:border-blue-600/50 transition group relative overflow-hidden"
                             >
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-full blur-2xl group-hover:bg-blue-600/10 transition"></div>
                                 <div className="relative z-10">
                                     <div className="flex items-center justify-between mb-4">
-                                        <div className="text-blue-400 group-hover:scale-110 transition">
+                                        <motion.div
+                                            className="text-blue-400"
+                                            whileHover={{ scale: 1.15, rotate: 5 }}
+                                            transition={{ type: "spring", stiffness: 300 }}
+                                        >
                                             {stage.icon}
-                                        </div>
+                                        </motion.div>
                                         <div className="text-4xl font-black text-gray-800 group-hover:text-gray-700 transition">
                                             {String(index + 1).padStart(2, '0')}
                                         </div>
@@ -132,39 +208,45 @@ export default function GrowthOs() {
                                         {stage.description}
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
+                </AnimatedSection>
             </section>
 
             {/* Philosophy Section */}
             <section className="py-20 px-6 relative z-10">
-                <div className="max-w-5xl mx-auto">
-                    <div className="bg-gradient-to-br from-blue-600/10 via-blue-600/10 to-blue-800/10 border border-blue-600/30 rounded-3xl p-12">
-                        <p className="text-2xl text-gray-200 mb-6 leading-relaxed">
+                <AnimatedSection className="max-w-5xl mx-auto">
+                    <motion.div
+                        variants={scaleIn}
+                        className="bg-gradient-to-br from-blue-600/10 via-blue-600/10 to-blue-800/10 border border-blue-600/30 rounded-3xl p-12"
+                    >
+                        <motion.p variants={fadeUp} className="text-2xl text-gray-200 mb-6 leading-relaxed">
                             GROWTH OS is more than just a strategy - it&apos;s a mindset.
-                        </p>
-                        <p className="text-xl text-gray-300 leading-relaxed">
+                        </motion.p>
+                        <motion.p variants={fadeUp} custom={1} className="text-xl text-gray-300 leading-relaxed">
                             It&apos;s for leaders who refuse to settle for status quo and are hungry for exponential growth. By harnessing the power of GROWTH OS, you&apos;ll be equipped to navigate the complexities of scaling, outmaneuver the competition, and achieve unparalleled success.
-                        </p>
-                    </div>
-                </div>
+                        </motion.p>
+                    </motion.div>
+                </AnimatedSection>
             </section>
 
             {/* CTA Section */}
             <section className="py-20 px-6 relative z-10">
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className="bg-gradient-to-r from-blue-600/20 via-blue-600/20 to-blue-800/20 border border-blue-600/40 rounded-3xl p-12 relative overflow-hidden">
+                <AnimatedSection className="max-w-4xl mx-auto text-center">
+                    <motion.div
+                        variants={scaleIn}
+                        className="bg-gradient-to-r from-blue-600/20 via-blue-600/20 to-blue-800/20 border border-blue-600/40 rounded-3xl p-12 relative overflow-hidden"
+                    >
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-blue-600/5"></div>
                         <div className="relative z-10">
-                            <h2 className="text-5xl md:text-6xl font-black mb-8">
+                            <motion.h2 variants={fadeUp} className="text-5xl md:text-6xl font-black mb-8">
                                 ARE YOU READY?
-                            </h2>
-                            <p className="text-xl text-gray-300 mb-8">
+                            </motion.h2>
+                            <motion.p variants={fadeUp} custom={1} className="text-xl text-gray-300 mb-8">
                                 Join the leaders who are transforming their businesses with GROWTH OS.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            </motion.p>
+                            <motion.div variants={fadeUp} custom={2} className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center justify-center gap-2 group">
                                     Get Started Now
                                     <svg className="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -174,10 +256,10 @@ export default function GrowthOs() {
                                 <button className="bg-gray-800 hover:bg-gray-700 border border-gray-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition">
                                     Learn More
                                 </button>
-                            </div>
+                            </motion.div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </AnimatedSection>
             </section>
         </div>
     );
