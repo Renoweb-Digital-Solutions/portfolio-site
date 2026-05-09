@@ -35,6 +35,17 @@ const ArticleCard = ({ article, index }) => {
             {/* Top accent bar */}
             <div className={`h-1 w-full bg-gradient-to-r ${article.tagColor}`} />
 
+            {/* Banner image */}
+            {article.bannerUrl && (
+                <div className="w-full aspect-video overflow-hidden">
+                    <img
+                        src={article.bannerUrl}
+                        alt={article.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                </div>
+            )}
+
             <div className="p-6 md:p-7">
                 {/* Category + Tag */}
                 <div className="flex items-center justify-between mb-4">
@@ -60,7 +71,7 @@ const ArticleCard = ({ article, index }) => {
                 </div>
 
                 {/* Excerpt */}
-                <p className="text-sm mb-5" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.65' }}>
+                <p className="text-sm mb-5" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.65', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                     {article.excerpt}
                 </p>
 
