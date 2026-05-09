@@ -60,6 +60,17 @@ const BlogCard = ({ post, index }) => (
                 {/* Top accent bar */}
                 <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
 
+                {/* Banner image */}
+                {post.bannerUrl && (
+                    <div className="w-full aspect-video overflow-hidden">
+                        <img
+                            src={post.bannerUrl}
+                            alt={post.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                    </div>
+                )}
+
                 <div className="p-6">
                     {/* Category + Tag row */}
                     <div className="flex items-center justify-between mb-4">
@@ -91,7 +102,7 @@ const BlogCard = ({ post, index }) => (
                     </div>
 
                     {/* Excerpt */}
-                    <p className="text-sm mb-5 line-clamp-3" style={{ color: 'rgba(255,255,255,0.48)', lineHeight: '1.7' }}>
+                    <p className="text-sm mb-5 line-clamp-3" style={{ color: 'rgba(255,255,255,0.48)', lineHeight: '1.7', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                         {post.excerpt}
                     </p>
 
@@ -170,6 +181,17 @@ const FeaturedCard = ({ post }) => (
                 {/* Top accent */}
                 <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
 
+                {/* Banner image */}
+                {post.bannerUrl && (
+                    <div className="w-full aspect-video md:aspect-[3/1] overflow-hidden">
+                        <img
+                            src={post.bannerUrl}
+                            alt={post.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                    </div>
+                )}
+
                 <div className="p-7 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
                     <div>
                         <div className="flex items-center gap-3 mb-4 flex-wrap">
@@ -205,7 +227,7 @@ const FeaturedCard = ({ post }) => (
                             </h2>
                         </div>
 
-                        <p className="text-sm md:text-base mb-6 max-w-2xl" style={{ color: 'rgba(255,255,255,0.5)', lineHeight: '1.75' }}>
+                        <p className="text-sm md:text-base mb-6 max-w-2xl line-clamp-3" style={{ color: 'rgba(255,255,255,0.5)', lineHeight: '1.75', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                             {post.excerpt}
                         </p>
 

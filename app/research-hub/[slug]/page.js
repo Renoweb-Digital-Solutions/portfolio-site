@@ -42,8 +42,79 @@ const ResearchArticlePage = () => {
         )
     }
 
+    const authorName = typeof article.author === 'string' ? article.author : (article.author?.name || 'Renoweb Team')
+    const authorRole = article.author?.role || 'Head of Research'
+    const authorInitial = authorName.charAt(0)
+
     return (
         <div className="min-h-screen bg-black text-white pt-32 pb-20 px-6 relative overflow-hidden">
+            <style>{`
+                .research-content h1,
+                .research-content h2,
+                .research-content h3,
+                .research-content h4,
+                .research-content h5,
+                .research-content h6 {
+                    font-weight: 800;
+                    color: #ffffff;
+                    margin-top: 2rem;
+                    margin-bottom: 0.75rem;
+                    line-height: 1.3;
+                }
+                .research-content h1 { font-size: 2rem; }
+                .research-content h2 { font-size: 1.6rem; }
+                .research-content h3 { font-size: 1.35rem; }
+                .research-content h4 { font-size: 1.15rem; }
+                .research-content p {
+                    color: rgba(255,255,255,0.72);
+                    line-height: 1.85;
+                    margin-bottom: 1.25rem;
+                }
+                .research-content strong, .research-content b {
+                    font-weight: 700;
+                    color: #ffffff;
+                }
+                .research-content em, .research-content i {
+                    font-style: italic;
+                }
+                .research-content a {
+                    color: #fb923c;
+                    text-decoration: underline;
+                }
+                .research-content ul, .research-content ol {
+                    padding-left: 1.5rem;
+                    margin-bottom: 1.25rem;
+                    color: rgba(255,255,255,0.72);
+                }
+                .research-content ul { list-style-type: disc; }
+                .research-content ol { list-style-type: decimal; }
+                .research-content li { margin-bottom: 0.4rem; line-height: 1.75; }
+                .research-content blockquote {
+                    border-left: 4px solid #fb923c;
+                    padding-left: 1.25rem;
+                    margin: 1.5rem 0;
+                    color: rgba(255,255,255,0.6);
+                    font-style: italic;
+                }
+                .research-content img {
+                    border-radius: 1rem;
+                    max-width: 100%;
+                    margin: 1.5rem 0;
+                }
+                .research-content pre, .research-content code {
+                    background: rgba(255,255,255,0.06);
+                    border-radius: 0.5rem;
+                    padding: 0.2em 0.5em;
+                    font-size: 0.9em;
+                    color: #fbbf24;
+                }
+                .research-content pre { padding: 1rem; overflow-x: auto; }
+                .research-content hr {
+                    border-color: rgba(251,146,60,0.2);
+                    margin: 2rem 0;
+                }
+            `}</style>
+
             {/* Background Blobs */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30">
                 <div className="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full blur-3xl"
@@ -82,24 +153,14 @@ const ResearchArticlePage = () => {
                         {article.abstract}
                     </p>
 
-                    <div className="flex items-center gap-4 mb-12 p-4 rounded-2xl bg-white/5 border border-white/10 w-fit">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-black font-black">
-                            {typeof article.author === 'string' ? article.author.charAt(0) : (article.author?.name?.charAt(0) || 'R')}
-                        </div>
-                        <div>
-                            <p className="text-sm font-bold">{typeof article.author === 'string' ? article.author : (article.author?.name || 'Renoweb Team')}</p>
-                            <p className="text-xs text-white/40">{article.author?.role || 'Head of Research'}</p>
-                        </div>
-                    </div>
-
                     {article.bannerUrl && (
                         <div className="w-full aspect-video rounded-3xl overflow-hidden mb-12 border border-white/10 shadow-2xl">
                             <img src={article.bannerUrl} alt={article.title} className="w-full h-full object-cover" />
                         </div>
                     )}
 
-                    <div 
-                        className="prose prose-invert prose-orange max-w-none prose-headings:font-black prose-p:text-white/70 prose-p:leading-relaxed prose-img:rounded-3xl"
+                    <div
+                        className="research-content"
                         dangerouslySetInnerHTML={{ __html: article.content }}
                     />
 
@@ -112,6 +173,17 @@ const ResearchArticlePage = () => {
                             ))}
                         </div>
                     )}
+
+                    {/* Author — shown below the article */}
+                    <div className="flex items-center gap-4 mt-10 p-4 rounded-2xl bg-white/5 border border-white/10 w-fit">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-black font-black">
+                            {authorInitial}
+                        </div>
+                        <div>
+                            <p className="text-sm font-bold">{authorName}</p>
+                            <p className="text-xs text-white/40">{authorRole}</p>
+                        </div>
+                    </div>
 
                     <div className="mt-16 p-8 rounded-3xl bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/20 text-center">
                         <h3 className="text-2xl font-black mb-4">Want more insights?</h3>
