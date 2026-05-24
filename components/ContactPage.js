@@ -28,8 +28,8 @@ export default function ContactPage() {
 
             {/* Contact Info Cards */}
             <section className="py-12 px-6 relative z-10">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="max-w-[1400px] mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                         {contactInfo.map((info, index) => (
                             <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-blue-600/50 transition group">
                                 <div className="text-blue-400 mb-4 group-hover:scale-110 transition">
@@ -137,20 +137,50 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Map Section (Optional) */}
+            {/* Map Section */}
             <section className="py-16 px-6 relative z-10">
                 <div className="max-w-6xl mx-auto">
-                    <div className="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden h-96">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1843.1260128248066!2d88.3251612!3d22.4947255!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027164df297f4b%3A0x7159820ed6785017!2s63T%2C%20Bamacharan%20Roy%20Rd%2C%20Senhati%20Colony%2C%20Behala%2C%20Kolkata%2C%20West%20Bengal%20700034!5e0!3m2!1sen!2sin!4v1777819499752!5m2!1sen!2sin"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Renoweb Headquarters Location"
-                        ></iframe>
+                    <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Find Us on the Map</h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {/* Headquarters Map */}
+                        <div className="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden flex flex-col group hover:border-blue-600/30 transition duration-300">
+                            <div className="p-4 bg-gray-900/80 border-b border-gray-800 flex items-center justify-between">
+                                <span className="font-semibold text-lg text-white">Headquarters (Kolkata, India)</span>
+                                <span className="text-xs px-2.5 py-1 bg-blue-600/20 text-blue-400 rounded-full font-medium border border-blue-600/30">Primary</span>
+                            </div>
+                            <div className="h-80 w-full">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1843.1260128248066!2d88.3251612!3d22.4947255!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027164df297f4b%3A0x7159820ed6785017!2s63T%2C%20Bamacharan%20Roy%20Rd%2C%20Senhati%20Colony%2C%20Behala%2C%20Kolkata%2C%20West%20Bengal%20700034!5e0!3m2!1sen!2sin!4v1777819499752!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Renoweb Headquarters Location"
+                                ></iframe>
+                            </div>
+                        </div>
+
+                        {/* US Office Map */}
+                        <div className="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden flex flex-col group hover:border-blue-600/30 transition duration-300">
+                            <div className="p-4 bg-gray-900/80 border-b border-gray-800 flex items-center justify-between">
+                                <span className="font-semibold text-lg text-white">US Office (Lakeland, Florida)</span>
+                                <span className="text-xs px-2.5 py-1 bg-blue-600/20 text-blue-400 rounded-full font-medium border border-blue-600/30">US Branch</span>
+                            </div>
+                            <div className="h-80 w-full">
+                                <iframe
+                                    src="https://maps.google.com/maps?q=7364+Kathleen+Road,+Lakeland,+FL+33810&output=embed"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    title="Renoweb US Office Location"
+                                ></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
