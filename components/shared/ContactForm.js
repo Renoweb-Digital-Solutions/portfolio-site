@@ -47,7 +47,7 @@ export default function ContactForm({
         website: formData.website
       };
 
-      const res = await fetch('https://renowebbots.shop/contacthq/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
