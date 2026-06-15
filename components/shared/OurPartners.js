@@ -7,14 +7,14 @@ export default function OurPartners({
     subtitle = "Trusted by leading brands around the world"
 }) {
     const partners = [
+        { name: "cquel", logo: "/brand_logos/cquel.png" },
+        { name: "nidaan", logo: "/brand_logos/nidaan.png" },
         { name: "numr", logo: "/brand_logos/numr.png" },
         { name: "reccy", logo: "/brand_logos/reccy.png" },
         { name: "moneyview", logo: "/brand_logos/moneyview.png" },
         { name: "nexority_infotech", logo: "/brand_logos/nexority_infotech.png" },
         { name: "community_club", logo: "/brand_logos/community_club.png" },
-        { name: "nidaan", logo: "/brand_logos/nidaan.png" },
         { name: "moovana", logo: "/brand_logos/moovana.png" },
-        { name: "qcbt", logo: "/brand_logos/qcbt.png" },
         { name: "eco_guard", logo: "/brand_logos/eco_guard.png" },
         { name: "borrowed_pen", logo: "/brand_logos/borrowed_pen.png" },
         { name: "cloudify", logo: "/brand_logos/cloudify.png" },
@@ -32,6 +32,7 @@ export default function OurPartners({
         { name: "artshoppy", logo: "/brand_logos/artshoppy.png" },
         { name: "provisas_nz", logo: "/brand_logos/provisas_nz.png" },
         { name: "blockmagic", logo: "/brand_logos/blockmagic.png" },
+        { name: "qcbt", logo: "/brand_logos/qcbt.png" },
         { name: "wings", logo: "/brand_logos/wings.png" },
         { name: "jmr", logo: "/brand_logos/jmr.png" },
         { name: "hopium_health", logo: "/brand_logos/hopium_health.png" },

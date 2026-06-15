@@ -29,25 +29,62 @@ export default function ContactPage() {
             {/* Contact Info Cards */}
             <section className="py-12 px-6 relative z-10">
                 <div className="max-w-[1400px] mx-auto">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                        {contactInfo.map((info, index) => (
-                            <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-blue-600/50 transition group">
-                                <div className="text-blue-400 mb-4 group-hover:scale-110 transition">
-                                    {info.icon}
+                    {/* Top Row: Email, Phone, WhatsApp */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        {contactInfo.slice(0, 3).map((info, index) => (
+                            <div key={index} className="relative group overflow-hidden bg-[#0A0A0A] border border-white/10 hover:border-blue-500/30 rounded-2xl p-8 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="relative z-10 flex flex-col items-center text-center">
+                                    <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-500 border border-blue-500/20">
+                                        <div className="scale-125">
+                                            {info.icon}
+                                        </div>
+                                    </div>
+                                    <h3 className="text-xs uppercase tracking-widest font-semibold text-gray-500 mb-3">{info.title}</h3>
+                                    {info.link ? (
+                                        <a
+                                            href={info.link}
+                                            className="text-lg font-medium text-white hover:text-blue-400 transition-colors break-words w-full"
+                                            target={info.link.startsWith('http') ? '_blank' : undefined}
+                                            rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        >
+                                            {info.value}
+                                        </a>
+                                    ) : (
+                                        <p className="text-lg font-medium text-white break-words w-full">{info.value}</p>
+                                    )}
                                 </div>
-                                <h3 className="text-sm font-medium text-gray-400 mb-2">{info.title}</h3>
-                                {info.link ? (
-                                    <a
-                                        href={info.link}
-                                        className="text-white hover:text-blue-400 transition break-words"
-                                        target={info.link.startsWith('http') ? '_blank' : undefined}
-                                        rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                    >
-                                        {info.value}
-                                    </a>
-                                ) : (
-                                    <p className="text-white break-words">{info.value}</p>
-                                )}
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Bottom Row: Headquarters, US Office */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {contactInfo.slice(3, 5).map((info, index) => (
+                            <div key={index} className="relative group overflow-hidden bg-[#0A0A0A] border border-white/10 hover:border-blue-500/30 rounded-2xl p-8 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+                                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
+                                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-500 border border-blue-500/20">
+                                        <div className="scale-125">
+                                            {info.icon}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xs uppercase tracking-widest font-semibold text-gray-500 mb-2">{info.title}</h3>
+                                        {info.link ? (
+                                            <a
+                                                href={info.link}
+                                                className="text-lg font-medium text-white hover:text-blue-400 transition-colors inline-block"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {info.value}
+                                            </a>
+                                        ) : (
+                                            <p className="text-lg font-medium text-white">{info.value}</p>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>

@@ -73,7 +73,7 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
     const filter = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(20px)"]);
 
     return (
-        <div ref={containerRef} className="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-[#050505]">
+        <div ref={containerRef} className="relative w-full h-[90vh] min-h-[650px] flex items-center justify-center overflow-hidden bg-[#050505]">
             {/* Background Video with Parallax & Scale */}
             <motion.div style={{ y, scale, opacity, filter }} className="absolute inset-0 w-full h-full z-0 origin-center">
                 <video
@@ -103,7 +103,7 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
             </motion.div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-center text-center mt-20">
+            <div className="relative z-20 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex flex-col items-center justify-center text-center mt-20">
                 
                 {/* Animated Badge */}
                 <motion.div
@@ -127,18 +127,18 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                     className="flex flex-col items-center justify-center gap-2 mb-8"
                 >
                     <div className="overflow-hidden">
-                        <motion.h1 variants={textWordVariants} className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] mix-blend-overlay drop-shadow-2xl">
+                        <motion.h1 variants={textWordVariants} className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
                             BUILDING
                         </motion.h1>
                     </div>
                     <div className="overflow-hidden flex flex-wrap justify-center gap-x-4">
                         <motion.h1 
                             variants={textWordVariants} 
-                            className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black tracking-wide sm:tracking-tighter leading-[0.9] hero-outline-text"
+                            className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black tracking-wide sm:tracking-tighter leading-[0.9] text-cyan-400 drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]"
                         >
                             SUSTAINABLE
                         </motion.h1>
-                        <motion.h1 variants={textWordVariants} className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] mix-blend-overlay drop-shadow-2xl">
+                        <motion.h1 variants={textWordVariants} className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white tracking-tighter leading-[0.9] drop-shadow-[0_0_20px_rgba(0,0,0,0.8)]">
                             SUCCESS
                         </motion.h1>
                     </div>
@@ -161,15 +161,14 @@ const Hero = ({ videoSrc = "/video/hero_video.mp4" }) => {
                     className="flex flex-col sm:flex-row gap-6 items-center"
                 >
                     <MagneticButton href="/contact-us">
-                        <div className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                        <div className="group relative px-8 py-4 bg-[#4460ef] text-white font-semibold rounded-full overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(68,96,239,0.3)] hover:shadow-[0_0_40px_rgba(68,96,239,0.7)]">
                             <span className="relative z-10">Start Your Project</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-200 to-blue-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                     </MagneticButton>
                     
                     <MagneticButton href="#services">
-                        <div className="px-8 py-4 bg-white/10 text-white font-semibold rounded-full border border-white/20 backdrop-blur-md hover:bg-white/20 hover:scale-105 transition-all">
-                            Services
+                        <div className="group relative px-8 py-4 bg-[#023dbb] text-white font-semibold rounded-full overflow-hidden transition-all hover:scale-105 shadow-[0_0_20px_rgba(2,61,187,0.3)] hover:shadow-[0_0_40px_rgba(2,61,187,0.7)]">
+                            <span className="relative z-10">Services</span>
                         </div>
                     </MagneticButton>
                 </motion.div>

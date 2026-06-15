@@ -27,7 +27,7 @@ const STARS = [
 ]
 
 // ─── Blog Card ────────────────────────────────────────────────────────────────
-const BlogCard = ({ post, index }) => (
+export const BlogCard = ({ post, index, basePath = '/blog' }) => (
     <motion.article
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const BlogCard = ({ post, index }) => (
         transition={{ duration: 0.45, delay: index * 0.06 }}
         className="group relative h-full"
     >
-        <Link href={`/blog/${post.slug}`} className="block h-full">
+        <Link href={post.href || `${basePath}/${post.slug || post.id}`} className="block h-full">
             {/* Neumorphic card shell */}
             <div
                 className="relative h-full rounded-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-1"
@@ -151,7 +151,7 @@ const BlogCard = ({ post, index }) => (
 )
 
 // ─── Featured Card (wide, hero-style) ─────────────────────────────────────────
-const FeaturedCard = ({ post }) => (
+export const FeaturedCard = ({ post }) => (
     <motion.article
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}

@@ -161,10 +161,10 @@ const Navbar = () => {
                         onMouseEnter={() => setIsResourcesOpen(true)}
                         onMouseLeave={() => setIsResourcesOpen(false)}
                     >
-                        <span className="cursor-pointer hover:text-[#3877F0] transition flex items-center gap-1">
+                        <Link href="/resources" className="cursor-pointer hover:text-[#3877F0] transition flex items-center gap-1">
                             Resources
                             <span className="text-xs opacity-70"></span>
-                        </span>
+                        </Link>
 
                         <AnimatePresence>
                             {isResourcesOpen && (
@@ -226,9 +226,9 @@ const Navbar = () => {
 
                         {/* Mobile Resources */}
                         <div className="px-6 py-4">
-                            <div onClick={() => setIsResourcesOpen(!isResourcesOpen)} className="flex justify-between items-center cursor-pointer hover:text-[#3877F0]">
-                                <span>Resources</span>
-                                <span className="text-xs">⌄</span>
+                            <div className="flex justify-between items-center hover:text-[#3877F0]">
+                                <Link href="/resources" onClick={() => setIsMenuOpen(false)} className="cursor-pointer">Resources</Link>
+                                <span onClick={() => setIsResourcesOpen(!isResourcesOpen)} className="text-xl cursor-pointer px-4">⌄</span>
                             </div>
 
                             <AnimatePresence>

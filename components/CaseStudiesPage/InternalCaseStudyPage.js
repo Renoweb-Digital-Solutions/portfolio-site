@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import AuthorSection from '../Author/AuthorSection';
+import ContactForm from '../shared/ContactForm';
 
 
 // ── Severity dot ──────────────────────────────────────────────────────────────
@@ -24,7 +25,8 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                 </>
             )}
 
-            <main className="max-w-5xl mx-auto px-6 py-16 relative z-10">
+            <main className="max-w-7xl mx-auto px-6 py-16 relative z-10 grid lg:grid-cols-12 gap-12">
+                <div className="lg:col-span-7">
 
                 {/* Back */}
                 <Link href="/case-studies" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition mb-8 group">
@@ -344,6 +346,18 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                                 Get in Touch
                             </button>
                         </Link>
+                    </div>
+                </div>
+                </div>
+
+                {/* Right Sidebar - Sticky Contact Form */}
+                <div className="lg:col-span-5 mt-12 lg:mt-0">
+                    <div className="sticky top-32">
+                        <ContactForm 
+                            title="Ready to Transform Your Business?"
+                            subtitle="Let's discuss how we can help you achieve similar results."
+                            showBudget={false}
+                        />
                     </div>
                 </div>
 

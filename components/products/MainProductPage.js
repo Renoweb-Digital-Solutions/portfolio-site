@@ -61,11 +61,30 @@ export default function MainProductPage() {
 
     const products = [
         {
+            id: 'growth',
+            name: 'GROWTH OS',
+            tagline: 'Unlock Your Business\'s Full Potential',
+            description: 'The ultimate operating system for scaling success. This game-changing framework guides you through seven pivotal stages to navigate complexities and achieve unparalleled success.',
+            gradient: 'from-[#4ec8ef] via-[#308fef] to-[#4460ef]',
+            logo: '/growth_os_logo.png',
+            features: [
+                'Listen to Market Data',
+                'Analyze Insights',
+                'Strategize Roadmap',
+                'Customize Approach',
+                'Deploy with Precision',
+                'Measure Progress',
+                'Unlock Value'
+            ],
+            link: '/products/growth-os'
+        },
+        {
             id: 'quantum',
             name: 'QUANTUM ACCELERATOR',
             tagline: 'Revolutionize Your Business Growth',
             description: 'The cutting-edge program designed to catapult your success. This transformative framework propels you forward by converging strategy, technology, and innovation.',
-            gradient: 'from-blue-500 via-purple-500 to-blue-600',
+            gradient: 'from-[#308fef] via-[#4460ef] to-[#023dbb]',
+            logo: '/qa_logo.png',
             features: [
                 'Realign Digital Presence',
                 'Revitalize Corporate Culture',
@@ -77,23 +96,6 @@ export default function MainProductPage() {
                 'Reignite Growth'
             ],
             link: '/products/quantum-accelerator'
-        },
-        {
-            id: 'growth',
-            name: 'GROWTH OS',
-            tagline: 'Unlock Your Business\'s Full Potential',
-            description: 'The ultimate operating system for scaling success. This game-changing framework guides you through seven pivotal stages to navigate complexities and achieve unparalleled success.',
-            gradient: 'from-blue-400 via-blue-500 to-blue-600',
-            features: [
-                'Listen to Market Data',
-                'Analyze Insights',
-                'Strategize Roadmap',
-                'Customize Approach',
-                'Deploy with Precision',
-                'Measure Progress',
-                'Unlock Value'
-            ],
-            link: '/products/growth-os'
         }
     ];
 
@@ -125,7 +127,7 @@ export default function MainProductPage() {
                 ].map((particle, i) => (
                     <div
                         key={i}
-                        className="absolute w-1 h-1 bg-blue-400 rounded-full animate-pulse"
+                        className="absolute w-1 h-1 bg-[#4ec8ef] rounded-full animate-pulse"
                         style={{
                             left: particle.left,
                             top: particle.top,
@@ -137,22 +139,22 @@ export default function MainProductPage() {
             </div>
 
             {/* Gradient Blobs */}
-            <div className="absolute top-20 left-0 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute top-20 left-0 w-96 h-96 bg-[#4460ef]/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-0 w-96 h-96 bg-[#308fef]/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#4ec8ef]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
 
             {/* Hero Section */}
             <section className="pt-32 pb-16 px-6 relative z-10">
                 <AnimatedSection className="max-w-6xl mx-auto text-center">
                     <motion.div variants={fadeUp} className="inline-block mb-6 relative">
-                        <div className="absolute inset-0 bg-blue-600/20 blur-xl animate-pulse"></div>
-                        <span className="relative px-6 py-2 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium border border-blue-600/30">
+                        <div className="absolute inset-0 bg-[#4460ef]/20 blur-xl animate-pulse"></div>
+                        <span className="relative px-6 py-2 bg-[#4460ef]/20 text-[#4ec8ef] rounded-full text-sm font-medium border border-[#4460ef]/30">
                             Transformative Solutions
                         </span>
                     </motion.div>
                     <motion.h1 variants={fadeUp} custom={1} className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                         Our
-                        <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent animate-pulse"> Products</span>
+                        <span className="bg-gradient-to-r from-[#4ec8ef] via-[#308fef] to-[#4460ef] bg-clip-text text-transparent animate-pulse"> Products</span>
                     </motion.h1>
                     <motion.p variants={fadeUp} custom={2} className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
                         Discover game-changing frameworks designed to accelerate your business growth and unlock unprecedented success.
@@ -162,7 +164,7 @@ export default function MainProductPage() {
 
             {/* Products Grid */}
             <section className="py-20 px-6 relative z-10">
-                <AnimatedSection className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+                <AnimatedSection className="max-w-6xl mx-auto grid grid-cols-1 gap-12">
                     {products.map((product, idx) => (
                         <motion.div
                             key={product.id}
@@ -177,37 +179,48 @@ export default function MainProductPage() {
                             <div className={`absolute inset-0 bg-gradient-to-r ${product.gradient} opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 rounded-3xl`}></div>
 
                             {/* Card */}
-                            <div className="relative bg-gray-900/50 border border-gray-800 rounded-3xl p-8 md:p-12 hover:border-blue-600/50 transition-all duration-500 overflow-hidden">
+                            <div className="relative bg-gray-900/50 border border-gray-800 rounded-3xl p-8 md:p-12 hover:border-[#4460ef]/50 transition-all duration-500 overflow-hidden flex flex-col md:flex-row items-center gap-12">
                                 {/* Animated Corner Accent */}
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#4460ef]/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
 
                                 {/* Sparkle Effect */}
                                 {hoveredProduct === product.id && (
                                     <>
-                                        <div className="absolute top-10 right-10 w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
-                                        <div className="absolute top-20 right-24 w-1 h-1 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '0.3s' }}></div>
-                                        <div className="absolute top-16 right-16 w-1.5 h-1.5 bg-blue-300 rounded-full animate-ping" style={{ animationDelay: '0.6s' }}></div>
+                                        <div className="absolute top-10 right-10 w-2 h-2 bg-[#4ec8ef] rounded-full animate-ping"></div>
+                                        <div className="absolute top-20 right-24 w-1 h-1 bg-[#308fef] rounded-full animate-ping" style={{ animationDelay: '0.3s' }}></div>
+                                        <div className="absolute top-16 right-16 w-1.5 h-1.5 bg-[#4460ef] rounded-full animate-ping" style={{ animationDelay: '0.6s' }}></div>
                                     </>
                                 )}
 
-                                <div className="relative z-10">
+                                {/* Left Logo */}
+                                <div className="flex-shrink-0 relative z-10 w-48 h-48 md:w-64 md:h-64 flex items-center justify-center bg-black/20 rounded-2xl border border-white/5 group-hover:border-white/10 transition-colors">
+                                    <Image
+                                        src={product.logo}
+                                        width={200}
+                                        height={200}
+                                        alt={`${product.name} logo`}
+                                        className="object-contain"
+                                    />
+                                </div>
+
+                                <div className="relative z-10 flex-grow text-center md:text-left">
                                     {/* Product Name */}
-                                    <h2 className={`text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300`}>
+                                    <h2 className={`text-3xl md:text-5xl font-black mb-4 bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300 origin-left`}>
                                         {product.name}
                                     </h2>
 
                                     {/* Tagline */}
-                                    <p className="text-xl font-semibold text-gray-300 mb-6 group-hover:text-white transition-colors">
+                                    <p className="text-lg md:text-xl font-semibold text-gray-300 mb-6 group-hover:text-white transition-colors">
                                         {product.tagline}
                                     </p>
 
                                     {/* Description */}
-                                    <p className="text-gray-400 leading-relaxed mb-8">
+                                    <p className="text-gray-400 leading-relaxed mb-8 max-w-2xl">
                                         {product.description}
                                     </p>
 
                                     {/* Features Grid */}
-                                    <div className="grid grid-cols-2 gap-3 mb-8">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                                         {product.features.map((feature, index) => (
                                             <motion.div
                                                 key={index}
@@ -217,7 +230,7 @@ export default function MainProductPage() {
                                                 transition={{ delay: index * 0.05, duration: 0.4 }}
                                                 className="flex items-center gap-2 text-sm text-gray-400 group-hover:text-gray-300 transition-colors"
                                             >
-                                                <div className="flex-shrink-0 w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:animate-pulse"></div>
+                                                <div className="flex-shrink-0 w-1.5 h-1.5 bg-[#4ec8ef] rounded-full group-hover:animate-pulse"></div>
                                                 <span>{feature}</span>
                                             </motion.div>
                                         ))}
@@ -226,7 +239,7 @@ export default function MainProductPage() {
                                     {/* CTA Button */}
                                     <a
                                         href={product.link}
-                                        className={`inline-flex items-center gap-2 bg-gradient-to-r ${product.gradient} text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-600/50 group-hover:scale-105`}
+                                        className={`inline-flex items-center gap-2 bg-gradient-to-r ${product.gradient} text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#4460ef]/50 group-hover:scale-105`}
                                     >
                                         Explore {product.id === 'quantum' ? 'Quantum Accelerator' : 'Growth OS'}
                                         <svg
@@ -257,7 +270,7 @@ export default function MainProductPage() {
                         <motion.div
                             variants={scaleIn}
                             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-                            className="bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8"
+                            className="bg-gradient-to-br from-[#308fef]/10 via-[#4460ef]/10 to-[#023dbb]/10 border border-[#308fef]/30 rounded-2xl p-8"
                         >
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="flex items-center">
@@ -283,7 +296,7 @@ export default function MainProductPage() {
                                         transition={{ delay: i * 0.1, duration: 0.5 }}
                                         className="flex items-start gap-2"
                                     >
-                                        <span className="text-blue-400 mt-1">→</span>
+                                        <span className="text-[#4ec8ef] mt-1">→</span>
                                         <span>{item}</span>
                                     </motion.li>
                                 ))}
@@ -293,7 +306,7 @@ export default function MainProductPage() {
                         <motion.div
                             variants={scaleIn}
                             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
-                            className="bg-gradient-to-br from-blue-600/10 to-blue-800/10 border border-blue-600/30 rounded-2xl p-8"
+                            className="bg-gradient-to-br from-[#4ec8ef]/10 to-[#308fef]/10 border border-[#4ec8ef]/30 rounded-2xl p-8"
                         >
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="flex items-center">
@@ -319,7 +332,7 @@ export default function MainProductPage() {
                                         transition={{ delay: i * 0.1, duration: 0.5 }}
                                         className="flex items-start gap-2"
                                     >
-                                        <span className="text-blue-400 mt-1">→</span>
+                                        <span className="text-[#4ec8ef] mt-1">→</span>
                                         <span>{item}</span>
                                     </motion.li>
                                 ))}
@@ -329,15 +342,14 @@ export default function MainProductPage() {
                 </AnimatedSection>
             </section >
 
-            {/* CTA Section */}
             <section className="py-20 px-6 relative z-10" >
                 <AnimatedSection className="max-w-4xl mx-auto text-center">
                     <motion.div
                         variants={scaleIn}
-                        className="relative bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-800/20 border border-blue-600/40 rounded-3xl p-12 overflow-hidden"
+                        className="relative bg-gradient-to-r from-[#4ec8ef]/20 via-[#308fef]/20 to-[#4460ef]/20 border border-[#308fef]/40 rounded-3xl p-12 overflow-hidden"
                     >
                         {/* Animated background shimmer */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent animate-shimmer"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#4ec8ef]/10 to-transparent animate-shimmer"></div>
 
                         <div className="relative z-10">
                             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold mb-6">
@@ -347,7 +359,7 @@ export default function MainProductPage() {
                                 Choose your path to exponential growth and start your transformation today.
                             </motion.p>
                             <motion.div variants={fadeUp} custom={2} className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Link href="/contact-us" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center justify-center gap-2 group">
+                                <Link href="/contact-us" className="bg-[#4460ef] hover:bg-[#308fef] text-white px-8 py-4 rounded-lg text-lg font-semibold transition inline-flex items-center justify-center gap-2 group">
                                     Schedule Consultation
                                     <svg className="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -15,15 +15,15 @@ const StatsRow = ({ stats, label, labelColor }) => (
         <span className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${labelColor} w-12 md:w-16 text-right shrink-0`}>{label}</span>
         <div className="flex items-center gap-1 md:gap-2 flex-1 py-2 md:py-3 px-2 md:px-4 rounded-xl md:rounded-2xl bg-white/[0.03] border border-white/5">
             <StatItem value={stats.clicks} label="Clicks" />
-            <div className="w-[1px] h-6 md:h-8 bg-gradient-to-b from-transparent via-cyan-500/40 to-transparent shrink-0" />
+            <div className="w-[1px] h-6 md:h-8 bg-gradient-to-b from-transparent via-[#4ec8ef]/40 to-transparent shrink-0" />
             <StatItem value={stats.Impression} label="Impression" />
-            <div className="w-[1px] h-6 md:h-8 bg-gradient-to-b from-transparent via-cyan-500/40 to-transparent shrink-0" />
+            <div className="w-[1px] h-6 md:h-8 bg-gradient-to-b from-transparent via-[#4ec8ef]/40 to-transparent shrink-0" />
             <StatItem value={stats.CTR} label="CTR" />
         </div>
     </div>
 );
 
-const CaseStudyCard = ({ data }) => {
+export const CaseStudyCard = ({ data }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -33,12 +33,12 @@ const CaseStudyCard = ({ data }) => {
             className="group relative rounded-3xl overflow-hidden transition-all duration-700 hover:-translate-y-2"
         >
             {/* Gradient border */}
-            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-cyan-500/50 via-blue-600/30 to-purple-600/50 opacity-40 group-hover:opacity-80 transition-opacity duration-700 blur-[0.5px]" />
+            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-[#308fef]/50 via-[#4460ef]/30 to-[#023dbb]/50 opacity-40 group-hover:opacity-80 transition-opacity duration-700 blur-[0.5px]" />
 
             <div className="relative rounded-3xl bg-[#0a0a0a] overflow-hidden">
                 {/* Category Badge + Title */}
                 <div className="p-4 md:p-6 pb-0 flex items-center gap-3">
-                    <span className="px-4 py-1.5 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-semibold border border-cyan-500/20 uppercase tracking-wider">
+                    <span className="px-4 py-1.5 bg-[#4ec8ef]/10 text-[#4ec8ef] rounded-full text-xs font-semibold border border-[#4ec8ef]/20 uppercase tracking-wider">
                         {data.category}
                     </span>
                 </div>
@@ -60,12 +60,12 @@ const CaseStudyCard = ({ data }) => {
 
                     {/* Arrow indicator */}
                     <div className="flex justify-center py-1">
-                        <svg className="w-5 h-5 text-cyan-500/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-5 h-5 text-[#4ec8ef]/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                         </svg>
                     </div>
 
-                    <StatsRow stats={data.after} label="After" labelColor="text-cyan-400" />
+                    <StatsRow stats={data.after} label="After" labelColor="text-[#4ec8ef]" />
                 </div>
 
                 {/* Study description */}
@@ -75,7 +75,7 @@ const CaseStudyCard = ({ data }) => {
 
                 {/* CTA */}
                 <div className="px-4 md:px-6 pb-6">
-                    <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-white group-hover:bg-cyan-500 group-hover:border-cyan-500 group-hover:text-black transition-all duration-500">
+                    <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-white group-hover:bg-[#4ec8ef] group-hover:border-[#4ec8ef] group-hover:text-black transition-all duration-500">
                         Learn more
                         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -84,7 +84,7 @@ const CaseStudyCard = ({ data }) => {
                 </div>
 
                 {/* Hover glow */}
-                <div className="absolute -inset-10 bg-gradient-to-br from-cyan-500/8 via-blue-500/4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl pointer-events-none" />
+                <div className="absolute -inset-10 bg-gradient-to-br from-[#308fef]/8 via-[#4460ef]/4 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl pointer-events-none" />
             </div>
         </motion.div>
     );

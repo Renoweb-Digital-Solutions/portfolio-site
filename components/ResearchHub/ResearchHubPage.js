@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 const categories = ['All', 'Digital Marketing', 'Consumer Behaviour', 'Social Media', 'Lead Generation', 'Branding', 'E-Commerce']
 
-const ArticleCard = ({ article, index }) => {
+export const ArticleCard = ({ article, index }) => {
     const card = (
         <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -30,8 +30,8 @@ const WhyRenoweb = () => {
     return (
         <section ref={sectionRef} className="relative py-24 md:py-32 px-6 overflow-hidden bg-black">
             {/* Ambient background glows */}
-            <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[150px] pointer-events-none" />
-            <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-[#4ec8ef]/5 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-[#4460ef]/5 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
@@ -42,13 +42,13 @@ const WhyRenoweb = () => {
                     className="text-center mb-16 md:mb-20"
                 >
                     <div className="inline-block mb-5">
-                        <span className="px-5 py-2 bg-cyan-500/10 text-cyan-400 rounded-full text-sm font-medium border border-cyan-500/20 tracking-widest uppercase">
+                        <span className="px-5 py-2 bg-[#4ec8ef]/10 text-[#4ec8ef] rounded-full text-sm font-medium border border-[#4ec8ef]/20 tracking-widest uppercase">
                             Why Choose Us
                         </span>
                     </div>
                     <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight">
                         WHY{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4ec8ef] to-[#308fef]">
                             RENOWEB
                         </span>
                     </h2>
@@ -68,7 +68,7 @@ const WhyRenoweb = () => {
                             className="group relative rounded-3xl overflow-hidden transition-all duration-700 hover:-translate-y-3"
                         >
                             {/* Gradient border */}
-                            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-cyan-500/40 via-blue-600/20 to-purple-600/40 opacity-30 group-hover:opacity-100 transition-opacity duration-700 blur-[0.5px]" />
+                            <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-br from-[#308fef]/40 via-[#4460ef]/20 to-[#023dbb]/40 opacity-30 group-hover:opacity-100 transition-opacity duration-700 blur-[0.5px]" />
 
                             <div className="relative rounded-3xl bg-[#0a0a0a] overflow-hidden h-full flex flex-col">
                                 {/* Image section */}
@@ -82,8 +82,8 @@ const WhyRenoweb = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent" />
 
                                     {/* Number badge */}
-                                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-black/50 backdrop-blur-xl border border-white/10 flex items-center justify-center group-hover:border-cyan-500/50 group-hover:scale-110 transition-all duration-500">
-                                        <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-500">
+                                    <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-black/50 backdrop-blur-xl border border-white/10 flex items-center justify-center group-hover:border-[#308fef]/50 group-hover:scale-110 transition-all duration-500">
+                                        <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#4ec8ef] to-[#308fef]">
                                             0{index + 1}
                                         </span>
                                     </div>
@@ -91,12 +91,12 @@ const WhyRenoweb = () => {
 
                                 {/* Content */}
                                 <div className="p-7 flex flex-col flex-grow">
-                                    <h3 className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 group-hover:from-cyan-300 group-hover:to-white transition-all duration-500 mb-2 leading-tight">
+                                    <h3 className="text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 group-hover:from-[#4ec8ef] group-hover:to-white transition-all duration-500 mb-2 leading-tight">
                                         {item.title.replace(/\n/g, " ")}
                                     </h3>
 
                                     {/* Accent line */}
-                                    <div className="w-10 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mt-2 mb-5 opacity-50 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                                    <div className="w-10 h-1 bg-gradient-to-r from-[#4ec8ef] to-[#308fef] rounded-full mt-2 mb-5 opacity-50 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
 
                                     <p className="text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-500 flex-grow">
                                         {item.description}
@@ -104,7 +104,7 @@ const WhyRenoweb = () => {
                                 </div>
 
                                 {/* Hover glow */}
-                                <div className="absolute -inset-10 bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl pointer-events-none" />
+                                <div className="absolute -inset-10 bg-gradient-to-br from-[#308fef]/10 via-[#4460ef]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl pointer-events-none" />
                             </div>
                         </motion.div>
                     ))}

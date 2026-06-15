@@ -21,8 +21,8 @@ const AnimatedHeadings = ({ children, triggerOnScroll = false }) => {
         }
 
         return {
-            initial: { x: -100, opacity: 0 },
-            animate: { x: 0, opacity: 1 }
+            initial: { y: -100, opacity: 0 },
+            animate: { y: 0, opacity: 1 }
         };
     };
 

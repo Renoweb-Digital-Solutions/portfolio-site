@@ -104,32 +104,85 @@ const AnimatedLine = ({ progress, start, end, color, className }) => {
     );
 };
 
+/* ─── Header Overlay (inside sticky viewport, fades out as products appear) ─── */
+const HeaderOverlay = ({ scrollProgress }) => {
+    const headerOpacity = useTransform(scrollProgress, [0, 0.08], [1, 0]);
+    const headerY = useTransform(scrollProgress, [0, 0.08], [0, -60]);
+    const headerScale = useTransform(scrollProgress, [0, 0.08], [1, 0.95]);
+
+    return (
+        <motion.div
+            style={{ opacity: headerOpacity, y: headerY, scale: headerScale }}
+            className="absolute inset-0 z-25 flex items-center justify-center pointer-events-none"
+        >
+            <div className="relative px-6 text-center">
+                {/* Ambient glows */}
+                <div className="absolute top-1/3 -left-32 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+                <div className="absolute bottom-1/4 -right-32 w-[350px] h-[350px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
+
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="relative z-10"
+                >
+                    <div className="inline-block mb-5">
+                        <span className="px-5 py-2 bg-cyan-500/10 text-cyan-400 rounded-full text-sm font-medium border border-cyan-500/20 tracking-widest uppercase">
+                            What We Build
+                        </span>
+                    </div>
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight">
+                        OUR{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+                            PRODUCTS
+                        </span>
+                    </h2>
+                    <p className="mt-5 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                        Proprietary frameworks designed to unlock exponential growth for your business.
+                    </p>
+
+                    {/* Scroll cue */}
+                    <div className="mt-12 flex flex-col items-center gap-2 text-white/30">
+                        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll to explore</span>
+                        <motion.div
+                            animate={{ y: [0, 8, 0] }}
+                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                            className="w-[1px] h-10 bg-gradient-to-b from-white/40 to-transparent"
+                        />
+                    </div>
+                </motion.div>
+            </div>
+        </motion.div>
+    );
+};
+
 /* ─── Single Product Showcase (used inside the sticky container) ─── */
 const ProductShowcase = ({ product, index, scrollProgress }) => {
     const colors = accentColors[product.accent];
     const isFirst = index === 0;
 
-    // Each product occupies a segment of overall scroll:
-    // Product 0: 0.0 → 0.5
+    // Header occupies 0.0 → 0.1 of scroll progress (fading out)
+    // Product 0: 0.08 → 0.5  (overlaps slightly with header fade-out)
     // Product 1: 0.5 → 1.0
-    const segStart = index * 0.5;
-    const segEnd = (index + 1) * 0.5;
+    const segStart = isFirst ? 0.08 : 0.5;
+    const segEnd = isFirst ? 0.5 : 1.0;
 
     // --- Image transforms ---
     const imgScale = useTransform(
         scrollProgress,
-        [segStart, segStart + 0.15, segEnd - 0.15, segEnd],
-        [1.3, 1.0, 1.0, 0.95]
+        [segStart, segStart + 0.08, segEnd - 0.08, segEnd],
+        [1.2, 1.0, 1.0, 0.95]
     );
     const imgOpacity = useTransform(
         scrollProgress,
-        [segStart, segStart + 0.08, segEnd - 0.08, segEnd],
+        [segStart, segStart + 0.05, segEnd - 0.05, segEnd],
         [0, 1, 1, 0]
     );
     const imgFilter = useTransform(
         scrollProgress,
-        [segStart, segStart + 0.12, segEnd - 0.12, segEnd],
-        ["blur(12px) brightness(0.3)", "blur(0px) brightness(1)", "blur(0px) brightness(1)", "blur(12px) brightness(0.3)"]
+        [segStart, segStart + 0.06, segEnd - 0.06, segEnd],
+        ["blur(8px) brightness(0.4)", "blur(0px) brightness(1)", "blur(0px) brightness(1)", "blur(8px) brightness(0.3)"]
     );
 
     // --- Clip-path reveal (circle expanding from center) ---
@@ -142,74 +195,74 @@ const ProductShowcase = ({ product, index, scrollProgress }) => {
     // --- Content transforms ---
     const contentOpacity = useTransform(
         scrollProgress,
-        [segStart + 0.08, segStart + 0.2, segEnd - 0.15, segEnd - 0.05],
+        [segStart + 0.03, segStart + 0.1, segEnd - 0.08, segEnd - 0.03],
         [0, 1, 1, 0]
     );
     const contentX = useTransform(
         scrollProgress,
-        [segStart + 0.08, segStart + 0.2, segEnd - 0.15, segEnd - 0.05],
-        [isFirst ? -80 : 80, 0, 0, isFirst ? -40 : 40]
+        [segStart + 0.03, segStart + 0.1, segEnd - 0.08, segEnd - 0.03],
+        [isFirst ? -60 : 60, 0, 0, isFirst ? -40 : 40]
     );
 
     // --- Floating elements ---
     const orbY = useTransform(scrollProgress, [segStart, segEnd], ["15%", "-15%"]);
     const orbScale = useTransform(
         scrollProgress,
-        [segStart, segStart + 0.25, segEnd - 0.1, segEnd],
+        [segStart, segStart + 0.1, segEnd - 0.06, segEnd],
         [0.5, 1.3, 1.3, 0.5]
     );
     const orbOpacity = useTransform(
         scrollProgress,
-        [segStart, segStart + 0.1, segEnd - 0.1, segEnd],
+        [segStart, segStart + 0.06, segEnd - 0.06, segEnd],
         [0, 1, 1, 0]
     );
 
     // --- Vertical accent line draw ---
     const lineScaleY = useTransform(
         scrollProgress,
-        [segStart + 0.1, segStart + 0.25],
+        [segStart + 0.04, segStart + 0.12],
         [0, 1]
     );
     const lineOpacity = useTransform(
         scrollProgress,
-        [segStart + 0.1, segStart + 0.15, segEnd - 0.1, segEnd],
+        [segStart + 0.04, segStart + 0.08, segEnd - 0.06, segEnd],
         [0, 0.6, 0.6, 0]
     );
 
     // --- Product number counter animation ---
     const numOpacity = useTransform(
         scrollProgress,
-        [segStart + 0.05, segStart + 0.15, segEnd - 0.12, segEnd - 0.02],
+        [segStart + 0.02, segStart + 0.08, segEnd - 0.06, segEnd - 0.02],
         [0, 1, 1, 0]
     );
     const numY = useTransform(
         scrollProgress,
-        [segStart + 0.05, segStart + 0.15],
+        [segStart + 0.02, segStart + 0.08],
         [30, 0]
     );
 
     // Logo pulse
     const logoPulse = useTransform(
         scrollProgress,
-        [segStart + 0.15, segStart + 0.25],
+        [segStart + 0.05, segStart + 0.1],
         [0.8, 1]
     );
     const logoOpacity = useTransform(
         scrollProgress,
-        [segStart + 0.1, segStart + 0.2, segEnd - 0.12, segEnd - 0.02],
+        [segStart + 0.04, segStart + 0.1, segEnd - 0.06, segEnd - 0.02],
         [0, 1, 1, 0]
     );
 
     // CTA button
     const ctaOpacity = useTransform(
         scrollProgress,
-        [segStart + 0.22, segStart + 0.32, segEnd - 0.15, segEnd - 0.05],
+        [segStart + 0.08, segStart + 0.14, segEnd - 0.08, segEnd - 0.03],
         [0, 1, 1, 0]
     );
     const ctaY = useTransform(
         scrollProgress,
-        [segStart + 0.22, segStart + 0.32],
-        [30, 0]
+        [segStart + 0.08, segStart + 0.14],
+        [20, 0]
     );
 
     const words = product.name.split(" ");
@@ -329,8 +382,8 @@ const ProductShowcase = ({ product, index, scrollProgress }) => {
                                 text={firstWord}
                                 className="text-white drop-shadow-lg"
                                 progress={scrollProgress}
-                                start={segStart + 0.1}
-                                end={segStart + 0.22}
+                                start={segStart + 0.04}
+                                end={segStart + 0.1}
                             />
                         </h2>
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.05] mb-4 tracking-tight">
@@ -338,16 +391,16 @@ const ProductShowcase = ({ product, index, scrollProgress }) => {
                                 text={restWords}
                                 className={`text-transparent bg-clip-text bg-gradient-to-r ${colors.gradient}`}
                                 progress={scrollProgress}
-                                start={segStart + 0.14}
-                                end={segStart + 0.26}
+                                start={segStart + 0.06}
+                                end={segStart + 0.12}
                             />
                         </h2>
 
                         {/* Animated accent line */}
                         <AnimatedLine
                             progress={scrollProgress}
-                            start={segStart + 0.18}
-                            end={segStart + 0.28}
+                            start={segStart + 0.06}
+                            end={segStart + 0.12}
                             color={colors.gradient}
                             className="w-20 mb-6 rounded-full"
                         />
@@ -357,13 +410,13 @@ const ProductShowcase = ({ product, index, scrollProgress }) => {
                             style={{
                                 opacity: useTransform(
                                     scrollProgress,
-                                    [segStart + 0.2, segStart + 0.3, segEnd - 0.15, segEnd - 0.05],
+                                    [segStart + 0.06, segStart + 0.12, segEnd - 0.08, segEnd - 0.03],
                                     [0, 1, 1, 0]
                                 ),
                                 y: useTransform(
                                     scrollProgress,
-                                    [segStart + 0.2, segStart + 0.3],
-                                    [20, 0]
+                                    [segStart + 0.06, segStart + 0.12],
+                                    [15, 0]
                                 ),
                             }}
                             className="text-gray-300/90 text-sm sm:text-base leading-relaxed mb-8 max-w-md"
@@ -397,7 +450,7 @@ const ProductShowcase = ({ product, index, scrollProgress }) => {
 
 /* ─── Scroll Progress Dots ─── */
 const ScrollDots = ({ scrollProgress }) => {
-    const opacity = useTransform(scrollProgress, [0, 0.05, 0.9, 1], [0, 1, 1, 0]);
+    const opacity = useTransform(scrollProgress, [0.08, 0.12, 0.9, 1], [0, 1, 1, 0]);
 
     return (
         <motion.div
@@ -405,8 +458,8 @@ const ScrollDots = ({ scrollProgress }) => {
             className="absolute right-6 sm:right-10 top-1/2 -translate-y-1/2 z-30 hidden lg:flex flex-col items-center gap-1"
         >
             {products.map((p, i) => {
-                const dotStart = i * 0.5;
-                const dotEnd = (i + 1) * 0.5;
+                const dotStart = i === 0 ? 0.08 : 0.5;
+                const dotEnd = i === 0 ? 0.5 : 1.0;
                 return <ScrollDot key={i} index={i} accent={p.accent} scrollProgress={scrollProgress} dotStart={dotStart} dotEnd={dotEnd} />;
             })}
         </motion.div>
@@ -461,10 +514,7 @@ const ScrollDot = ({ index, accent, scrollProgress, dotStart, dotEnd }) => {
 
 /* ─── Main Products Component ─── */
 const Our_Products = () => {
-    const headerRef = useRef(null);
-    const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
-
-    // The sticky scroll container
+    // The sticky scroll container — header is now INSIDE this container
     const stickyContainerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: stickyContainerRef,
@@ -473,63 +523,21 @@ const Our_Products = () => {
 
     return (
         <div className="relative bg-black">
-            {/* ── Section Header ── */}
-            <div ref={headerRef} className="relative py-24 md:py-28 px-6 overflow-hidden">
-                {/* Ambient glows */}
-                <div className="absolute top-1/3 -left-32 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
-                <div className="absolute bottom-1/4 -right-32 w-[350px] h-[350px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none" />
-
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="text-center"
-                    >
-                        <div className="inline-block mb-5">
-                            <span className="px-5 py-2 bg-cyan-500/10 text-cyan-400 rounded-full text-sm font-medium border border-cyan-500/20 tracking-widest uppercase">
-                                What We Build
-                            </span>
-                        </div>
-                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight">
-                            OUR{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                                PRODUCTS
-                            </span>
-                        </h2>
-                        <p className="mt-5 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                            Proprietary frameworks designed to unlock exponential growth for your business.
-                        </p>
-
-                        {/* Scroll cue */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={isHeaderInView ? { opacity: 1 } : {}}
-                            transition={{ delay: 1, duration: 1 }}
-                            className="mt-12 flex flex-col items-center gap-2 text-white/30"
-                        >
-                            <span className="text-[10px] uppercase tracking-[0.3em]">Scroll to explore</span>
-                            <motion.div
-                                animate={{ y: [0, 8, 0] }}
-                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                                className="w-[1px] h-10 bg-gradient-to-b from-white/40 to-transparent"
-                            />
-                        </motion.div>
-                    </motion.div>
-                </div>
-            </div>
-
             {/* ── Sticky Parallax Scroll Container ── */}
             {/*
-                Total height = (number of products) × 150vh for scroll room.
-                More height = more scroll distance = slower, more cinematic animations.
+                Header + Products all live inside one scroll-tracked container.
+                Header fades out at 0-8% progress, products occupy the rest.
+                Total height = 250vh → 150vh scrollable distance.
             */}
             <div
                 ref={stickyContainerRef}
                 className="relative"
-                style={{ height: `${products.length * 150}vh` }}
+                style={{ height: "250vh" }}
             >
                 <div className="sticky top-0 h-screen w-full overflow-hidden">
+                    {/* Header overlay — visible initially, fades as you scroll */}
+                    <HeaderOverlay scrollProgress={scrollYProgress} />
+
                     {/* Product layers stack on top of each other; visibility controlled by scroll */}
                     {products.map((product, index) => (
                         <ProductShowcase
