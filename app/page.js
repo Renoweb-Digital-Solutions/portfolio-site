@@ -6,6 +6,7 @@ import Our_Services from "@/components/Our_Services";
 import OurPartners from "@/components/shared/OurPartners";
 import Testimonials from "@/components/shared/Testimonials";
 import WhyRenoweb from "@/components/WhyRenoweb";
+import AsSeenOn from "@/components/shared/AsSeenOn";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Our_Results />
         <OurPartners />
         <Testimonials />
+        <AsSeenOn />
         <WhyRenoweb />
         <Case_Studies />
       </div>
