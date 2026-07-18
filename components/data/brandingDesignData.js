@@ -6,7 +6,7 @@ export const brandingDesignData = {
         "/recap/branding/logos/growthos.jpg",
         "/recap/branding/logos/marketing_mantras.jpg",
         "/recap/branding/logos/quantum.jpg",
-        "/recap/branding/logos/renoweb.jpg",
+        "/recap/branding/logos/Renoweb.jpg",
         "/recap/branding/logos/threaded_hobbies.jpg",
         "/recap/branding/logos/webwonder.jpg",
         "/recap/branding/logos/ZontroMontro.jpg"
