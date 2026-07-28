@@ -107,3 +107,10 @@ body {
   background-size: 80px 80px;
   opacity: 0.4;
 }
+
+.diagram-grid-bg {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
