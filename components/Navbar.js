@@ -103,6 +103,8 @@ const Navbar = () => {
                                     {isFrameworksOpen && (
                                         <motion.div initial={{ opacity: 0, y: 15, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 15, scale: 0.95 }} transition={{ duration: 0.3, ease: "easeOut" }} className="absolute top-10 left-0 bg-[#0F0F0F] border border-white/10 rounded-2xl p-2 flex flex-col gap-1 overflow-hidden shadow-xl min-w-[280px]">
                                             <DropdownItem title="Quantum Accelerator" subtitle="High-Velocity Growth" iconPath="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            <DropdownItem title="Renoweb Prism" subtitle="Founder-Voice Content" href="/services/frameworks/renoweb-prism" iconPath="M12 3l-8 18h16L12 3zm0 4l5.5 12h-11L12 7z" />
+                                            <DropdownItem title="Waterfall OS" subtitle="Content Repurposing" href="/services/frameworks/renoweb-waterfall" iconPath="M4 7v10c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V7M4 7h16M4 7c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4" />
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -282,6 +284,8 @@ const Navbar = () => {
                                         {isFrameworksOpen && (
                                             <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="mt-2 ml-3 border-l border-[#3877F0]/20 flex flex-col gap-1">
                                                 <MobileDropdownItem title="Quantum Accelerator" subtitle="High-Velocity Growth" iconPath="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                <MobileDropdownItem title="Renoweb Prism" subtitle="Founder-Voice Content" href="/services/frameworks/renoweb-prism" onClick={() => setIsMenuOpen(false)} iconPath="M12 3l-8 18h16L12 3zm0 4l5.5 12h-11L12 7z" />
+                                                <MobileDropdownItem title="Waterfall OS" subtitle="Content Repurposing" href="/services/frameworks/renoweb-waterfall" onClick={() => setIsMenuOpen(false)} iconPath="M4 7v10c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V7M4 7h16M4 7c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4" />
                                             </motion.div>
                                         )}
                                     </AnimatePresence>

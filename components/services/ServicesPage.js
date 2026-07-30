@@ -566,6 +566,137 @@ export default function ServicesPage() {
             </section>
 
             {/* ════════════════════════════════════════════════
+                SECTION 4B: OUR FRAMEWORKS
+            ════════════════════════════════════════════════ */}
+            <section className="py-20 px-6 relative z-10">
+                <AnimatedSection className="max-w-7xl mx-auto">
+                    <motion.div variants={fadeUp} className="text-center mb-16">
+                        <div className="inline-block mb-5">
+                            <span className="px-5 py-2 bg-[#ffc857]/10 text-[#ffc857] rounded-full text-sm font-medium border border-[#ffc857]/20 tracking-widest uppercase">
+                                Frameworks
+                            </span>
+                        </div>
+                        <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight">
+                            OUR{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4ec8ef] to-[#308fef]">
+                                FRAMEWORKS
+                            </span>
+                        </h2>
+                        <p className="mt-5 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                            Proprietary systems built from real-world experience — designed to give founders repeatable, scalable playbooks for growth.
+                        </p>
+                    </motion.div>
+
+                    <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                        {/* Renoweb Prism Card */}
+                        <Link href="/services/frameworks/renoweb-prism" className="group relative block">
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#4460ef]/0 via-[#4ec8ef]/0 to-[#4460ef]/0 group-hover:from-[#4460ef]/10 group-hover:via-[#4ec8ef]/10 group-hover:to-[#4460ef]/10 blur-2xl transition-all duration-500 rounded-3xl" />
+                            <motion.div
+                                variants={fadeUp}
+                                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                                className="relative bg-gray-900/50 border border-gray-800 rounded-3xl p-8 md:p-10 overflow-hidden transition-all duration-500 hover:border-[#4460ef]/50 hover:shadow-[0_0_40px_rgba(68,96,239,0.1)]"
+                            >
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-[#4460ef]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                <div className="relative z-10">
+                                    <div className="flex items-start justify-between mb-5">
+                                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#4460ef]/15 to-[#4ec8ef]/15 border border-[#4460ef]/20 flex items-center justify-center text-[#4ec8ef] group-hover:border-[#4ec8ef]/40 group-hover:scale-110 transition-all duration-500">
+                                            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l-8 18h16L12 3z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 7l5.5 12h-11L12 7z" />
+                                            </svg>
+                                        </div>
+                                        <div className="opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#4ec8ef]">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 group-hover:from-[#4ec8ef] group-hover:to-white transition-all duration-500 mb-2">
+                                        Renoweb Prism
+                                    </h3>
+                                    <div className="w-10 h-1 bg-gradient-to-r from-[#4ec8ef] to-[#308fef] rounded-full mb-4 opacity-50 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                                    <p className="text-sm text-[#4ec8ef]/60 uppercase tracking-widest mb-3 font-medium">Ultimate Founder-Voice Content Creator</p>
+                                    <p className="text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                                        A raw-moment capture and conversion system that turns lived moments into publishable posts using a repeatable Story Arc — without losing your authentic voice.
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </Link>
+
+                        {/* Renoweb Waterfall OS Card */}
+                        <Link href="/services/frameworks/renoweb-waterfall" className="group relative block">
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#4ec8ef]/0 via-[#308fef]/0 to-[#4ec8ef]/0 group-hover:from-[#4ec8ef]/10 group-hover:via-[#308fef]/10 group-hover:to-[#4ec8ef]/10 blur-2xl transition-all duration-500 rounded-3xl" />
+                            <motion.div
+                                variants={fadeUp}
+                                custom={0.5}
+                                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                                className="relative bg-gray-900/50 border border-gray-800 rounded-3xl p-8 md:p-10 overflow-hidden transition-all duration-500 hover:border-[#308fef]/50 hover:shadow-[0_0_40px_rgba(48,143,239,0.1)]"
+                            >
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-[#308fef]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                <div className="relative z-10">
+                                    <div className="flex items-start justify-between mb-5">
+                                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#4ec8ef]/15 to-[#308fef]/15 border border-[#4ec8ef]/20 flex items-center justify-center text-[#4ec8ef] group-hover:border-[#308fef]/40 group-hover:scale-110 transition-all duration-500">
+                                            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V7M4 7h16M4 7c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4" />
+                                            </svg>
+                                        </div>
+                                        <div className="opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#4ec8ef]">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 group-hover:from-[#4ec8ef] group-hover:to-white transition-all duration-500 mb-2">
+                                        Waterfall OS
+                                    </h3>
+                                    <div className="w-10 h-1 bg-gradient-to-r from-[#4ec8ef] to-[#308fef] rounded-full mb-4 opacity-50 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                                    <p className="text-sm text-[#4ec8ef]/60 uppercase tracking-widest mb-3 font-medium">Proprietary Repurposing Engine</p>
+                                    <p className="text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                                        A structured system that takes one core piece of source content and cascades it into 30 distinct content expressions.
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </Link>
+
+                        {/* Quantum Accelerator Card */}
+                        <Link href="/products/quantum-accelerator" className="group relative block">
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#023dbb]/0 via-[#308fef]/0 to-[#023dbb]/0 group-hover:from-[#023dbb]/10 group-hover:via-[#308fef]/10 group-hover:to-[#023dbb]/10 blur-2xl transition-all duration-500 rounded-3xl" />
+                            <motion.div
+                                variants={fadeUp}
+                                custom={1}
+                                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                                className="relative bg-gray-900/50 border border-gray-800 rounded-3xl p-8 md:p-10 overflow-hidden transition-all duration-500 hover:border-[#308fef]/50 hover:shadow-[0_0_40px_rgba(48,143,239,0.1)]"
+                            >
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-[#308fef]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                <div className="relative z-10">
+                                    <div className="flex items-start justify-between mb-5">
+                                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#023dbb]/15 to-[#308fef]/15 border border-[#023dbb]/20 flex items-center justify-center text-[#308fef] group-hover:border-[#308fef]/40 group-hover:scale-110 transition-all duration-500">
+                                            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                            </svg>
+                                        </div>
+                                        <div className="opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#308fef]">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 group-hover:from-[#308fef] group-hover:to-white transition-all duration-500 mb-2">
+                                        Quantum Accelerator
+                                    </h3>
+                                    <div className="w-10 h-1 bg-gradient-to-r from-[#308fef] to-[#4460ef] rounded-full mb-4 opacity-50 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                                    <p className="text-sm text-[#308fef]/60 uppercase tracking-widest mb-3 font-medium">High-Velocity Growth</p>
+                                    <p className="text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                                        A cutting-edge program designed to catapult your success — converging strategy, technology, and innovation into exponential growth.
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </Link>
+                    </motion.div>
+                </AnimatedSection>
+            </section>
+
+            {/* ════════════════════════════════════════════════
                 SECTION 5: TRUST / CREDIBILITY STRIP
                 (COMMENTED OUT — Awaiting CEO approval on stats)
             ════════════════════════════════════════════════ */}
