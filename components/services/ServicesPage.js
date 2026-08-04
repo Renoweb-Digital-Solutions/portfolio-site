@@ -658,6 +658,41 @@ export default function ServicesPage() {
                             </motion.div>
                         </Link>
 
+                        {/* Renoweb Brand Blueprint Card */}
+                        <Link href="/services/frameworks/renoweb-blueprint" className="group relative block">
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#308fef]/0 via-[#023dbb]/0 to-[#308fef]/0 group-hover:from-[#308fef]/10 group-hover:via-[#023dbb]/10 group-hover:to-[#308fef]/10 blur-2xl transition-all duration-500 rounded-3xl" />
+                            <motion.div
+                                variants={fadeUp}
+                                custom={0.8}
+                                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                                className="relative bg-gray-900/50 border border-gray-800 rounded-3xl p-8 md:p-10 overflow-hidden transition-all duration-500 hover:border-[#023dbb]/50 hover:shadow-[0_0_40px_rgba(2,61,187,0.1)]"
+                            >
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-[#023dbb]/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                                <div className="relative z-10">
+                                    <div className="flex items-start justify-between mb-5">
+                                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#308fef]/15 to-[#023dbb]/15 border border-[#308fef]/20 flex items-center justify-center text-[#308fef] group-hover:border-[#023dbb]/40 group-hover:scale-110 transition-all duration-500">
+                                            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                            </svg>
+                                        </div>
+                                        <div className="opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#308fef]">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 group-hover:from-[#308fef] group-hover:to-white transition-all duration-500 mb-2">
+                                        Brand Blueprint
+                                    </h3>
+                                    <div className="w-10 h-1 bg-gradient-to-r from-[#308fef] to-[#023dbb] rounded-full mb-4 opacity-50 group-hover:opacity-100 group-hover:w-16 transition-all duration-500" />
+                                    <p className="text-sm text-[#308fef]/60 uppercase tracking-widest mb-3 font-medium">The Comprehensive Brand Map</p>
+                                    <p className="text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                                        A structured diagnostic that documents your brand's foundation before a single piece of copy or creative is built.
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </Link>
+
                         {/* Quantum Accelerator Card */}
                         <Link href="/products/quantum-accelerator" className="group relative block">
                             <div className="absolute inset-0 bg-gradient-to-r from-[#023dbb]/0 via-[#308fef]/0 to-[#023dbb]/0 group-hover:from-[#023dbb]/10 group-hover:via-[#308fef]/10 group-hover:to-[#023dbb]/10 blur-2xl transition-all duration-500 rounded-3xl" />

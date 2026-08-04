@@ -105,6 +105,7 @@ const Navbar = () => {
                                             <DropdownItem title="Quantum Accelerator" subtitle="High-Velocity Growth" iconPath="M13 10V3L4 14h7v7l9-11h-7z" />
                                             <DropdownItem title="Renoweb Prism" subtitle="Founder-Voice Content" href="/services/frameworks/renoweb-prism" iconPath="M12 3l-8 18h16L12 3zm0 4l5.5 12h-11L12 7z" />
                                             <DropdownItem title="Waterfall OS" subtitle="Content Repurposing" href="/services/frameworks/renoweb-waterfall" iconPath="M4 7v10c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V7M4 7h16M4 7c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4" />
+                                            <DropdownItem title="Brand Blueprint" subtitle="The Comprehensive Brand Map" href="/services/frameworks/renoweb-blueprint" iconPath="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                                         </motion.div>
                                     )}
                                 </AnimatePresence>
@@ -286,6 +287,7 @@ const Navbar = () => {
                                                 <MobileDropdownItem title="Quantum Accelerator" subtitle="High-Velocity Growth" iconPath="M13 10V3L4 14h7v7l9-11h-7z" />
                                                 <MobileDropdownItem title="Renoweb Prism" subtitle="Founder-Voice Content" href="/services/frameworks/renoweb-prism" onClick={() => setIsMenuOpen(false)} iconPath="M12 3l-8 18h16L12 3zm0 4l5.5 12h-11L12 7z" />
                                                 <MobileDropdownItem title="Waterfall OS" subtitle="Content Repurposing" href="/services/frameworks/renoweb-waterfall" onClick={() => setIsMenuOpen(false)} iconPath="M4 7v10c0 2.21 1.79 4 4 4h8c2.21 0 4-1.79 4-4V7M4 7h16M4 7c0-2.21 1.79-4 4-4h8c2.21 0 4 1.79 4 4" />
+                                                <MobileDropdownItem title="Brand Blueprint" subtitle="The Comprehensive Brand Map" href="/services/frameworks/renoweb-blueprint" onClick={() => setIsMenuOpen(false)} iconPath="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                                             </motion.div>
                                         )}
                                     </AnimatePresence>
