@@ -47,7 +47,6 @@ export default function PortfolioPage() {
 
     return (
         <div className="bg-black min-h-screen poppins-regular text-white">
-            <Navbar />
             
             <main className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
                 {/* Header */}
@@ -152,8 +151,6 @@ export default function PortfolioPage() {
                     </div>
                 )}
             </main>
-
-            <Footer />
         </div>
     );
 }
