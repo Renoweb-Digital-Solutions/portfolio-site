@@ -11,9 +11,7 @@ async function getProject(slug) {
     const url = `${process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL}/projects/${slug}.json?_t=${Date.now()}`;
     const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) return null;
-    const data = await res.json();
-    console.log(`[DEBUG] Fetched project ${slug}:`, JSON.stringify(data, null, 2));
-    return data;
+    return res.json();
 }
 
 export async function generateMetadata({ params }) {
