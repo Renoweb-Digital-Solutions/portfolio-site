@@ -16,7 +16,7 @@ export const ArticleCard = ({ article, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.07 }}
-            className="group relative rounded-2xl overflow-hidden cursor-pointer h-full"
+            className="group relative rounded-2xl overflow-hidden cursor-pointer h-full flex flex-col"
             style={{
                 background: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(251, 146, 60, 0.15)',
@@ -46,7 +46,7 @@ export const ArticleCard = ({ article, index }) => {
                 </div>
             )}
 
-            <div className="p-6 md:p-7">
+            <div className="p-6 md:p-7 flex flex-col flex-grow">
                 {/* Category + Tag */}
                 <div className="flex items-center justify-between mb-4">
                     <span
@@ -62,10 +62,9 @@ export const ArticleCard = ({ article, index }) => {
                     </span>
                 </div>
 
-                {/* Icon + Title */}
-                <div className="flex items-start gap-3 mb-3">
-                    <span className="text-3xl mt-0.5 select-none">{article.icon}</span>
-                    <h2 className="text-white font-bold text-lg leading-snug group-hover:text-amber-300 transition-colors duration-300">
+                {/* Title */}
+                <div className="mb-3">
+                    <h2 className="text-white font-bold text-lg leading-snug group-hover:text-amber-300 transition-colors duration-300" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                         {article.title}
                     </h2>
                 </div>
@@ -75,39 +74,27 @@ export const ArticleCard = ({ article, index }) => {
                     {article.excerpt}
                 </p>
 
-                {/* Stats
-                <div className="flex gap-5 mb-5">
-                    {article.stats.map((stat, i) => (
-                        <div key={i} className="flex flex-col">
-                            <span
-                                className={`text-base font-extrabold bg-gradient-to-r ${article.tagColor} bg-clip-text text-transparent`}
+                <div className="mt-auto">
+                    {/* Divider */}
+                    <div className="h-px mb-4" style={{ background: 'rgba(251,146,60,0.1)' }} />
+
+                    {/* Author + Read time */}
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                            <div
+                                className={`w-7 h-7 rounded-full bg-gradient-to-br ${article.tagColor} flex items-center justify-center text-xs font-bold text-black`}
                             >
-                                {stat.value}
-                            </span>
-                            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{stat.label}</span>
+                                {article.author.charAt(0)}
+                            </div>
+                            <div>
+                                <p className="text-xs font-semibold text-white">{article.author}</p>
+                                <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.authorRole}</p>
+                            </div>
                         </div>
-                    ))}
-                </div> */}
-
-                {/* Divider */}
-                <div className="h-px mb-4" style={{ background: 'rgba(251,146,60,0.1)' }} />
-
-                {/* Author + Read time */}
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <div
-                            className={`w-7 h-7 rounded-full bg-gradient-to-br ${article.tagColor} flex items-center justify-center text-xs font-bold text-black`}
-                        >
-                            {article.author.charAt(0)}
+                        <div className="text-right">
+                            <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.date}</p>
+                            <p className="text-xs font-medium" style={{ color: 'rgba(251,146,60,0.7)' }}>{article.readTime}</p>
                         </div>
-                        <div>
-                            <p className="text-xs font-semibold text-white">{article.author}</p>
-                            <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.authorRole}</p>
-                        </div>
-                    </div>
-                    <div className="text-right">
-                        <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.date}</p>
-                        <p className="text-xs font-medium" style={{ color: 'rgba(251,146,60,0.7)' }}>{article.readTime}</p>
                     </div>
                 </div>
             </div>
@@ -142,6 +129,8 @@ const ResearchHubPage = () => {
     const [loading, setLoading] = useState(true)
     const [activeCategory, setActiveCategory] = useState('All')
     const [searchQuery, setSearchQuery] = useState('')
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 6
 
     useEffect(() => {
         const loadResearch = async () => {
@@ -201,6 +190,9 @@ const ResearchHubPage = () => {
             a.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
         return matchCat && matchSearch
     })
+
+    const totalPages = Math.ceil(filtered.length / itemsPerPage)
+    const paginatedArticles = filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
     return (
         <div className="min-h-screen bg-black text-white relative overflow-hidden">
@@ -304,7 +296,10 @@ const ResearchHubPage = () => {
                             type="text"
                             placeholder="Search reports, topics, categories…"
                             value={searchQuery}
-                            onChange={e => setSearchQuery(e.target.value)}
+                            onChange={e => {
+                                setSearchQuery(e.target.value)
+                                setCurrentPage(1)
+                            }}
                             className="w-full pl-12 pr-5 py-3.5 rounded-xl text-sm text-white placeholder-white/30 outline-none transition-all"
                             style={{
                                 background: 'rgba(255,255,255,0.05)',
@@ -327,7 +322,10 @@ const ResearchHubPage = () => {
                     {categories.map(cat => (
                         <button
                             key={cat}
-                            onClick={() => setActiveCategory(cat)}
+                            onClick={() => {
+                                setActiveCategory(cat)
+                                setCurrentPage(1)
+                            }}
                             className="relative px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 overflow-hidden"
                             style={
                                 activeCategory === cat
@@ -367,16 +365,55 @@ const ResearchHubPage = () => {
                     <AnimatePresence mode="wait">
                         {filtered.length > 0 ? (
                             <motion.div
-                                key={activeCategory + searchQuery}
+                                key={activeCategory + searchQuery + currentPage}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                                className="max-w-7xl mx-auto"
                             >
-                                {filtered.map((article, i) => (
-                                    <ArticleCard key={article.id} article={article} index={i} />
-                                ))}
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {paginatedArticles.map((article, i) => (
+                                        <ArticleCard key={article.id} article={article} index={i} />
+                                    ))}
+                                </div>
+                                
+                                {/* Pagination Controls */}
+                                {totalPages > 1 && (
+                                    <div className="flex justify-center items-center gap-2 mt-12">
+                                        <button
+                                            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                                            disabled={currentPage === 1}
+                                            className="p-2 rounded-lg bg-white/5 border border-amber-500/20 text-amber-500 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/10 transition-colors"
+                                        >
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+                                        </button>
+                                        
+                                        <div className="flex gap-1">
+                                            {[...Array(totalPages)].map((_, i) => (
+                                                <button
+                                                    key={i}
+                                                    onClick={() => setCurrentPage(i + 1)}
+                                                    className={`w-10 h-10 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                                                        currentPage === i + 1 
+                                                            ? 'bg-gradient-to-r from-orange-500 to-amber-400 text-black shadow-[0_0_15px_rgba(251,146,60,0.3)]' 
+                                                            : 'bg-white/5 border border-amber-500/20 text-white/70 hover:bg-white/10'
+                                                    }`}
+                                                >
+                                                    {i + 1}
+                                                </button>
+                                            ))}
+                                        </div>
+
+                                        <button
+                                            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                                            disabled={currentPage === totalPages}
+                                            className="p-2 rounded-lg bg-white/5 border border-amber-500/20 text-amber-500 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/10 transition-colors"
+                                        >
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                                        </button>
+                                    </div>
+                                )}
                             </motion.div>
                         ) : (
                             <motion.div
