@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getAllPress } from '@/lib/db'
 
@@ -313,10 +313,77 @@ const FeaturedPressCard = ({ article }) => (
     </motion.article>
 )
 
+// ─── Pagination ──────────────────────────────────────────────────────────────
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+    if (totalPages <= 1) return null;
+
+    let pages = [];
+    if (totalPages <= 5) {
+        pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+    } else {
+        if (currentPage <= 3) {
+            pages = [1, 2, 3, 4, '...', totalPages];
+        } else if (currentPage >= totalPages - 2) {
+            pages = [1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+        } else {
+            pages = [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+        }
+    }
+
+    return (
+        <div className="flex justify-center items-center gap-2 mt-12 mb-8">
+            <button
+                onClick={() => onPageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-cyan-500/10 border border-cyan-500/20 text-cyan-400"
+            >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            
+            <div className="flex gap-1 sm:gap-2">
+                {pages.map((page, idx) => (
+                    page === '...' ? (
+                        <span key={`dots-${idx}`} className="w-8 h-10 flex items-center justify-center text-white/40">...</span>
+                    ) : (
+                        <button
+                            key={page}
+                            onClick={() => onPageChange(page)}
+                            className={`w-10 h-10 rounded-xl flex items-center justify-center font-semibold transition-all duration-300 ${
+                                currentPage === page 
+                                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-black shadow-[0_0_15px_rgba(6,182,212,0.4)]'
+                                    : 'text-white/60 hover:text-cyan-400 hover:bg-cyan-500/10 border border-transparent hover:border-cyan-500/20'
+                            }`}
+                        >
+                            {page}
+                        </button>
+                    )
+                ))}
+            </div>
+
+            <button
+                onClick={() => onPageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-cyan-500/10 border border-cyan-500/20 text-cyan-400"
+            >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    );
+};
+
 // ─── Main PressPage ──────────────────────────────────────────────────────────
 const PressPage = () => {
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
+    
+    const [sortBy, setSortBy] = useState('latest')
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 6
+    const listRef = useRef(null)
 
     useEffect(() => {
         const loadPress = async () => {
@@ -328,8 +395,63 @@ const PressPage = () => {
         loadPress()
     }, [])
 
-    const featuredArticle = articles.length > 0 ? articles[0] : null
-    const restArticles = articles.length > 1 ? articles.slice(1) : []
+    const actuallyLatestArticle = useMemo(() => {
+        if (!articles.length) return null;
+        return [...articles].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))[0];
+    }, [articles]);
+
+    const isLatestSort = sortBy === 'latest';
+
+    const gridArticles = useMemo(() => {
+        let items = [...articles];
+        if (isLatestSort && actuallyLatestArticle) {
+            items = items.filter(a => a.id !== actuallyLatestArticle.id);
+        }
+
+        switch (sortBy) {
+            case 'oldest':
+                items.sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0))
+                break
+            case 'a-z':
+                items.sort((a, b) => (a.title || '').localeCompare(b.title || ''))
+                break
+            case 'z-a':
+                items.sort((a, b) => (b.title || '').localeCompare(a.title || ''))
+                break
+            case 'latest':
+            default:
+                items.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+                break
+        }
+        return items;
+    }, [articles, actuallyLatestArticle, isLatestSort, sortBy]);
+
+    const totalPages = Math.ceil(gridArticles.length / itemsPerPage);
+    const currentGridArticles = gridArticles.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
+
+    // reset page on sort change
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [sortBy]);
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+        if (listRef.current) {
+            const offset = 100;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = listRef.current.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
 
     return (
         <div
@@ -420,30 +542,55 @@ const PressPage = () => {
                     </p>
                 </motion.div>
 
-                {/* ── Results meta ── */}
-                {!loading && articles.length > 0 && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="max-w-7xl mx-auto mb-8 flex items-center gap-4"
-                    >
-                        <p className="text-sm flex-shrink-0" style={{ color: 'rgba(255,255,255,0.35)' }}>
-                            <span style={{ color: 'rgba(103,232,249,0.85)' }} className="font-semibold">{articles.length}</span>
-                            {' '}article{articles.length !== 1 ? 's' : ''} published
-                        </p>
-                        <div className="h-px flex-1" style={{ background: 'rgba(6,182,212,0.1)' }} />
-                    </motion.div>
-                )}
-
                 {/* ── Featured Hero ── */}
                 <AnimatePresence>
-                    {featuredArticle && !loading && (
+                    {isLatestSort && currentPage === 1 && actuallyLatestArticle && !loading && (
                         <div className="max-w-7xl mx-auto mb-10">
-                            <FeaturedPressCard article={featuredArticle} />
+                            <FeaturedPressCard article={actuallyLatestArticle} />
                         </div>
                     )}
                 </AnimatePresence>
+
+                {/* ── Results meta & Sort ── */}
+                {!loading && articles.length > 0 && (
+                    <motion.div
+                        ref={listRef}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                        className="max-w-7xl mx-auto mb-8 flex flex-wrap items-center justify-between gap-4"
+                    >
+                        <div className="flex items-center gap-4 flex-1">
+                            <p className="text-sm flex-shrink-0" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                                <span style={{ color: 'rgba(103,232,249,0.85)' }} className="font-semibold">{articles.length}</span>
+                                {' '}article{articles.length !== 1 ? 's' : ''} published
+                            </p>
+                            <div className="h-px flex-1 min-w-[50px]" style={{ background: 'rgba(6,182,212,0.1)' }} />
+                        </div>
+                        
+                        <div className="flex items-center gap-3">
+                            <span className="text-sm text-white/50">Sort by:</span>
+                            <div className="relative">
+                                <select
+                                    value={sortBy}
+                                    onChange={(e) => setSortBy(e.target.value)}
+                                    className="appearance-none bg-[#0a1014] border border-cyan-500/20 text-white text-sm rounded-lg pl-4 pr-10 py-2 focus:outline-none focus:border-cyan-500/50 transition-colors cursor-pointer"
+                                    style={{ boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.3)' }}
+                                >
+                                    <option value="latest">Latest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="a-z">Title (A-Z)</option>
+                                    <option value="z-a">Title (Z-A)</option>
+                                </select>
+                                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-cyan-400">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
 
                 {/* ── Grid ── */}
                 <div className="max-w-7xl mx-auto">
@@ -454,15 +601,16 @@ const PressPage = () => {
                         </div>
                     ) : (
                         <AnimatePresence mode="wait">
-                            {restArticles.length > 0 ? (
+                            {currentGridArticles.length > 0 ? (
                                 <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
+                                    key={`${currentPage}-${sortBy}`}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.3 }}
                                     className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
                                 >
-                                    {restArticles.map((article, i) => (
+                                    {currentGridArticles.map((article, i) => (
                                         <PressCard key={article.id} article={article} index={i} />
                                     ))}
                                 </motion.div>
@@ -490,6 +638,15 @@ const PressPage = () => {
                         </AnimatePresence>
                     )}
                 </div>
+
+                {/* ── Pagination ── */}
+                {!loading && totalPages > 1 && (
+                    <Pagination 
+                        currentPage={currentPage} 
+                        totalPages={totalPages} 
+                        onPageChange={handlePageChange} 
+                    />
+                )}
 
                 {/* ── CTA Section ── */}
                 <motion.div
