@@ -113,7 +113,7 @@ const HeaderOverlay = ({ scrollProgress }) => {
     return (
         <motion.div
             style={{ opacity: headerOpacity, y: headerY, scale: headerScale }}
-            className="absolute inset-0 z-25 flex items-center justify-center pointer-events-none"
+            className="absolute inset-0 z-25 flex items-start justify-center pt-[15vh] pointer-events-none"
         >
             <div className="relative px-6 text-center">
                 {/* Ambient glows */}

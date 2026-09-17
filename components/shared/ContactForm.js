@@ -103,9 +103,12 @@ export default function ContactForm({
   }
 
   return (
-    <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8">
-      <h2 className="text-2xl font-bold mb-2">{title}</h2>
-      <p className="text-gray-400 mb-6">{subtitle}</p>
+    <div className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 text-white relative overflow-hidden">
+      {/* Subtle Gradient Blob for beauty */}
+      <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <h2 className="text-2xl font-bold mb-2 relative z-10">{title}</h2>
+      <p className="text-gray-400 mb-6 relative z-10">{subtitle}</p>
 
       {/* Error banner */}
       {status === 'error' && (

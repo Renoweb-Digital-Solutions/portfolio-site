@@ -46,6 +46,18 @@ export default function sitemap() {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/press`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/services`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/legal`,
             lastModified: new Date(),
             changeFrequency: 'yearly',
