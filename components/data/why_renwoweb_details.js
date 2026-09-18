@@ -1,20 +1,17 @@
 export const why_renwoweb_details = [
     {
         id: 0,
-        image: "/why_renoweb1.jpg",
-        title: "WE BUILD SYSTEMS,\n NOT CAMPAIGNS",
-        description: "Most agencies focus on one-off campaigns that deliver temporary results. We focus on building growth systems-like our Growth OS-thatscale with your business and deliver consistent, long-term success."
+        title: "WE GIVE DATA-BACKED\nGUARANTEES",
+        description: "And, where our diagnostics support it, financial guarantees, because a roadmap built on rigorous analysis can be underwritten with confidence."
     },
     {
         id: 1,
-        image: "/why_renoweb2.jpg",
-        title: "SUSTAINABILITY OVER \n SHORT-TERM GAINS",
-        description: "Growth hackers often rely on tactics like ads, influencer marketing, or viral stunts that burn through cash and fade quickly. We prioritize organic demand generation, ensuring your brand grows without being dependent on expensive, fleeting strategies."
+        title: "WE FIX FOUNDATIONS\nBEFORE WE CHASE GROWTH",
+        description: "Our Critical Action Phase exists because most execution failures trace back to skipped fundamentals, not bad ideas."
     },
     {
         id: 2,
-        image: "/why_renoweb3.jpg",
-        title: "DATA MEETS \n EMOTION",
-        description: "While many agencies rely solely on data, we combine data-driven insights with neuro-emotional triggers to craft strategies that resonate deeply with your audience. This unique blend ensures your brand not only attracts attention but also builds loyalty."
+        title: "WE'VE BUILT PROPRIETARY\nSYSTEMS & SOFTWARE",
+        description: "So growth isn't reinvented from scratch for every client. It's engineered on a tested operating system using our proprietary frameworks."
     }
 ]
