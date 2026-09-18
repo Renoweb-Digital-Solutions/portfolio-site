@@ -13,7 +13,16 @@ const Our_Results = () => {
     return (
         <div className='mb-20'>
             <AnimatedHeadings triggerOnScroll={true}>
-                <h1 className='text-[#FFFBEF] font-bold text-center text-3xl'>OUR <span className='text-[#3877F0]'>RESULTS</span></h1>
+                <div className="text-center mb-12">
+                    <div className="inline-block mb-4">
+                        <span className="px-5 py-2 bg-[#4ec8ef]/10 text-[#4ec8ef] rounded-full text-sm font-medium border border-[#4ec8ef]/20 tracking-widest uppercase">
+                            Proof of Work
+                        </span>
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+                        OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4ec8ef] to-[#308fef]">RESULTS</span>
+                    </h2>
+                </div>
             </AnimatedHeadings>
 
             <div className='my-10'>

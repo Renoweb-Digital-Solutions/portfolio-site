@@ -53,12 +53,12 @@ export default function OurPartners({
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-16">
                     <div className="inline-block mb-4">
-                        <span className="px-4 py-2 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium border border-blue-600/30">
+                        <span className="px-5 py-2 bg-[#4ec8ef]/10 text-[#4ec8ef] rounded-full text-sm font-medium border border-[#4ec8ef]/20 tracking-widest uppercase">
                             {subtitle}
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        {title}
+                    <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+                        OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4ec8ef] to-[#308fef]">PARTNERS</span>
                     </h2>
                 </div>
 
