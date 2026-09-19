@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import { getBlogBySlug } from '@/lib/db'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import ShareButton from '@/components/shared/ShareButton'
 
 const BlogPostPage = () => {
     const { slug } = useParams()
@@ -128,13 +129,16 @@ const BlogPostPage = () => {
                         Back to Insights
                     </Link>
 
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest">
-                            {post.category}
-                        </span>
-                        <span className="text-white/40 text-xs">{post.publishDate}</span>
-                        <span className="text-white/40 text-xs">•</span>
-                        <span className="text-cyan-400/60 text-xs font-medium">{post.readTime}</span>
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                            <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-widest">
+                                {post.category}
+                            </span>
+                            <span className="text-white/40 text-xs">{post.publishDate}</span>
+                            <span className="text-white/40 text-xs">•</span>
+                            <span className="text-cyan-400/60 text-xs font-medium">{post.readTime}</span>
+                        </div>
+                        <ShareButton url={`/blog/${post.slug}`} title={post.title} />
                     </div>
 
                     <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight">

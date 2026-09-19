@@ -6,6 +6,8 @@ import AuthorSection from '../Author/AuthorSection';
 import ContactForm from '../shared/ContactForm';
 
 
+import ShareButton from '../shared/ShareButton';
+
 // ── Severity dot ──────────────────────────────────────────────────────────────
 const SeverityDot = ({ severity }) => {
     const map = { critical: "bg-red-500", warning: "bg-yellow-500", info: "bg-blue-500" };
@@ -36,11 +38,12 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                     Back to Case Studies
                 </Link>
 
-                {/* Category */}
-                <div className="mb-6">
+                {/* Category & Share */}
+                <div className="flex items-center justify-between mb-6">
                     <span className="inline-block px-4 py-1.5 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium border border-blue-600/30">
                         {caseStudy.category}
                     </span>
+                    <ShareButton url={`/case-studies/${caseStudy.slug || caseStudy.id}`} title={caseStudy.title} />
                 </div>
 
                 {/* Title */}
