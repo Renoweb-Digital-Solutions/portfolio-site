@@ -136,7 +136,7 @@ const ResearchHubPage = () => {
         const loadResearch = async () => {
             setLoading(true)
             const data = await getAllResearch()
-            
+
             // Map Firestore data to UI structure
             const mapped = data.map(article => ({
                 ...article,
@@ -153,7 +153,7 @@ const ResearchHubPage = () => {
                 icon: article.icon || getCategoryIcon(article.category),
                 href: `/research-hub/${article.slug}`
             }))
-            
+
             setArticles(mapped)
             setLoading(false)
         }
@@ -313,7 +313,7 @@ const ResearchHubPage = () => {
                 </motion.div>
 
                 {/* ── Category Filters ── */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.55, delay: 0.25 }}
@@ -344,7 +344,7 @@ const ResearchHubPage = () => {
                             {cat}
                         </button>
                     ))}
-                </motion.div>
+                </motion.div> */}
 
                 {/* ── Results meta ── */}
                 <div className="max-w-7xl mx-auto mb-8 flex items-center justify-between">
@@ -377,7 +377,7 @@ const ResearchHubPage = () => {
                                         <ArticleCard key={article.id} article={article} index={i} />
                                     ))}
                                 </div>
-                                
+
                                 {/* Pagination Controls */}
                                 {totalPages > 1 && (
                                     <div className="flex justify-center items-center gap-2 mt-12">
@@ -388,17 +388,16 @@ const ResearchHubPage = () => {
                                         >
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
                                         </button>
-                                        
+
                                         <div className="flex gap-1">
                                             {[...Array(totalPages)].map((_, i) => (
                                                 <button
                                                     key={i}
                                                     onClick={() => setCurrentPage(i + 1)}
-                                                    className={`w-10 h-10 rounded-lg text-sm font-semibold transition-all duration-300 ${
-                                                        currentPage === i + 1 
-                                                            ? 'bg-gradient-to-r from-orange-500 to-amber-400 text-black shadow-[0_0_15px_rgba(251,146,60,0.3)]' 
+                                                    className={`w-10 h-10 rounded-lg text-sm font-semibold transition-all duration-300 ${currentPage === i + 1
+                                                            ? 'bg-gradient-to-r from-orange-500 to-amber-400 text-black shadow-[0_0_15px_rgba(251,146,60,0.3)]'
                                                             : 'bg-white/5 border border-amber-500/20 text-white/70 hover:bg-white/10'
-                                                    }`}
+                                                        }`}
                                                 >
                                                     {i + 1}
                                                 </button>

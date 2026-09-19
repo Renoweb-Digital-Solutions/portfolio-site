@@ -8,6 +8,8 @@ import Testimonials from "@/components/shared/Testimonials";
 import WhyRenoweb from "@/components/WhyRenoweb";
 import AsSeenOn from "@/components/shared/AsSeenOn";
 import TrustAndPress from "@/components/TrustAndPress";
+import Communities from "@/components/Communities";
+import Mentors from "@/components/Mentors";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
         <Our_Results />
         <OurPartners />
         <Testimonials />
+        {/* <Communities />
+        <Mentors /> */}
         {/* <AsSeenOn /> */}
         <WhyRenoweb />
         <Case_Studies />
