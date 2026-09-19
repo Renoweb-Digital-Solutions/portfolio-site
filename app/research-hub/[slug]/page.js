@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 import { getResearchBySlug } from '@/lib/db'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import ShareButton from '@/components/shared/ShareButton'
 
 const ResearchArticlePage = () => {
     const { slug } = useParams()
@@ -47,8 +48,11 @@ const ResearchArticlePage = () => {
     const authorInitial = authorName.charAt(0)
 
     return (
-        <div className="min-h-screen bg-black text-white pt-32 pb-20 px-6 relative overflow-hidden">
+        <div className="min-h-screen bg-black text-white pt-32 pb-20 px-6 relative overflow-hidden poppins-regular">
             <style>{`
+                .research-content * {
+                    font-family: inherit !important;
+                }
                 .research-content h1,
                 .research-content h2,
                 .research-content h3,
@@ -66,9 +70,15 @@ const ResearchArticlePage = () => {
                 .research-content h3 { font-size: 1.35rem; }
                 .research-content h4 { font-size: 1.15rem; }
                 .research-content p {
-                    color: rgba(255,255,255,0.72);
-                    line-height: 1.85;
-                    margin-bottom: 1.25rem;
+                    color: rgba(255,255,255,0.72) !important;
+                    line-height: 1.85 !important;
+                    margin-bottom: 1.25rem !important;
+                    font-size: 16px !important;
+                }
+                .research-content p span {
+                    font-size: inherit !important;
+                    color: inherit !important;
+                    line-height: inherit !important;
                 }
                 .research-content strong, .research-content b {
                     font-weight: 700;
@@ -88,7 +98,8 @@ const ResearchArticlePage = () => {
                 }
                 .research-content ul { list-style-type: disc; }
                 .research-content ol { list-style-type: decimal; }
-                .research-content li { margin-bottom: 0.4rem; line-height: 1.75; }
+                .research-content li { margin-bottom: 0.4rem !important; line-height: 1.75 !important; font-size: 16px !important; }
+                .research-content li span { font-size: inherit !important; color: inherit !important; }
                 .research-content blockquote {
                     border-left: 4px solid #fb923c;
                     padding-left: 1.25rem;
@@ -136,13 +147,16 @@ const ResearchArticlePage = () => {
                         Back to Research Hub
                     </Link>
 
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">
-                            {article.category}
-                        </span>
-                        <span className="text-white/40 text-xs">{article.publishDate}</span>
-                        <span className="text-white/40 text-xs">•</span>
-                        <span className="text-amber-400/60 text-xs font-medium">{article.readTime}</span>
+                    <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-3">
+                            <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">
+                                {article.category}
+                            </span>
+                            <span className="text-white/40 text-xs">{article.publishDate}</span>
+                            <span className="text-white/40 text-xs">•</span>
+                            <span className="text-amber-400/60 text-xs font-medium">{article.readTime}</span>
+                        </div>
+                        <ShareButton url={`/research-hub/${article.slug}`} title={article.title} />
                     </div>
 
                     <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight">

@@ -4,6 +4,8 @@ import { motion } from "motion/react"
 import Link from "next/link";
 import Image from "next/image";
 
+import ShareButton from '../shared/ShareButton';
+
 const Case_studies_page_cards = ({ studies }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -65,7 +67,7 @@ const Case_studies_page_cards = ({ studies }) => {
             <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
 
             {/* Category Badge */}
-            <div className="relative z-10 mb-4">
+            <div className="relative z-10 mb-4 flex justify-between items-start">
                 <span className="inline-block px-3 py-1 bg-blue-600/20 text-blue-400 rounded-full text-xs font-medium border border-blue-600/30">
                     {studies.category}
                 </span>
@@ -74,7 +76,7 @@ const Case_studies_page_cards = ({ studies }) => {
 
 
             {/* Title */}
-            <Link href={`/case-studies/${studies.id}`} className="relative z-10 flex-grow">
+            <Link href={`/case-studies/${studies.id}`} className="relative z-10 flex-grow mt-2">
                 <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
                     {studies.title}
                 </h2>
@@ -105,9 +107,12 @@ const Case_studies_page_cards = ({ studies }) => {
                     </svg>
                 </Link>
 
-                {studies.author && (
-                    <AuthorAvatars author={studies.author} coAuthor={studies.coAuthor} />
-                )}
+                <div className="flex items-center gap-3 relative z-20 mt-6">
+                    <ShareButton url={`/case-studies/${studies.id}`} title={studies.title} />
+                    {studies.author && (
+                        <AuthorAvatars author={studies.author} coAuthor={studies.coAuthor} />
+                    )}
+                </div>
             </div>
 
         </motion.div>

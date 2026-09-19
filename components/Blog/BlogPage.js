@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { getAllBlogs } from '@/lib/db'
 import { blog_categories } from '@/components/data/blog_posts'
+import ShareButton from '../shared/ShareButton'
 
 // ─── Star field ──────────────────────────────────────────────────────────────
 const STARS = [
@@ -33,80 +34,85 @@ export const BlogCard = ({ post, index, basePath = '/blog' }) => (
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -16 }}
         transition={{ duration: 0.45, delay: index * 0.06 }}
-        className="group relative h-full"
+        className="group relative h-full flex flex-col"
     >
-        <Link href={post.href || `${basePath}/${post.slug || post.id}`} className="block h-full">
-            {/* Neumorphic card shell */}
+        {/* Background wrapper */}
+        <div 
+            className="absolute inset-0 rounded-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-1 pointer-events-none z-0"
+            style={{
+                background: 'linear-gradient(145deg, #10161a, #0d1215)',
+                boxShadow: `
+                    6px 6px 14px rgba(0,0,0,0.55),
+                    -4px -4px 10px rgba(255,255,255,0.025),
+                    inset 0 1px 0 rgba(255,255,255,0.04)
+                `,
+                border: '1px solid rgba(6,182,212,0.12)',
+            }}
+        >
+            {/* Hover glow overlay */}
             <div
-                className="relative h-full rounded-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-1"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                    background: 'linear-gradient(145deg, #10161a, #0d1215)',
-                    boxShadow: `
-                        6px 6px 14px rgba(0,0,0,0.55),
-                        -4px -4px 10px rgba(255,255,255,0.025),
-                        inset 0 1px 0 rgba(255,255,255,0.04)
-                    `,
-                    border: '1px solid rgba(6,182,212,0.12)',
+                    background: 'radial-gradient(ellipse at top left, rgba(6,182,212,0.07) 0%, transparent 65%)',
                 }}
-            >
-                {/* Hover glow overlay */}
-                <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                        background: 'radial-gradient(ellipse at top left, rgba(6,182,212,0.07) 0%, transparent 65%)',
-                    }}
-                />
+            />
+        </div>
 
-                {/* Top accent bar */}
-                <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
+        {/* Main Click Overlay */}
+        <Link href={post.href || `${basePath}/${post.slug || post.id}`} className="absolute inset-0 z-10 rounded-2xl transition-all duration-500 group-hover:-translate-y-1" aria-label={post.title} />
 
-                {/* Banner image */}
-                {post.bannerUrl && (
-                    <div className="w-full aspect-video overflow-hidden">
-                        <img
-                            src={post.bannerUrl}
-                            alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                    </div>
-                )}
+        {/* Content */}
+        <div className="relative z-10 flex flex-col flex-grow transition-all duration-500 group-hover:-translate-y-1 pointer-events-none">
+            {/* Top accent bar */}
+            <div className={`h-[3px] w-full rounded-t-2xl bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
 
-                <div className="p-6">
-                    {/* Category + Tag row */}
-                    <div className="flex items-center justify-between mb-4">
-                        <span
-                            className="text-[10px] font-bold uppercase tracking-widest"
-                            style={{ color: 'rgba(103,232,249,0.75)' }}
-                        >
-                            {post.category}
-                        </span>
-                        <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'} text-black`}>
-                            {post.tag}
-                        </span>
-                    </div>
+            {/* Banner image */}
+            {post.bannerUrl && (
+                <div className="w-full aspect-video overflow-hidden">
+                    <img
+                        src={post.bannerUrl}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                </div>
+            )}
 
-                    {/* Icon + Title */}
-                    <div className="flex items-start gap-3 mb-3">
-                        <span
-                            className="text-2xl mt-0.5 select-none flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl"
-                            style={{
-                                background: 'rgba(6,182,212,0.08)',
-                                boxShadow: 'inset 2px 2px 5px rgba(0,0,0,0.4), inset -2px -2px 4px rgba(255,255,255,0.03)',
-                            }}
-                        >
-                            {post.icon}
-                        </span>
-                        <h2 className="text-white font-bold text-base leading-snug group-hover:text-cyan-300 transition-colors duration-300 line-clamp-2">
-                            {post.title}
-                        </h2>
-                    </div>
+            <div className="p-6 flex flex-col flex-grow">
+                {/* Category + Tag row */}
+                <div className="flex items-center justify-between mb-4">
+                    <span
+                        className="text-[10px] font-bold uppercase tracking-widest"
+                        style={{ color: 'rgba(103,232,249,0.75)' }}
+                    >
+                        {post.category}
+                    </span>
+                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'} text-black`}>
+                        {post.tag}
+                    </span>
+                </div>
 
-                    {/* Excerpt */}
-                    <p className="text-sm mb-5 line-clamp-3" style={{ color: 'rgba(255,255,255,0.48)', lineHeight: '1.7', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                        {post.excerpt}
-                    </p>
+                {/* Icon + Title */}
+                <div className="flex items-start gap-3 mb-3">
+                    <span
+                        className="text-2xl mt-0.5 select-none flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl"
+                        style={{
+                            background: 'rgba(6,182,212,0.08)',
+                            boxShadow: 'inset 2px 2px 5px rgba(0,0,0,0.4), inset -2px -2px 4px rgba(255,255,255,0.03)',
+                        }}
+                    >
+                        {post.icon}
+                    </span>
+                    <h2 className="text-white font-bold text-base leading-snug group-hover:text-cyan-300 transition-colors duration-300 line-clamp-2">
+                        {post.title}
+                    </h2>
+                </div>
 
+                {/* Excerpt */}
+                <p className="text-sm mb-5 line-clamp-3" style={{ color: 'rgba(255,255,255,0.48)', lineHeight: '1.7', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                    {post.excerpt}
+                </p>
 
+                <div className="mt-auto">
                     {/* Divider */}
                     <div className="h-px mb-4" style={{ background: 'rgba(6,182,212,0.1)' }} />
 
@@ -132,21 +138,23 @@ export const BlogCard = ({ post, index, basePath = '/blog' }) => (
                         </div>
                     </div>
                 </div>
-
-                {/* CTA */}
-                <div className="px-6 pb-5">
-                    <div
-                        className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
-                        style={{ color: 'rgba(103,232,249,0.8)' }}
-                    >
-                        Read Article
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </div>
-                </div>
             </div>
-        </Link>
+
+            {/* CTA */}
+            <div className="px-6 pb-5 flex items-center justify-between pointer-events-auto relative z-20">
+                <div
+                    className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
+                    style={{ color: 'rgba(103,232,249,0.8)' }}
+                >
+                    Read Article
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                
+                <ShareButton url={post.href || `${basePath}/${post.slug || post.id}`} title={post.title} />
+            </div>
+        </div>
     </motion.article>
 )
 
@@ -158,114 +166,120 @@ export const FeaturedCard = ({ post }) => (
         transition={{ duration: 0.6 }}
         className="group relative col-span-full"
     >
-        <Link href={`/blog/${post.slug}`} className="block">
+        {/* Background wrapper */}
+        <div 
+            className="absolute inset-0 rounded-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-1 pointer-events-none z-0"
+            style={{
+                background: 'linear-gradient(145deg, #0e141a, #0a1014)',
+                boxShadow: `
+                    8px 8px 18px rgba(0,0,0,0.6),
+                    -4px -4px 12px rgba(255,255,255,0.02),
+                    inset 0 1px 0 rgba(255,255,255,0.04)
+                `,
+                border: '1px solid rgba(6,182,212,0.18)',
+            }}
+        >
+            {/* Hover glow */}
             <div
-                className="relative rounded-2xl overflow-hidden transition-all duration-500 group-hover:-translate-y-1"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{
-                    background: 'linear-gradient(145deg, #0e141a, #0a1014)',
-                    boxShadow: `
-                        8px 8px 18px rgba(0,0,0,0.6),
-                        -4px -4px 12px rgba(255,255,255,0.02),
-                        inset 0 1px 0 rgba(255,255,255,0.04)
-                    `,
-                    border: '1px solid rgba(6,182,212,0.18)',
+                    background: 'radial-gradient(ellipse at 20% 50%, rgba(6,182,212,0.09) 0%, transparent 60%)',
                 }}
-            >
-                {/* Hover glow */}
-                <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                        background: 'radial-gradient(ellipse at 20% 50%, rgba(6,182,212,0.09) 0%, transparent 60%)',
-                    }}
-                />
-                {/* Top accent */}
-                <div className={`h-[3px] w-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
+            />
+        </div>
 
-                {/* Banner image */}
-                {post.bannerUrl && (
-                    <div className="w-full aspect-video md:aspect-[3/1] overflow-hidden">
-                        <img
-                            src={post.bannerUrl}
-                            alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                    </div>
-                )}
+        {/* Main click overlay */}
+        <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10 rounded-2xl transition-all duration-500 group-hover:-translate-y-1" aria-label={post.title} />
 
-                <div className="p-7 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
-                    <div>
-                        <div className="flex items-center gap-3 mb-4 flex-wrap">
-                            <span
-                                className="text-[10px] font-bold uppercase tracking-widest"
-                                style={{ color: 'rgba(103,232,249,0.75)' }}
-                            >
-                                {post.category}
-                            </span>
-                            <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'} text-black`}>
-                                {post.tag}
-                            </span>
-                            <span
-                                className="text-[10px] font-bold px-2.5 py-1 rounded-full border"
-                                style={{ borderColor: 'rgba(6,182,212,0.35)', color: 'rgba(103,232,249,0.8)', background: 'rgba(6,182,212,0.06)' }}
-                            >
-                                ✦ Featured
-                            </span>
-                        </div>
+        <div className="relative z-10 transition-all duration-500 group-hover:-translate-y-1 pointer-events-none">
+            {/* Top accent */}
+            <div className={`h-[3px] w-full rounded-t-2xl bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'}`} />
 
-                        <div className="flex items-start gap-4 mb-4">
-                            <span
-                                className="text-3xl select-none flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl"
-                                style={{
-                                    background: 'rgba(6,182,212,0.09)',
-                                    boxShadow: 'inset 2px 2px 6px rgba(0,0,0,0.45), inset -2px -2px 5px rgba(255,255,255,0.03)',
-                                }}
-                            >
-                                {post.icon}
-                            </span>
-                            <h2 className="text-white font-black text-xl md:text-3xl leading-tight group-hover:text-cyan-300 transition-colors duration-300">
-                                {post.title}
-                            </h2>
-                        </div>
+            {/* Banner image */}
+            {post.bannerUrl && (
+                <div className="w-full aspect-video md:aspect-[3/1] overflow-hidden">
+                    <img
+                        src={post.bannerUrl}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                </div>
+            )}
 
-                        <p className="text-sm md:text-base mb-6 max-w-2xl line-clamp-3" style={{ color: 'rgba(255,255,255,0.5)', lineHeight: '1.75', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                            {post.excerpt}
-                        </p>
-
-                        <div className="flex items-center gap-5 flex-wrap">
-                            <div className="flex items-center gap-2">
-                                <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${post.tagColor || 'from-cyan-500 to-sky-400'} flex items-center justify-center text-xs font-black text-black`}>
-                                    {post.author.charAt(0)}
-                                </div>
-                                <div>
-                                    <p className="text-xs font-semibold text-white">{post.author}</p>
-                                    <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.35)' }}>{post.authorRole}</p>
-                                </div>
-                            </div>
-                            <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>{post.date}</span>
-                            <span className="text-xs font-medium" style={{ color: 'rgba(103,232,249,0.65)' }}>{post.readTime}</span>
-
-                        </div>
+            <div className="p-7 md:p-10 grid md:grid-cols-[1fr_auto] gap-6 items-center">
+                <div>
+                    <div className="flex items-center gap-3 mb-4 flex-wrap">
+                        <span
+                            className="text-[10px] font-bold uppercase tracking-widest"
+                            style={{ color: 'rgba(103,232,249,0.75)' }}
+                        >
+                            {post.category}
+                        </span>
+                        <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${post.tagColor || 'from-cyan-500 to-sky-400'} text-black`}>
+                            {post.tag}
+                        </span>
+                        <span
+                            className="text-[10px] font-bold px-2.5 py-1 rounded-full border"
+                            style={{ borderColor: 'rgba(6,182,212,0.35)', color: 'rgba(103,232,249,0.8)', background: 'rgba(6,182,212,0.06)' }}
+                        >
+                            ✦ Featured
+                        </span>
                     </div>
 
-                    {/* CTA side */}
-                    <div className="flex-shrink-0">
-                        <div
-                            className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300 group-hover:scale-105"
+                    <div className="flex items-start gap-4 mb-4">
+                        <span
+                            className="text-3xl select-none flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl"
                             style={{
-                                background: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
-                                color: '#000',
-                                boxShadow: '0 0 28px rgba(6,182,212,0.30)',
+                                background: 'rgba(6,182,212,0.09)',
+                                boxShadow: 'inset 2px 2px 6px rgba(0,0,0,0.45), inset -2px -2px 5px rgba(255,255,255,0.03)',
                             }}
                         >
-                            Read Now
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
+                            {post.icon}
+                        </span>
+                        <h2 className="text-white font-black text-xl md:text-3xl leading-tight group-hover:text-cyan-300 transition-colors duration-300">
+                            {post.title}
+                        </h2>
+                    </div>
+
+                    <p className="text-sm md:text-base mb-6 max-w-2xl line-clamp-3" style={{ color: 'rgba(255,255,255,0.5)', lineHeight: '1.75', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        {post.excerpt}
+                    </p>
+
+                    <div className="flex items-center gap-5 flex-wrap">
+                        <div className="flex items-center gap-2">
+                            <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${post.tagColor || 'from-cyan-500 to-sky-400'} flex items-center justify-center text-xs font-black text-black`}>
+                                {post.author.charAt(0)}
+                            </div>
+                            <div>
+                                <p className="text-xs font-semibold text-white">{post.author}</p>
+                                <p className="text-[11px]" style={{ color: 'rgba(255,255,255,0.35)' }}>{post.authorRole}</p>
+                            </div>
                         </div>
+                        <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>{post.date}</span>
+                        <span className="text-xs font-medium" style={{ color: 'rgba(103,232,249,0.65)' }}>{post.readTime}</span>
+
+                    </div>
+                </div>
+
+                {/* CTA side */}
+                <div className="flex-shrink-0 flex flex-col gap-4 items-end pointer-events-auto relative z-20">
+                    <ShareButton url={`/blog/${post.slug}`} title={post.title} />
+                    <div
+                        className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300 group-hover:scale-105"
+                        style={{
+                            background: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
+                            color: '#000',
+                            boxShadow: '0 0 28px rgba(6,182,212,0.30)',
+                        }}
+                    >
+                        Read Now
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
                     </div>
                 </div>
             </div>
-        </Link>
+        </div>
     </motion.article>
 )
 

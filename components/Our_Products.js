@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import ShareButton from "./shared/ShareButton";
+
 const products = [
     {
         name: "Quantum Accelerator",
@@ -64,19 +66,26 @@ const Our_Products = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.7, delay: idx * 0.15, ease: "easeOut" }}
-                            className="group relative flex flex-col justify-between bg-gradient-to-b from-[#12121a] to-[#0a0a0f] rounded-[20px] border border-white/5 overflow-hidden transition-all duration-500 hover:border-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
+                            className="group relative flex flex-col justify-between bg-gradient-to-b from-[#12121a] to-[#0a0a0f] rounded-[20px] border border-white/5 transition-all duration-500 hover:border-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
                         >
                             {/* Inner soft shadow/glow effect on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[20px]" />
 
-                            <div className="p-8 pb-0 z-10">
-                                <div className="mb-6">
+                            <Link href={product.link} className="absolute inset-0 z-10 rounded-[20px]">
+                                <span className="sr-only">View {product.name}</span>
+                            </Link>
+
+                            <div className="p-8 pb-0 z-20 pointer-events-none">
+                                <div className="mb-6 flex justify-between items-start pointer-events-auto">
                                     <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider border ${product.accentGroup === "cyan"
                                             ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
                                             : "bg-blue-500/10 text-blue-400 border-blue-500/20"
                                         }`}>
                                         {product.tag}
                                     </span>
+                                    <div className="relative z-30">
+                                        <ShareButton url={product.link} title={product.name} />
+                                    </div>
                                 </div>
                                 <h3 className="text-xl font-semibold text-white mb-3">
                                     {product.name} <span className="text-gray-500 font-medium">— {product.headline}</span>
@@ -102,10 +111,6 @@ const Our_Products = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent pointer-events-none opacity-80" />
                                 </motion.div>
                             </div>
-
-                            <Link href={product.link} className="absolute inset-0 z-20">
-                                <span className="sr-only">View {product.name}</span>
-                            </Link>
                         </motion.div>
                     ))}
                 </div>

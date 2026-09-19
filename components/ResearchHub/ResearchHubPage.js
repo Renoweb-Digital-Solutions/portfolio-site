@@ -4,124 +4,130 @@ import { useState, useEffect } from 'react'
 import { getAllResearch } from '@/lib/db'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import ShareButton from '../shared/ShareButton'
 
 // Static researchArticles removed, now fetched from DB
 
 const categories = ['All', 'Digital Marketing', 'Consumer Behaviour', 'Social Media', 'Lead Generation', 'Branding', 'E-Commerce']
 
 export const ArticleCard = ({ article, index }) => {
-    const card = (
+    return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.07 }}
-            className="group relative rounded-2xl overflow-hidden cursor-pointer h-full flex flex-col"
-            style={{
-                background: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(251, 146, 60, 0.15)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-            }}
+            className="group relative h-full flex flex-col rounded-2xl"
         >
-            {/* Hover glow */}
-            <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+            {/* Background & Clip layer */}
+            <div 
+                className="absolute inset-0 rounded-2xl overflow-hidden z-0 pointer-events-none"
                 style={{
-                    background: 'radial-gradient(ellipse at top left, rgba(251,146,60,0.08) 0%, transparent 60%)',
+                    background: 'rgba(255, 255, 255, 0.03)',
+                    border: '1px solid rgba(251, 146, 60, 0.15)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
                 }}
-            />
+            >
+                {/* Hover glow */}
+                <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{
+                        background: 'radial-gradient(ellipse at top left, rgba(251,146,60,0.08) 0%, transparent 60%)',
+                    }}
+                />
+            </div>
 
-            {/* Top accent bar */}
-            <div className={`h-1 w-full bg-gradient-to-r ${article.tagColor}`} />
-
-            {/* Banner image */}
-            {article.bannerUrl && (
-                <div className="w-full aspect-video overflow-hidden">
-                    <img
-                        src={article.bannerUrl}
-                        alt={article.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                </div>
+            {/* Main Link Overlay */}
+            {article.href && (
+                <Link href={article.href} className="absolute inset-0 z-10 rounded-2xl" aria-label={article.title} />
             )}
 
-            <div className="p-6 md:p-7 flex flex-col flex-grow">
-                {/* Category + Tag */}
-                <div className="flex items-center justify-between mb-4">
-                    <span
-                        className="text-xs font-semibold uppercase tracking-widest"
-                        style={{ color: 'rgba(251,146,60,0.8)' }}
-                    >
-                        {article.category}
-                    </span>
-                    <span
-                        className={`text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r ${article.tagColor} text-black`}
-                    >
-                        {article.tag}
-                    </span>
-                </div>
+            <div className="relative z-10 flex flex-col flex-grow pointer-events-none">
+                {/* Top accent bar */}
+                <div className={`h-1 w-full rounded-t-2xl bg-gradient-to-r ${article.tagColor}`} />
 
-                {/* Title */}
-                <div className="mb-3">
-                    <h2 className="text-white font-bold text-lg leading-snug group-hover:text-amber-300 transition-colors duration-300" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                        {article.title}
-                    </h2>
-                </div>
+                {/* Banner image */}
+                {article.bannerUrl && (
+                    <div className="w-full aspect-video overflow-hidden">
+                        <img
+                            src={article.bannerUrl}
+                            alt={article.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                    </div>
+                )}
 
-                {/* Excerpt */}
-                <p className="text-sm mb-5" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.65', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                    {article.excerpt}
-                </p>
+                <div className="p-6 md:p-7 flex flex-col flex-grow">
+                    {/* Category + Tag */}
+                    <div className="flex items-center justify-between mb-4">
+                        <span
+                            className="text-xs font-semibold uppercase tracking-widest"
+                            style={{ color: 'rgba(251,146,60,0.8)' }}
+                        >
+                            {article.category}
+                        </span>
+                        <span
+                            className={`text-xs font-bold px-3 py-1 rounded-full bg-gradient-to-r ${article.tagColor} text-black`}
+                        >
+                            {article.tag}
+                        </span>
+                    </div>
 
-                <div className="mt-auto">
-                    {/* Divider */}
-                    <div className="h-px mb-4" style={{ background: 'rgba(251,146,60,0.1)' }} />
+                    {/* Title */}
+                    <div className="mb-3">
+                        <h2 className="text-white font-bold text-lg leading-snug group-hover:text-amber-300 transition-colors duration-300" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                            {article.title}
+                        </h2>
+                    </div>
 
-                    {/* Author + Read time */}
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                            <div
-                                className={`w-7 h-7 rounded-full bg-gradient-to-br ${article.tagColor} flex items-center justify-center text-xs font-bold text-black`}
-                            >
-                                {article.author.charAt(0)}
+                    {/* Excerpt */}
+                    <p className="text-sm mb-5" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.65', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        {article.excerpt}
+                    </p>
+
+                    <div className="mt-auto">
+                        {/* Divider */}
+                        <div className="h-px mb-4" style={{ background: 'rgba(251,146,60,0.1)' }} />
+
+                        {/* Author + Read time */}
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2">
+                                <div
+                                    className={`w-7 h-7 rounded-full bg-gradient-to-br ${article.tagColor} flex items-center justify-center text-xs font-bold text-black`}
+                                >
+                                    {article.author.charAt(0)}
+                                </div>
+                                <div>
+                                    <p className="text-xs font-semibold text-white">{article.author}</p>
+                                    <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.authorRole}</p>
+                                </div>
                             </div>
-                            <div>
-                                <p className="text-xs font-semibold text-white">{article.author}</p>
-                                <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.authorRole}</p>
+                            <div className="text-right">
+                                <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.date}</p>
+                                <p className="text-xs font-medium" style={{ color: 'rgba(251,146,60,0.7)' }}>{article.readTime}</p>
                             </div>
-                        </div>
-                        <div className="text-right">
-                            <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{article.date}</p>
-                            <p className="text-xs font-medium" style={{ color: 'rgba(251,146,60,0.7)' }}>{article.readTime}</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* CTA */}
-            <div className="px-7 pb-6">
-                <div
-                    className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
-                    style={{ color: 'rgba(251,191,36,0.85)' }}
-                >
-                    Read Full Report
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                {/* CTA */}
+                <div className="px-7 pb-6 flex items-center justify-between pointer-events-auto relative z-20">
+                    <div
+                        className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
+                        style={{ color: 'rgba(251,191,36,0.85)' }}
+                    >
+                        Read Full Report
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </div>
+                    
+                    <ShareButton url={article.href} title={article.title} />
                 </div>
             </div>
         </motion.div>
     )
-
-    if (article.href) {
-        return (
-            <Link href={article.href} className="block h-full">
-                {card}
-            </Link>
-        )
-    }
-    return card
 }
 
 const ResearchHubPage = () => {
