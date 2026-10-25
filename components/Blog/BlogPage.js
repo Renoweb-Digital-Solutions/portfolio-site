@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { getAllBlogs } from '@/lib/db'
 import { blog_categories } from '@/components/data/blog_posts'
 import ShareButton from '../shared/ShareButton'
+import NewsletterForm from '../shared/NewsletterForm'
 
 // ─── Star field ──────────────────────────────────────────────────────────────
 const STARS = [
@@ -812,19 +813,20 @@ const BlogPage = () => {
                         <p className="mb-8 max-w-lg mx-auto text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>
                             Weekly articles on SEO, content, growth, and what's actually working in digital marketing. No spam — just signal.
                         </p>
-                        <Link
-                            href="/contact-us"
-                            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                            style={{
-                                background: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
-                                boxShadow: '0 0 32px rgba(6,182,212,0.32)',
-                            }}
-                        >
-                            Subscribe — It&apos;s Free
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </Link>
+                        <NewsletterForm theme="cyan">
+                            <div
+                                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                style={{
+                                    background: 'linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)',
+                                    boxShadow: '0 0 32px rgba(6,182,212,0.32)',
+                                }}
+                            >
+                                Subscribe — It&apos;s Free
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </NewsletterForm>
                     </div>
                 </motion.div>
             </div>

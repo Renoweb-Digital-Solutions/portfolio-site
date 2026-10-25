@@ -5,7 +5,7 @@ import { getAllResearch } from '@/lib/db'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import ShareButton from '../shared/ShareButton'
-
+import NewsletterForm from '../shared/NewsletterForm'
 // Static researchArticles removed, now fetched from DB
 
 const categories = ['All', 'Digital Marketing', 'Consumer Behaviour', 'Social Media', 'Lead Generation', 'Branding', 'E-Commerce']
@@ -484,19 +484,20 @@ const ResearchHubPage = () => {
                         <p className="mb-8 max-w-lg mx-auto text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>
                             New reports, benchmarks, and data insights — delivered monthly. No fluff, just signals worth acting on.
                         </p>
-                        <Link
-                            href="/contact-us"
-                            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                            style={{
-                                background: 'linear-gradient(90deg, #fb923c 0%, #fbbf24 100%)',
-                                boxShadow: '0 0 30px rgba(251,146,60,0.35)',
-                            }}
-                        >
-                            Subscribe for Free
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </Link>
+                        <NewsletterForm theme="amber">
+                            <div
+                                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-sm text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                                style={{
+                                    background: 'linear-gradient(90deg, #fb923c 0%, #fbbf24 100%)',
+                                    boxShadow: '0 0 30px rgba(251,146,60,0.35)',
+                                }}
+                            >
+                                Subscribe for Free
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </div>
+                        </NewsletterForm>
                     </div>
                 </motion.div>
             </div>

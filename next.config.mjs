@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['flowbite.com', 'ifolrlareviovjvbavok.supabase.co'],
+        domains: ['flowbite.com', 'ifolrlareviovjvbavok.supabase.co', 'res.cloudinary.com'],
     },
     async rewrites() {
         return [

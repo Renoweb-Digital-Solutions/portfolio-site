@@ -7,6 +7,7 @@ import ContactForm from '../shared/ContactForm';
 
 
 import ShareButton from '../shared/ShareButton';
+import NewsletterForm from '../shared/NewsletterForm';
 
 // ── Severity dot ──────────────────────────────────────────────────────────────
 const SeverityDot = ({ severity }) => {
@@ -344,11 +345,18 @@ export default function InternalCaseStudyPage({ caseStudy }) {
                     <div className="bg-gradient-to-r from-blue-600/20 to-blue-800/20 border border-blue-600/30 rounded-2xl p-12">
                         <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
                         <p className="text-gray-400 text-lg mb-8">Let&apos;s discuss how we can help you achieve similar results.</p>
-                        <Link href="/contact-us">
-                            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-lg text-lg font-medium transition">
-                                Get in Touch
-                            </button>
-                        </Link>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link href="/contact-us">
+                                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-lg text-lg font-medium transition">
+                                    Get in Touch
+                                </button>
+                            </Link>
+                            <NewsletterForm theme="blue">
+                                <div className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-lg text-lg font-medium transition cursor-pointer">
+                                    Subscribe to Newsletter
+                                </div>
+                            </NewsletterForm>
+                        </div>
                     </div>
                 </div>
                 </div>
